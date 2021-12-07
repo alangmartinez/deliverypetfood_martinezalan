@@ -1,0 +1,1227 @@
+/*Para seleccionar un id, debemos colocar un #, previo a escribir el nombre que le asignamos*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: #000;
+    /* Se coloca una iamgen de fondo de la pagina */
+    background-image: url(../assets/img/dog/fondo/fondo_dog.jpg);
+    /* La imagen del fondo queda fija, no se desplaza junto con la pagina al hacer scroll */
+    background-attachment: fixed;
+    /* El fondo no se repite en caso de no abarcar el total del contenedor */
+    background-repeat: no-repeat;
+    /* Posiciona el fondo en el centro del contenedor */
+    background-position: center;
+    /* El fondo va cubrir el total del contenedor */
+    background-size: cover;
+    font-family: "Bebas Neue", cursive;
+}
+
+/* MOBILE FIRST DESIGN */
+
+/* --------------------------------------------------------------------------------- */
+
+/* BARRA DE NAVEGACION */
+
+nav ul{
+    /* No se mostrara el elemento al que se le aplique esta propiedad */
+    display: none;
+}
+.contenedor-iconos{
+    display: none;
+}
+header{
+    position: fixed;
+    top: 0;
+    /* El elemento ocupa el 100% del ancho del viewport */
+    width: 100vw;
+    background-color: #000;
+    height: 55px;
+    z-index: 1000;
+}
+nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.fa-user::before{
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+}
+.fa-bars::before{
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+}
+.icono-menu{
+    order: 3;
+}
+.usuario{
+    order: 1;
+}
+.titulo-menu{
+    color: #fff;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 25px;
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+    order: 2;
+}
+.titulo-menu a{
+    color: #fff;
+}
+.titulo-menu a p{
+    margin: 0;
+}
+
+
+/* ! Media Queries ¡ sirve para realizar condiciones en nuestro proyecto, en este caso a partir de 480px en adalente, nuestro diseño sera el mencionado dentro de este media queries */
+
+/* BARRA DE NAVEGACION TABLET 780px */
+
+@media screen and (min-width: 780px){
+    .contenedor-iconos{
+        width: 250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        right: 60px;
+    }
+    .search{
+        height: 26px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+    }
+    .fa-cart-plus::before{
+        color: #fff;
+        font-size: 26px;
+        margin-left: 15px;
+        cursor: pointer;
+        margin-left: 15px;
+    }
+    .titulo-menu{
+        display: none;
+    }
+}
+
+
+/* BARRA DE NAVEGACION DESKTOP 1280px */
+
+@media screen and (min-width:1280px){
+    nav{
+        justify-content: flex-start;
+        position: relative;
+    }
+    .menu{
+        display: block;
+    }
+    .fa-bars::before{
+        display: none;
+    }
+    .menu{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        width: 650px;
+        height: 100%;
+        order: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-sizing: unset;
+    }
+    .menu li{
+        box-sizing: unset;
+    }
+    .menu li a{
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 36px;
+        box-sizing: unset;
+    }
+    .menu li a:hover{
+        color: #bbb;
+        /* border-bottom: 3px solid #fff; */
+    }
+    .usuario{
+        order: 1;
+    }
+    .fa-user::before{
+        font-size: 30px;
+    }
+    .contenedor-iconos{
+        right: 20px;
+    }
+    .fa-cart-plus::before{
+        font-size: 30px;
+    }
+    .search{
+        height: 30px;
+    }
+}
+
+/* --------------------------------------------------------------------------------- */
+
+/* MAIN */
+
+main{
+    margin-top: 55px;
+}
+
+/* MAIN PARA MOBILES GRANDES 480px */
+
+@media screen and (min-width:480px) {
+    .contenedor-flex-2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+    }
+}
+
+/* MAIN PARA TABLET 780px */
+
+@media screen and (min-width:780px){
+    .contenedor-flex-1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        width: 100%;
+    }
+    .contenedor-flex-2{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 10px 0px;
+        height: 450px;
+    }
+}
+
+/* MAIN PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .contenedor-flex-desktop{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 400px;
+        margin: 20px 0;
+    }
+    .contenedor-flex-1{
+        width: auto;
+        height: 100%;
+    }
+    .contenedor-flex-2{
+        height: 100%;
+        width: calc(100% / 3);
+        margin: 0;
+    }
+}
+
+/* BANNER */
+
+.contenedor-superior{
+    width: 100vw;
+    height: 70vh;
+    background-image: url(../assets/img/banner/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.contenedor-superior > h1{
+    width: 300px;
+    margin-top: 30px;
+    color: #fff;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 40px;
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/* BANNER PARA MOBILES GRANDES 480px */
+
+@media screen and (min-width:480px) {
+    .contenedor-superior{
+        height: 70vh;
+    }
+}
+
+/* BANNER PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px){
+    .contenedor-superior{
+        height: 100vh;
+        grid-column: 1 / span 3;
+    }
+    .contenedor-superior h1{
+        width: 600px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 56px;
+        text-align: center;
+    }
+}
+
+/* SALE */
+
+.sale{
+    width: 100vw;
+    height: 250px;
+}
+
+.sale a img{
+    width: 100%;
+    height: 100%;
+    filter: brightness(70%);
+    transition: all .3s;
+}
+.sale a img:hover{
+    filter: brightness(100%);
+}
+
+/* SALE PARA MOBILES GRANDES 480px */
+
+@media screen and (min-width:480px) {
+    .sale{
+        width: 100vw;
+        max-width: 600px;
+        height: 400px;
+        max-height: 400px;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* SALE PARA TABLET 780px */
+
+@media screen and (min-width:780px) {
+    .sale{
+        height: 100%;
+        width: 50%;
+        padding: 10px 5px 10px 10px;
+        box-sizing: border-box;
+    }
+    .sale a img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* SALE PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .sale{
+        height: 100%;
+        width: 50%;
+        margin: 0;
+        padding: 10px;
+        box-sizing: border-box;
+        max-width: none;
+        max-height: none;
+    }
+}
+
+/* MAPA */
+
+.mapa{
+    width: 100vw;
+    height: 300px;
+}
+.mapa > iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* MAPA PARA MOBILE GRANDES 480px */
+
+@media screen and (min-width:480px) {
+    .mapa{
+        width: 100vw;
+        max-width: 600px;
+        height: 400px;
+        max-height: 400px;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* MAPA PARA TABLET 780px */
+
+@media screen and (min-width:780px) {
+    .mapa{
+        width: 50%;
+        padding: 10px 10px 10px 5px;
+        box-sizing: border-box;
+    }
+}
+
+/* MAPA PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .mapa{
+        height: 100%;
+        width: 50%;
+        margin: 0;
+        padding: 10px;
+        box-sizing: border-box;
+        max-height: none;
+        max-width: none;
+    }
+}
+
+/* IMAGEN ANIMADA */
+
+.imagen-animada{
+    display: none;
+}
+
+/* IMAGEN ANIMADA PARA MOBILES GRANDES 480px */
+
+@media screen and (min-width:480px) {
+    .imagen-animada{
+        display: block;
+        width: 50%;
+        height: 100%;
+        transform: translateX(-20px);
+    }
+    .imagen-animada img{
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* IMAGEN ANIMADA PARA TABLET */
+
+@media screen and (min-width:780px) {
+    .imagen-animada{
+        display: block;
+        width: 50%;
+        height: 100%;
+    }
+    .imagen-animada img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* IMAGEN ANIMADA PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .imagen-animada{
+        display: none;
+    }
+}
+
+/* REDES */
+
+.redes{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.redes .redes_sociales{
+    width: 100%;
+    height: calc(100% / 3);
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+.redes_sociales img{
+    width: 100%;
+    height: 100%;
+}
+
+/* REDES PARA MOBILES GRANDES 480px */
+
+@media screen and (min-width:480px) {
+    .redes{
+        height: 45%;
+        width: 40%;
+        transform: translateX(-20px);
+    }
+    .redes .redes_sociales{
+        margin: 6px;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .redes_sociales img{
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+    }
+}
+
+/* REDES PARA TABLET 780px */
+
+@media screen and (min-width:780px) {
+    .redes{
+        width: 40%;
+        height: 70%;
+        margin: 0;
+        transform: unset;
+    }
+    .redes .redes_sociales{
+        margin: 10px 0;
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .redes_sociales img{
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+    }
+}
+
+/* REDES PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .redes{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 100px);
+    justify-content: unset;
+    align-items: unset;
+    row-gap: 20px;
+    align-content: center;
+    transform: unset;
+    }
+    .redes .redes_sociales{
+        height: 100%;
+        margin: 0;
+    }
+    .redes_sociales img{
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+    }
+}
+
+.medios_pago{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 100px;
+}
+.medios_pago img{
+    width: 60px;
+    height: 50px;
+}
+
+/* MEDIOS PAGO PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px){
+    .medios_pago{
+        justify-content: space-around;
+        width: 800px;
+        margin: auto;
+    }
+}
+
+/* ICONO WHATS APP */
+.whats_app{
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+    width: 45px;
+    height: 45px;
+    z-index: 1000;
+    animation-name: rotation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotation{
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(360deg);}
+}
+
+/* ICONO WHATS APP TABLET 780px */
+
+@media screen and (min-width:780px) {
+    .whats_app{
+        left: 20px;
+        bottom: 20px;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+/* ICONO WHATS APP DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .whats_app{
+        left: 25px;
+        bottom: 25px;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* --------------------------------------------------------------------------------- */
+
+/* DOG */
+
+.contenedor-dog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* IMG SECCIONES DOG */
+
+.perros-viejos, .perros-adultos, .perros-cachorros, .perros-especiales{
+    width: 100vw;
+    height: 300px;
+    position: relative;
+}
+.perros-viejos img, .perros-adultos img, .perros-cachorros img, .perros-especiales img{
+    width: 100%;
+    height: 100%;
+    filter: brightness(50%);
+    object-fit: fill;
+    transition: all .5s;
+}
+.perros-viejos img:hover, .perros-adultos img:hover, .perros-cachorros img:hover, .perros-especiales img:hover{
+    filter: brightness(100%);
+}
+.perros-viejos p, .perros-adultos p, .perros-cachorros p, .perros-especiales p{
+    font-size: 2rem;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, .776);
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* IMG SECCIONES DOG DESKTOP 1280px*/
+
+@media screen and (min-width:1280px) {
+    .perros-viejos, .perros-adultos, .perros-cachorros, .perros-especiales{
+        height: 450px;
+    }
+    .perros-viejos p, .perros-adultos p, .perros-cachorros p, .perros-especiales p{
+        font-size: 3rem;
+    }
+}
+
+/* --------------------------------------------------------------------------------- */
+
+/* CAT */
+
+.contenedor-principal-gatos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+/* IMG CAT SECCIONES */
+
+.gatos-viejos, .gatos-adultos, .gatitos, .gatos-especiales{
+    width: 100vw;
+    height: 300px;
+    position: relative;
+}
+.gatos-viejos img, .gatos-adultos img, .gatitos img, .gatos-especiales img{
+    width: 100%;
+    height: 100%;
+    filter: brightness(50%);
+    object-fit: fill;
+    transition: all .5s;
+}
+.gatos-viejos img:hover, .gatos-adultos img:hover, .gatitos img:hover, .gatos-especiales img:hover{
+    filter: brightness(100%);
+}
+.gatos-viejos p, .gatos-adultos p, .gatitos p, .gatos-especiales p{
+    font-size: 2rem;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, .776);
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* IMG CAT SECCIONES DESKTOP 1280px*/
+
+@media screen and (min-width:1280px) {
+    .gatos-viejos, .gatos-adultos, .gatitos, .gatos-especiales{
+        height: 450px;
+    }
+    .gatos-viejos p, .gatos-adultos p, .gatitos p, .gatos-especiales p{
+        font-size: 3rem;
+    }
+}
+
+/* --------------------------------------------------------------------------------- */
+
+/* MARKET */
+
+/* OFERTA */
+
+.contenedor-ofertas{
+    width: 100vw;
+    height: 400px;
+}
+.contenedor-ofertas img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* TITULO SECCIONES */
+
+.contenedor-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-family: 'Amatic SC', cursive;
+    background-color: rgba( 255, 255, 255);
+    border-radius: 50px;
+    width: 320px;
+    height: 80px;
+    margin: 40px 0 20px 0;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}    
+
+/* TITULO SECCIONES PARA TABLET 780px */
+
+@media screen and (min-width:780px) {
+    .titulo{
+        margin: 40px 0;
+    }
+}
+
+/* CARDS */
+
+.contenedor-cards{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 400px;
+    position: relative;
+}
+.fa-angle-left::before{
+    color: #fff;
+    font-size: 45px;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.fa-angle-right::before{
+    color: #fff;
+    font-size: 45px;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.card{
+    border-radius: 10px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    width: 18rem;
+    transform: scale(.85);
+    background-color: transparent;
+}
+.img-container{
+    height: 200px;
+}
+.img-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.card-body{
+    max-height: 191px;
+    /* border-top: 1.5px solid rgba(0,0,0,.6); */
+    background: linear-gradient(#8e9eab, #eef2f3, transparent);
+    border-radius: 0 0 10px 10px;
+}
+.botton-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-title{
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    color: rgb(0, 0, 0);
+}
+.card-text{
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    color: #000;
+}
+.btn-primary{
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";;
+}
+.dog-chow-card{
+    display: none;
+}
+.royal-canin-card{
+    display: none;
+}
+.whiskas-card{
+    display: none;
+}
+.agility-card{
+    display: none;
+}
+
+/* CARDS PARA MOBILE GRANDES 480px */
+
+@media screen and (min-width:480px){
+    .fa-angle-left::before{
+        left: 10%;
+    }
+    .fa-angle-right::before{
+        right: 10%;
+    }
+}
+
+/* CARDS PARA TABLET 780px */
+
+@media screen and (min-width:780px) {
+    .dog-chow-card{
+        display: block;
+    }
+    .agility-card{
+        display: block;
+    }
+    .card{
+        transform: scale(1);
+    }
+    .fa-angle-left::before{
+        left: 5%;
+    }
+    .fa-angle-right::before{
+        right: 5%;
+    }
+}
+
+/* CARDS PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .royal-canin-card{
+        display: block;
+    }
+    .dog-chow-card{
+        display: block;
+    }
+    .agility-card{
+        display: block;
+    }
+    .whiskas-card{
+        display: block;
+    }
+}
+
+/* --------------------------------------------------------------------------------- */
+
+/* ABOUT US */
+
+/* TITLE */
+
+.title-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    padding-bottom: 1rem;
+    box-sizing: border-box;
+    width: 100vw;
+}
+.title-container h2{
+    color: #fff;
+    font-size: 40px;
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+}
+.fa-lightbulb::before{
+    display: block;
+    color: #fff000;
+    font-size: 35px;
+    margin-left: 1rem;
+    height: 45px;
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+}
+
+/* TITLE PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .title-container h2{
+        font-size: 50px;
+    }
+    .fa-lightbulb::before{
+        font-size: 50px;
+        height: 60px;
+    }
+}
+
+/* FLOAT BOX */
+
+.box-container{
+    width: 100vw;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+.float-box{
+    width: 100%;
+    height: 400px;
+    overflow-y: scroll;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, .6);
+    border-radius: 10px;
+}
+.float-img{
+    width: 100px;
+    height: 150px;
+    margin: .5rem;
+    float: left;
+}
+.float-img img{
+    width: 100%;
+    height: 100%;
+}
+.float-box p{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+}
+
+/* FLOAT BOX PARA TABLET 780px */
+
+@media screen and (min-width:780px){
+    .float-img{
+        width: 150px;
+        height: 200px;
+    }
+    .float-box{
+        height: unset;
+    }
+}
+
+/* FLOAT BOX PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .float-img{
+        width: 170px;
+        height: 220px;
+    }
+}
+
+/* VIDEO */
+
+.video{
+    width: 100vw;
+    height: 400px;
+    box-sizing: border-box;
+}
+.video iframe{
+    width: 100%;
+    height: 100%;
+}
+
+/* VIDEO PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .video{
+        padding: 2rem;
+    }
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+/* HELP */
+
+/* TITLE */
+
+.title-help-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2rem;
+    /* padding-bottom: 0; */
+    width: 100vw;
+    box-sizing: border-box;
+    height: 35vh;
+}
+.title-help-container h2{
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+}
+.fa-paper-plane::before{
+    display: block;
+    color: #fff000;
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+    font-size: 2rem;
+}
+
+/* TITLE PARA TABLET 780px */
+
+@media screen and (min-width:780px) {
+    .title-help-container h2{
+        font-size: 3rem;
+    }
+    .fa-paper-plane::before{
+        font-size: 3rem;
+    }
+}
+
+/* TITLE PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .title-help-container{
+        flex-direction: row;
+        justify-content: center;
+        height: 30vh;
+    }
+    .fa-paper-plane::before{
+        margin-left: 2rem;
+    }
+}
+
+/* FORM */
+
+.form-container{
+    width: 100vw;
+    padding: 2rem;
+    padding-bottom: 0;
+    box-sizing: border-box;
+}
+.form-container form{
+    width: 100%;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 10px;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+.box-container-1, .box-container-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+.box-container-1 label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 3rem;
+    box-sizing: border-box;
+    margin: .5rem;
+    width: 100%;
+}
+.input-sexo, .input-alimento, .input-marca{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 3rem;
+    box-sizing: border-box;
+    margin: .5rem;
+    width: 100%;
+}
+.perro input, .gato input, .masculino input, .femenino input{
+    margin-left: .5rem;
+}
+.sexo, .alimento{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.text-area{
+    resize: none;
+    width: 100%;
+    border-radius: 6px;
+}
+.submit-botton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    box-sizing: border-box;
+}
+.submit-botton input{
+    width: 5rem;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+/* FORM PARA MOBILE GRANDES 480px */
+
+@media screen and (min-width:480px) {
+    .box-container-1 label, .box-container-2 label, .box-container-3 label{
+        font-size: 20px;
+    }
+}
+
+/* FORM PARA TABLET 780px */
+
+@media screen and (min-width:780px) {
+    .box-container-1{
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    .box-container-1 label{
+        width: 40%;
+    }
+    .submit-botton input{
+        width: 6rem;
+        padding: .5rem;
+    }
+}
+
+/* FORM PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .form-container form{
+        display: grid;
+        grid-template-rows: 8rem 8rem 1fr 4rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .box-container-1{
+        grid-column: 1 / span 3;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 3rem;
+    }
+    .box-container-1 label{
+        width: unset;
+    }
+    .box-container-2{
+        grid-column: 1 / span 3;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    .input-sexo, .input-alimento, .input-marca{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 20%;
+    }
+    .input-alimento .title{
+        width: 8rem;
+    }
+    .input-marca{
+        justify-content: space-evenly;
+    }
+    .box-container-3{
+        grid-column: 1 / span 3;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .submit-botton{
+        grid-column: 1 / span 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box-container-3 label{
+        width: 90%;
+    }
+    .text-area{
+        height: 16rem;
+        width: 100%;
+    }
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* PERROS +7 */
+
+/* SECCIONES PERROS +7 */
+
+.large-breed{
+    width: 100vw;
+    height: 300px;
+    position: relative;
+}
+/* .large-breed img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+} */
+
+/* FOOTER */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer p{
+    padding: 10px 40px;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+@media screen and (min-width:1280px){
+    footer p{
+        font-size: 16px;
+    }
+}

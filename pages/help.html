@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--Lenguaje cambiado a Español-->
+<html lang="es">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Hoja de Estilos-->
+    <link rel="stylesheet" href="../css/estilos.css">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <!--Font Awesome Icons-->
+    <script src="https://kit.fontawesome.com/95674ce697.js" crossorigin="anonymous"></script>
+    <!--Head Icon-->
+    <link rel="shortcut icon" href="../assets/img/icono.png" type="image/x-icon">
+    <title>Delivery Pet Food</title>
+</head>
+<body>
+
+
+    <header>
+        <!--Comienzo Navegador-->
+        <nav>
+            <!--Icono Menu-->
+            <div class="icono-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <!-- Titulo Barra Navegacion Mobile -->
+            <div class="titulo-menu">
+                <a href="index.html">
+                    <p>Delivery Pet Food</p>
+                </a>
+            </div>
+            <!--Comienzo Menu-->
+            <ul class="menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="dog.html">Dog</a></li>
+                <li><a href="cat.html">Cat</a></li>
+                <li><a href="market.html">Market</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+            <div class="contenedor-iconos">
+                <i class="fas fa-cart-plus"></i>
+                <label class="contenedor-search" for="buscador">
+                    <input class="search" type="search" name="buscador" placeholder="Search">
+                </label>
+            </div>
+            <!-- Icono Usuario -->
+            <div class="usuario">
+                <i class="fas fa-user"></i>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- Title -->
+        <div class="title-help-container">
+            <h2>¿ No encontraste el alimento que buscabas ? ¿ Otro problema ?</h2>
+            <i class="fas fa-paper-plane"></i>
+        </div> 
+
+        <!-- Comienzo contenedor formulario -->
+        <div class="form-container">
+
+            <!--En el atributo "action" se indica la direccion a donde se enviar los datos recopilados-->
+            <form class="form" action="">
+
+
+                <!-- Box Container 1 -->
+                <div class="box-container-1">
+                    <label for="nombre">
+                        <div>Nombre:</div>
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                    </label>
+
+                    <label for="apellido">
+                        <div>Apellido:</div>
+                        <input type="text" name="apellido" placeholder="Apellido" required>
+                    </label>
+
+                    <label for="email">
+                        <div>E-mail:</div>
+                        <input type="email" name="email" placeholder="E-mail" required>
+                    </label>
+
+                    <label for="telefono">
+                        <div>Telefono:</div>
+                        <input type="tel" name="telefono" placeholder="Telefono" required>
+                    </label>
+                    <label for="fecha">
+                        <div>Fecha de Nacimiento:</div>
+                        <input type="date" name="fecha" required>
+                    </label>
+                </div>
+
+
+                <!-- Box Container 2 -->
+                <div class="box-container-2">
+                    <label class="input-sexo" for="sexo">
+                        <div>Sexo:</div>
+                        <div class="sexo">
+                            <div class="masculino">
+                                <span>Masculino</span><input type="radio" name="sexo" value="Masculino" required>
+                            </div>
+                            <div class="femenino">
+                                <span>Femenino</span><input type="radio" name="sexo" value="Femenino" required>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="input-alimento" for="alimento">
+                        <div class="title">Alimento de:</div>
+                        <div class="alimento">
+                            <div class="perro">
+                                <span>Perro</span><input type="radio" name="alimento" value="Perro" required>
+                            </div>
+                            <div class="gato">
+                                <span>Gato</span><input type="radio" name="alimento" value="Gato" required>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="input-marca" for="marca">
+                        <div>Marca:</div>
+                        <select name="marca">
+                            <option selected>Marca</option>
+                            <option value="1">Pro Plan</option>
+                            <option value="2">Royal Canin</option>
+                            <option value="3">Vital Can</option>
+                            <option value="4">Dog Chow</option>
+                            <option value="5">Whiskas</option>
+                        </select>
+                    </div>
+
+                <!-- Box Container 3 -->
+                <div class="box-container-3">
+                    <label for="texto">
+                    <textarea class="text-area" name="texto" cols="120" rows="10" placeholder="Escriba su mensaje aquí..."></textarea>
+                    </label>
+                </div>
+
+                <!-- Boton Enviar -->
+                <div class="submit-botton">
+                    <input type="submit" value="Enviar">
+                </div>
+            </form>
+        </div>
+
+    </main>
+
+
+    <!--Footer-->
+    <footer>
+        <p>Copy Right, Derechos de Autor Reservados a Alan Martinez. Buenos Aires, Bahía Blanca</p>
+    </footer>
+
+</body>
+</html>
