@@ -165,6 +165,9 @@ nav{
     }
     .contenedor-iconos{
         right: 20px;
+        animation: pulse;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
     }
     .fa-cart-plus::before{
         font-size: 30px;
@@ -238,7 +241,7 @@ main{
 
 .contenedor-superior{
     width: 100vw;
-    height: 70vh;
+    height: 100vh;
     background-image: url(../assets/img/banner/banner.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -263,7 +266,7 @@ main{
 
 @media screen and (min-width:480px) {
     .contenedor-superior{
-        height: 70vh;
+        height: 100vh;
     }
 }
 
@@ -889,6 +892,7 @@ main{
     font-size: 40px;
     text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
 }
+
 .fa-lightbulb::before{
     display: block;
     color: #fff000;
@@ -896,7 +900,17 @@ main{
     margin-left: 1rem;
     height: 45px;
     text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+    animation-name: rotation;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-timing-function: linear;
 }
+
+@keyframes rotation{
+    from{transform: rotateY(0deg);}
+    to{transform: rotateY(360deg);}
+}
+
 
 /* TITLE PARA DESKTOP 1280px */
 
