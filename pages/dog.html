@@ -28,27 +28,42 @@
     <link rel="shortcut icon" href="../assets/img/icono.png" type="image/x-icon">
     <title>Delivery Pet Food</title>
 </head>
-<body>
+<body id="body">
 
 
     <header>
         <!--Comienzo Navegador-->
         <nav>
-            <!--Icono Menu-->
-            <div class="icono-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-            <!-- Titulo Barra Navegacion Mobile -->
-            <div class="titulo-menu">
-                <a href="index.html">
-                    <p>Delivery Pet Food</p>
-                </a>
+            <!-- Menu Mobile -->
+            <div class="menuMobile">
+                <div class="userIcon" id="userIcon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="btnMenu">
+                    <i class="fas fa-bars" id="btnMenu"></i>
+                </div>
             </div>
             <!--Comienzo Menu-->
-            <ul class="menu">
+            <ul class="menuSide" id="menuSide">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="dog.html">Dog</a></li>
-                <li><a href="cat.html">Cat</a></li>
+                <li class="container-sub-menu">
+                    <a href="dog.html">Dog</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Dog +7</a></li>
+                        <li><a href="#">Adult Dog</a></li>
+                        <li><a href="#">Puppy</a></li>
+                        <li><a href="#">Special Dog</a></li>
+                    </ul>
+                </li>
+                <li class="container-sub-menu">
+                    <a href="cat.html">Cat</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Cat +7</a></li>
+                        <li><a href="#">Adult Cat</a></li>
+                        <li><a href="#">Kitten</a></li>
+                        <li><a href="#">Special Cat</a></li>
+                    </ul>
+                </li>
                 <li><a href="market.html">Market</a></li>
                 <li><a href="about_us.html">About Us</a></li>
                 <li><a href="help.html">Help</a></li>
@@ -58,10 +73,6 @@
                 <label class="contenedor-search" for="buscador">
                     <input class="search" type="search" name="buscador" placeholder="Search">
                 </label>
-            </div>
-            <!-- Icono Usuario -->
-            <div class="usuario">
-                <i class="fas fa-user"></i>
             </div>
         </nav>
     </header>
@@ -96,7 +107,7 @@
             <div class="perros-especiales">
                 <a href="#">
                     <img src="../assets/img/dog/perros especiales-mobile.png" alt="perros especiales">
-                    <p>Special Dog</p>
+                    <p>Special Dogs</p>
                 </a>
             </div>
 
@@ -107,7 +118,9 @@
     
     <!--Footer-->
     <footer>
-        <p>Copy Right, Derechos de Autor Reservados a Alan Martinez. Buenos Aires, Bahía Blanca</p>
+        <p>© 2021 Delivert Pet Food | CopyRight Leg:11432. | Todos los derechos reservados.</p>
     </footer>
+
+    <script src="../js/script.js"></script>
 </body>
 </html>
