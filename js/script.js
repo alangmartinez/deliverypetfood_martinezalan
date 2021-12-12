@@ -9,7 +9,7 @@ let userIcon = document.getElementById("userIcon");
 
 btnMenu.addEventListener("click", function(){
 
-        menuSide.classList.toggle("mostrar");
         body.classList.toggle("noScroll");
+        menuSide.classList.toggle("mostrar");
         userIcon.classList.toggle("oculto");
 });

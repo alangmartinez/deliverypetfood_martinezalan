@@ -84,11 +84,6 @@ nav{
 .oculto{
     visibility: hidden;
 }
-.container-menuSide{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .menuSide{
     padding: 0;
     margin: 0;
@@ -381,11 +376,6 @@ main{
 
 .sale a img{
     height: 100%;
-    filter: brightness(70%);
-    transition: all .3s;
-}
-.sale a img:hover{
-    filter: brightness(100%);
 }
 
 /* SALE PARA MOBILES GRANDES 480px */
