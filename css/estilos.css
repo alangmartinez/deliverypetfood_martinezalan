@@ -167,89 +167,54 @@ nav{
 /* BARRA DE NAVEGACION DESKTOP 1280px */
 
 @media screen and (min-width:1280px){
-    .icono-menu{
+    /* .menuMobile{
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        overflow: hidden;
+        width: 4rem;
+    }
+    .userIcon{
         display: none;
     }
-    nav{
-        justify-content: space-between;
+    .navBar{
+        background-color: #000;
+    }
+    .moveRight{
+        transform: translateX(20%);
+    } */
+    .navBar{
+        padding: 0 1rem;
+        background-color: #000;
         position: relative;
     }
-    .menu{
-        display: block;
-    }
-    .fa-bars::before{
+    .menuMobile{
         display: none;
     }
-    .menu{
-        margin: 0;
-        padding: 0;
-        display: flex;
+    .menuSide{
         flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        list-style: none;
-        width: 650px;
-        height: 100%;
-        order: 2;
-        transform: translateX(20%);
-    }
-    .menu li{
-        box-sizing: unset;
-    }
-    .menu li a{
-        color: #fff;
-        text-transform: uppercase;
-        box-sizing: unset;
-    }
-    .menu li a:hover{
-        color: #bbb;
-    }
-    .sub-menu{
-        color: #fff;
-        background-color: #000;
-        overflow: visible;
-        position: absolute;
-        top: 55px;
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        padding: 0;
-        transform: translateX(-45px);
-        z-index: 800;
-        visibility: hidden;
-        opacity: 0;
-        border-radius: 0 0 10px 10px;
-    }
-    .sub-menu li{
-        padding: 1rem 1.4rem;
-        text-align: center;
-        font-size: 1.4rem;
-        box-sizing: border-box;
-        border-radius: inherit;
-    }
-    .sub-menu li:hover{
-        background-color: #222;
-        color: #222;
-    }
-    .container-sub-menu:hover .sub-menu{
+        top: 0;
+        transform: translateX(0);
+        height: 55px;
         opacity: 1;
-        visibility: visible;
+        align-items: center;
     }
-    .usuario{
-        order: 1;
+    .menuSide li{
+        margin: 0 1.5rem;
+        height: 100%;
+        padding: 0;
+        display: flex;
+        align-items: center;
     }
-    .fa-user::before{
-        font-size: 30px;
+    .menuSide li:hover{
+        border: none;
     }
     .contenedor-iconos{
-        position: unset;
-        order: 3;
-    }
-    .fa-cart-plus::before{
-        font-size: 30px;
-    }
-    .search{
-        height: 30px;
+        position: absolute;
+        right: 1rem;
+        transform: translateY(50%);
+        z-index: 900;
     }
 }
 
