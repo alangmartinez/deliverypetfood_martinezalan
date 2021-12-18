@@ -6,7 +6,9 @@ $backgroundImg: url(../../assets/img/dog/fondo/fondo_dog.jpg);
 $font: "Bebas Neue", cursive;
 $navBarFontColor: #fff;
 $primaryColor: #fff;
-
+$textShadow: 5px 5px 3px rgba(0, 0, 0, .776);
+$footerFont: 13px;
+$footerFontFamily: Arial, Helvetica, sans-serif; 
 
 *{
     box-sizing: border-box;
@@ -242,7 +244,7 @@ main{
     color: $primaryColor;
     font-family: 'Kaushan Script', cursive;
     font-size: 40px;
-    text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+    text-shadow: $textShadow;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -264,14 +266,15 @@ main{
     .contenedor-superior{
         height: 100vh;
         grid-column: 1 / span 3;
-    }
-    .contenedor-superior h1{
-        width: 600px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 56px;
-        text-align: center;
+        
+        h1{
+            width: 600px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 56px;
+            text-align: center;
+        }
     }
 }
 
@@ -280,11 +283,12 @@ main{
 .sale{
     width: 100vw;
     height: 250px;
+    
+    a img{
+        height: 100%;
+    }
 }
 
-.sale a img{
-    height: 100%;
-}
 
 /* SALE PARA MOBILES GRANDES 480px */
 
@@ -330,11 +334,12 @@ main{
 .mapa{
     width: 100vw;
     height: 300px;
-}
-.mapa > iframe{
-    width: 100%;
-    height: 100%;
-    border: none;
+    
+    iframe{
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
 }
 
 /* MAPA PARA MOBILE GRANDES 480px */
@@ -375,6 +380,8 @@ main{
     }
 }
 
+
+
 /* IMAGEN ANIMADA */
 
 .imagen-animada{
@@ -389,11 +396,12 @@ main{
         width: 50%;
         height: 100%;
         transform: translateX(-20px);
-    }
-    .imagen-animada img{
-        object-fit: fill;
-        width: 100%;
-        height: 100%;
+        
+        img{
+            object-fit: fill;
+            width: 100%;
+            height: 100%;
+        }
     }
 }
 
@@ -569,4 +577,26 @@ main{
         width: 60px;
         height: 60px;
     }
+}
+
+/* FOOTER */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    p{
+        padding: 10px 40px;
+        text-align: center;
+        color: $primaryColor;
+        font-family: $footerFontFamily;
+        font-size: $footerFont;
+    }
+}
+@media screen and (min-width:1280px){
+    footer{
+        p{
+            font-size: 2rem;
+        }
+    } 
 }
