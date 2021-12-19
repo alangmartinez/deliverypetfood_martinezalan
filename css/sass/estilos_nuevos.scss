@@ -1,0 +1,510 @@
+// Variables Declaradas :
+
+$black: #000; 
+$white: #fff;
+$backgroundImg: url(../../assets/img/dog/fondo/fondo_dog.jpg);
+$font: "Bebas Neue", cursive;
+
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+    color: $white;
+}
+body{
+    background-color: $black;
+    background-image: $backgroundImg;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: $font;
+}
+.noScroll{
+    overflow: hidden;
+}
+header{
+    position: fixed;
+    top: 0;
+    height: 55px;
+    width: 100%;
+    z-index: 1000;
+
+        .navBar{
+            position: fixed;
+            top: 0;
+            height: 55px;
+            width: 100%;
+        
+            .menuMobile{
+                position: fixed;
+                top: 0;
+                padding: 0 1.5rem;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 55px;
+                justify-content: space-between;
+                background-color: $black;
+                z-index: 1000;
+
+                    .btnMenu{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        .fa-bars{
+                            display: block;
+                            color: $white;
+                            font-size: 26px;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .userIcon{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                            
+                        .fa-user{
+                            display: block;
+                            color: $white;
+                            font-size: 26px;
+                            cursor: pointer;
+                        }
+                    }
+            }
+        }
+}
+.oculto{
+    visibility: hidden;
+}
+.menuSide{
+    position: absolute;
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    background-color: $black;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all .5s;
+
+    li{
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 2rem;
+        margin-top: 1rem;
+        font-family: $font;   
+
+        &:hover{
+            border-bottom: 2px solid #fff;
+
+            a{
+                color: #555;
+            }
+        }
+    }
+}
+.sub-menu{
+    display: none;
+}
+.mostrar{
+    transform: translateX(0);
+    opacity: 1;
+}
+.contenedor-iconos{
+    display: none;
+}
+
+
+/* ! Media Queries ¡ sirve para realizar condiciones en nuestro proyecto, en este caso a partir de 480px en adalente, nuestro diseño sera el mencionado dentro de este media queries */
+
+/* BARRA DE NAVEGACION TABLET 780px */
+
+@media screen and (min-width: 780px){
+    .contenedor-iconos{
+        width: 250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        right: 60px;
+        
+        .search{
+            height: 26px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+        .fa-cart-plus{
+            color: #fff;
+            font-size: 26px;
+            margin-left: 15px;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+    }
+    .titulo-menu{
+        display: none;
+    }
+}
+/* --------------------------------------------------------------------------------- */
+
+/* MAIN */
+
+main{
+    margin-top: 55px;
+    
+    .contenedor-principal{
+        width: 100vw;
+    }
+}
+
+/* MAIN PARA MOBILES GRANDES 480px */
+
+@media screen and (min-width:480px) {
+    .contenedor-flex-2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+    }
+}
+
+/* MAIN PARA TABLET 780px */
+
+@media screen and (min-width:780px){
+    .contenedor-flex-1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        width: 100%;
+    }
+    .contenedor-flex-2{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 10px 0px;
+        height: 450px;
+    }
+}
+
+/* MAIN PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .contenedor-flex-desktop{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 400px;
+        margin: 20px 0;
+    }
+    .contenedor-flex-1{
+        width: auto;
+        height: 100%;
+    }
+    .contenedor-flex-2{
+        height: 100%;
+        width: calc(100% / 3);
+        margin: 0;
+    }
+}
+
+/* BANNER */
+
+.contenedor-superior{
+    width: 100vw;
+    height: 70vh;
+    background-image: url(../../assets/img/banner/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.contenedor-superior > h1{
+    width: 300px;
+    margin-top: 30px;
+    color: $white;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 40px;
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* BANNER PARA MOBILES GRANDES 480px */
+
+@media screen and (min-width:480px) {
+    .contenedor-superior{
+        height: 70vh;
+    }
+}
+
+/* BANNER PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px){
+    .contenedor-superior{
+        height: 100vh;
+        grid-column: 1 / span 3;
+    }
+    .contenedor-superior h1{
+        width: 600px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 56px;
+        text-align: center;
+    }
+}
+
+/* SALE */
+
+.carousel{
+    padding: .8rem;
+}
+
+/* MAPA */
+
+.mapa{
+    width: 100vw;
+    height: 300px;
+    padding: 1rem;
+    
+    iframe{
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+
+/* MAPA PARA MOBILE GRANDES 480px */
+
+@media screen and (min-width:480px) {
+    .mapa{
+        width: 100vw;
+        max-width: 600px;
+        height: 400px;
+        max-height: 400px;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* MAPA PARA TABLET 780px */
+
+@media screen and (min-width:780px) {
+    .mapa{
+        width: 50%;
+        padding: 10px 10px 10px 5px;
+        box-sizing: border-box;
+    }
+}
+
+/* MAPA PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .mapa{
+        height: 100%;
+        width: 50%;
+        margin: 0;
+        padding: 10px;
+        box-sizing: border-box;
+        max-height: none;
+        max-width: none;
+    }
+}
+
+/* IMAGEN ANIMADA */
+
+.imagen-animada{
+    display: none;
+}
+
+/* IMAGEN ANIMADA PARA MOBILES GRANDES 480px */
+
+@media screen and (min-width:480px) {
+    .imagen-animada{
+        display: block;
+        width: 50%;
+        height: 100%;
+        transform: translateX(-20px);
+    }
+    .imagen-animada img{
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* IMAGEN ANIMADA PARA TABLET */
+
+@media screen and (min-width:780px) {
+    .imagen-animada{
+        display: block;
+        width: 50%;
+        height: 100%;
+    }
+    .imagen-animada img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* IMAGEN ANIMADA PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .imagen-animada{
+        display: none;
+    }
+}
+
+.medios_pago{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 100px;
+}
+.medios_pago img{
+    width: 60px;
+    height: 50px;
+}
+
+/* MEDIOS PAGO PARA DESKTOP 1280px */
+
+@media screen and (min-width:1280px){
+    .medios_pago{
+        justify-content: space-around;
+        width: 800px;
+        margin: auto;
+    }
+}
+
+/* ICONO WHATS APP */
+.whats_app{
+    position: fixed;
+    left: 1.8rem;
+    bottom: 1.8rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    z-index: 300;
+}
+
+/* ICONO WHATS APP TABLET 780px */
+
+@media screen and (min-width:780px) {
+    .whats_app{
+        left: 20px;
+        bottom: 20px;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+/* ICONO WHATS APP DESKTOP 1280px */
+
+@media screen and (min-width:1280px) {
+    .whats_app{
+        left: 25px;
+        bottom: 25px;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+// FOOTER 
+
+.footerContainer{
+    padding: 1rem;
+    height: 30%;
+    background-color: rgba(10, 10, 10, .885);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    
+    .box{
+        padding: .75rem 1.5rem;
+        margin-bottom: 1rem;
+        
+        h3{
+            color: $white;
+            margin-bottom: 1.5rem;
+            font-family: 'Shadows Into Light', cursive;
+            font-size: 1.6rem;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            
+            li{
+                margin-bottom: .4rem;
+                
+                a{
+                    font-size: 1rem;
+                    color: rgba(255, 255, 255, .85);
+                    
+                    &:hover{
+                        color: rgba(255, 255, 255, .3);
+                    }
+                }
+            }
+        }
+        
+    }
+    .bar{
+        border-bottom: 1px solid rgba(255, 255, 255, .85);
+        height: 0;
+        width: 50%;
+        transform: translateX(50%);
+        margin-bottom: 1rem;
+    }
+}
+.redesSociales{
+    display: flex;
+    justify-content: flex-end;
+    
+    .fa-facebook-square{
+        margin-right: 1rem;
+        font-size: 1.55rem;
+        color: $white;
+    }
+    .fa-instagram-square{
+        margin-right: 1rem;
+        font-size: 1.55rem;
+        color: #fff;
+    }
+    .fa-twitter{
+        margin-right: 1rem;
+        font-size: 1.55rem;
+        color: $white;
+    }
+}
+.footerContainer p{
+    color: rgba(255, 255, 255, .7);
+    font-size: .85rem;
+    text-align: center;
+    
+    &::after{
+        content: "  DeliveryPetFood.com";
+        color: #aaa000;
+    }
+}

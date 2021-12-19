@@ -1,181 +1,152 @@
-/*Para seleccionar un id, debemos colocar un #, previo a escribir el nombre que le asignamos*/
-
-*{
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
-a{
+
+a {
     text-decoration: none;
+    color: #fff;
 }
-body{
+
+body {
     background-color: #000;
-    /* Se coloca una iamgen de fondo de la pagina */
-    background-image: url(../assets/img/dog/fondo/fondo_dog.jpg);
-    /* La imagen del fondo queda fija, no se desplaza junto con la pagina al hacer scroll */
+    background-image: url(../../assets/img/dog/fondo/fondo_dog.jpg);
     background-attachment: fixed;
-    /* El fondo no se repite en caso de no abarcar el total del contenedor */
-    background-repeat: no-repeat;
-    /* Posiciona el fondo en el centro del contenedor */
-    background-position: center;
-    /* El fondo va cubrir el total del contenedor */
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     font-family: "Bebas Neue", cursive;
 }
 
-/* MOBILE FIRST DESIGN */
-
-/* --------------------------------------------------------------------------------- */
-
-/* BARRA DE NAVEGACION */
-
-nav ul{
-    /* No se mostrara el elemento al que se le aplique esta propiedad */
-    display: none;
+.noScroll {
+    overflow: hidden;
 }
-.contenedor-iconos{
-    display: none;
-}
-header{
+
+header {
     position: fixed;
     top: 0;
-    /* El elemento ocupa el 100% del ancho del viewport */
-    width: 100vw;
-    background-color: #000;
     height: 55px;
+    width: 100%;
     z-index: 1000;
 }
-nav{
+header .navBar {
+    position: fixed;
+    top: 0;
+    height: 55px;
     width: 100%;
-    height: 100%;
+}
+header .navBar .menuMobile {
+    position: fixed;
+    top: 0;
+    padding: 0 1.5rem;
+    margin: 0;
     display: flex;
     align-items: center;
+    width: 100%;
+    height: 55px;
     justify-content: space-between;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-.fa-user::before{
+    background-color: #000;
+    z-index: 1000;
+  }
+  header .navBar .menuMobile .btnMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header .navBar .menuMobile .btnMenu .fa-bars {
+    display: block;
     color: #fff;
     font-size: 26px;
     cursor: pointer;
-}
-.fa-bars::before{
+  }
+  header .navBar .menuMobile .userIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header .navBar .menuMobile .userIcon .fa-user {
+    display: block;
     color: #fff;
     font-size: 26px;
     cursor: pointer;
-}
-.icono-menu{
-    order: 3;
-}
-.usuario{
-    order: 1;
-}
-.titulo-menu{
-    color: #fff;
-    font-family: 'Kaushan Script', cursive;
-    font-size: 25px;
-    text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
-    order: 2;
-}
-.titulo-menu a{
-    color: #fff;
-}
-.titulo-menu a p{
-    margin: 0;
-}
-
-
-/* ! Media Queries ¡ sirve para realizar condiciones en nuestro proyecto, en este caso a partir de 480px en adalente, nuestro diseño sera el mencionado dentro de este media queries */
-
-/* BARRA DE NAVEGACION TABLET 780px */
-
-@media screen and (min-width: 780px){
-    .contenedor-iconos{
-        width: 250px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: absolute;
-        right: 60px;
+  }
+  
+  .oculto {
+    visibility: hidden;
+  }
+  
+  .menuSide {
+    position: absolute;
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s;
+  }
+  .menuSide li {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 2rem;
+    margin-top: 1rem;
+    font-family: "Bebas Neue", cursive;
+  }
+  .menuSide li:hover {
+    border-bottom: 2px solid #fff;
+  }
+  .menuSide li:hover a {
+    color: #555;
+  }
+  
+  .sub-menu {
+    display: none;
+  }
+  
+  .mostrar {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .contenedor-iconos {
+    display: none;
+  }
+  
+  /* ! Media Queries ¡ sirve para realizar condiciones en nuestro proyecto, en este caso a partir de 480px en adalente, nuestro diseño sera el mencionado dentro de este media queries */
+  /* BARRA DE NAVEGACION TABLET 780px */
+  @media screen and (min-width: 780px) {
+    .contenedor-iconos {
+      width: 250px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      right: 60px;
     }
-    .search{
-        height: 26px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 16px;
+    .contenedor-iconos .search {
+      height: 26px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
     }
-    .fa-cart-plus::before{
-        color: #fff;
-        font-size: 26px;
-        margin-left: 15px;
-        cursor: pointer;
-        margin-left: 15px;
+    .contenedor-iconos .fa-cart-plus {
+      color: #fff;
+      font-size: 26px;
+      margin-left: 15px;
+      cursor: pointer;
+      margin-left: 15px;
     }
-    .titulo-menu{
-        display: none;
+  
+    .titulo-menu {
+      display: none;
     }
-}
-
-
-/* BARRA DE NAVEGACION DESKTOP 1280px */
-
-@media screen and (min-width:1280px){
-    nav{
-        justify-content: flex-start;
-        position: relative;
-    }
-    .menu{
-        display: block;
-    }
-    .fa-bars::before{
-        display: none;
-    }
-    .menu{
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        list-style: none;
-        width: 650px;
-        height: 100%;
-        order: 2;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        box-sizing: unset;
-    }
-    .menu li{
-        box-sizing: unset;
-    }
-    .menu li a{
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 36px;
-        box-sizing: unset;
-    }
-    .menu li a:hover{
-        color: #bbb;
-        /* border-bottom: 3px solid #fff; */
-    }
-    .usuario{
-        order: 1;
-    }
-    .fa-user::before{
-        font-size: 30px;
-    }
-    .contenedor-iconos{
-        right: 20px;
-        animation: pulse;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-    }
-    .fa-cart-plus::before{
-        font-size: 30px;
-    }
-    .search{
-        height: 30px;
-    }
-}
+  }
 
 /* --------------------------------------------------------------------------------- */
 
@@ -1005,19 +976,23 @@ main{
 .title-help-container{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     padding: 2rem;
-    /* padding-bottom: 0; */
+    padding-bottom: 1rem;
     width: 100vw;
     box-sizing: border-box;
-    height: 35vh;
+    height: 30%;
 }
 .title-help-container h2{
     color: #fff;
     font-size: 2rem;
     text-align: center;
     text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: .75rem;
+    font-family: "Bebas Neue", cursive;
 }
 .fa-paper-plane::before{
     display: block;
@@ -1050,192 +1025,106 @@ main{
     }
 }
 
-/* FORM */
+.boxFormContainer{
+    padding: 02rem;
+    background-color: rgba(255, 255, 255, .6);
+    margin: 1.5rem;
+    border-radius: 8px;
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
 
-.form-container{
-    width: 100vw;
-    padding: 2rem;
-    padding-bottom: 0;
-    box-sizing: border-box;
+.form-floating, .form-select{
+    margin-bottom: 2rem;
 }
-.form-container form{
-    width: 100%;
-    background-color: rgba(255, 255, 255, .5);
-    border-radius: 10px;
-    padding: 2rem;
-    box-sizing: border-box;
-}
-.box-container-1, .box-container-2{
+.radioContainer{
+    margin-bottom: 2rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem;
+    justify-content: center;
 }
-.box-container-1 label{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 3rem;
-    box-sizing: border-box;
-    margin: .5rem;
-    width: 100%;
+.radioContainer div{
+    margin-right: 1rem;
 }
-.input-sexo, .input-alimento, .input-marca{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 3rem;
-    box-sizing: border-box;
-    margin: .5rem;
-    width: 100%;
+.titleRadio{
+    margin-bottom: .5rem;
 }
-.perro input, .gato input, .masculino input, .femenino input{
-    margin-left: .5rem;
-}
-.sexo, .alimento{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.text-area{
+.textArea{
     resize: none;
-    width: 100%;
-    border-radius: 6px;
+    overflow-y: auto;
 }
-.submit-botton{
+.submitButton{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
-    box-sizing: border-box;
-}
-.submit-botton input{
-    width: 5rem;
-    padding: 3px;
-    box-sizing: border-box;
 }
 
-/* FORM PARA MOBILE GRANDES 480px */
-
-@media screen and (min-width:480px) {
-    .box-container-1 label, .box-container-2 label, .box-container-3 label{
-        font-size: 20px;
-    }
-}
-
-/* FORM PARA TABLET 780px */
-
-@media screen and (min-width:780px) {
-    .box-container-1{
-        flex-direction: row;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-    }
-    .box-container-1 label{
-        width: 40%;
-    }
-    .submit-botton input{
-        width: 6rem;
-        padding: .5rem;
-    }
-}
-
-/* FORM PARA DESKTOP 1280px */
-
-@media screen and (min-width:1280px) {
-    .form-container form{
-        display: grid;
-        grid-template-rows: 8rem 8rem 1fr 4rem;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .box-container-1{
-        grid-column: 1 / span 3;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-top: 3rem;
-    }
-    .box-container-1 label{
-        width: unset;
-    }
-    .box-container-2{
-        grid-column: 1 / span 3;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 100%;
-    }
-    .input-sexo, .input-alimento, .input-marca{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 20%;
-    }
-    .input-alimento .title{
-        width: 8rem;
-    }
-    .input-marca{
-        justify-content: space-evenly;
-    }
-    .box-container-3{
-        grid-column: 1 / span 3;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-    .submit-botton{
-        grid-column: 1 / span 3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .box-container-3 label{
-        width: 90%;
-    }
-    .text-area{
-        height: 16rem;
-        width: 100%;
-    }
-}
 
 /* ------------------------------------------------------------------------------------ */
 
-/* PERROS +7 */
-
-/* SECCIONES PERROS +7 */
-
-.large-breed{
-    width: 100vw;
-    height: 300px;
-    position: relative;
-}
-/* .large-breed img{
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    object-position: center;
-} */
-
 /* FOOTER */
-footer{
+.footerContainer{
+    padding: 1rem;
+    height: 30%;
+    background-color: rgba(10, 10, 10, .885);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
 }
-footer p{
-    padding: 10px 40px;
-    text-align: center;
+.box{
+    padding: .75rem 1.5rem;
+    margin-bottom: 1rem;
+}
+.box h3{
     color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
+    margin-bottom: 1.5rem;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.6rem;
 }
-@media screen and (min-width:1280px){
-    footer p{
-        font-size: 16px;
-    }
+.box ul{
+    list-style: none;
+    padding: 0;
+}
+.box ul li{
+    margin-bottom: .4rem;
+}
+.box ul li a{
+    font-size: 1rem;
+    color: rgba(255, 255, 255, .85);
+}
+.box ul li a:hover{
+    color: rgba(255, 255, 255, .3);
+}
+.bar{
+    border-bottom: 1px solid rgba(255, 255, 255, .85);
+    height: 0;
+    width: 50%;
+    transform: translateX(50%);
+    margin-bottom: 1rem;
+}
+.redesSociales{
+    display: flex;
+    justify-content: flex-end;
+}
+.fa-facebook-square{
+    margin-right: 1rem;
+    font-size: 1.55rem;
+    color: #fff;
+}
+.fa-instagram-square{
+    margin-right: 1rem;
+    font-size: 1.55rem;
+    color: #fff;
+}
+.fa-twitter{
+    margin-right: 1rem;
+    font-size: 1.55rem;
+    color: #fff;
+}
+.footerContainer p{
+    color: rgba(255, 255, 255, .7);
+    font-size: .85rem;
+    text-align: center;
+}
+.footerContainer p::after{
+    content: "  DeliveryPetFood.com";
+    color: #aaa000;
 }
