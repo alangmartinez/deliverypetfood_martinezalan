@@ -18,7 +18,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  font-size: "Bebas Neue", cursive;
+  font-family: "Bebas Neue", cursive;
 }
 
 .noScroll {
@@ -50,6 +50,7 @@ header .navBar .menuMobile {
   justify-content: space-between;
   background-color: #000;
   z-index: 1000;
+  box-shadow: 1px 1px 18px -2px black;
 }
 header .navBar .menuMobile .btnMenu {
   display: flex;
@@ -142,10 +143,6 @@ header .navBar .menuMobile .userIcon .fa-user {
     margin-left: 15px;
     cursor: pointer;
     margin-left: 15px;
-  }
-
-  .titulo-menu {
-    display: none;
   }
 }
 /* --------------------------------------------------------------------------------- */
@@ -243,6 +240,7 @@ main .contenedor-principal {
     height: 100vh;
     grid-column: 1/span 3;
   }
+
   .contenedor-superior h1 {
     width: 600px;
     position: absolute;
@@ -253,56 +251,27 @@ main .contenedor-principal {
   }
 }
 /* SALE */
-.sale {
-  width: 100vw;
-  height: 250px;
-}
-.sale a img {
-  height: 100%;
+.carousel {
+  padding: 0.8rem;
+  box-shadow: 1px 1px 18px -2px black;
 }
 
-/* SALE PARA MOBILES GRANDES 480px */
-@media screen and (min-width: 480px) {
-  .sale {
-    width: 100vw;
-    max-width: 600px;
-    height: 400px;
-    max-height: 400px;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+.d-block {
+  border-radius: 6px;
 }
-/* SALE PARA TABLET 780px */
-@media screen and (min-width: 780px) {
-  .sale {
-    height: 100%;
-    width: 50%;
-    padding: 10px 5px 10px 10px;
-    box-sizing: border-box;
-  }
-}
-/* SALE PARA DESKTOP 1280px */
-@media screen and (min-width: 1280px) {
-  .sale {
-    height: 100%;
-    width: 50%;
-    margin: 0;
-    padding: 10px;
-    box-sizing: border-box;
-    max-width: none;
-    max-height: none;
-  }
-}
+
 /* MAPA */
 .mapa {
   width: 100vw;
   height: 300px;
+  padding: 1rem;
+  box-shadow: 1px 1px 18px -2px black;
 }
 .mapa iframe {
   width: 100%;
   height: 100%;
   border: none;
+  border-radius: 6px;
 }
 
 /* MAPA PARA MOBILE GRANDES 480px */
@@ -350,6 +319,7 @@ main .contenedor-principal {
     height: 100%;
     transform: translateX(-20px);
   }
+
   .imagen-animada img {
     -o-object-fit: fill;
        object-fit: fill;
@@ -376,105 +346,6 @@ main .contenedor-principal {
     display: none;
   }
 }
-/* REDES */
-.redes {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.redes .redes_sociales {
-  width: 100%;
-  height: calc(100% / 3);
-  padding: 10px 15px;
-  box-sizing: border-box;
-}
-
-.redes_sociales img {
-  width: 100%;
-  height: 100%;
-}
-
-/* REDES PARA MOBILES GRANDES 480px */
-@media screen and (min-width: 480px) {
-  .redes {
-    height: 45%;
-    width: 40%;
-    transform: translateX(-20px);
-  }
-
-  .redes .redes_sociales {
-    margin: 6px;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .redes_sociales img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-  }
-}
-/* REDES PARA TABLET 780px */
-@media screen and (min-width: 780px) {
-  .contenedor-superior {
-    height: 100vh;
-    padding-top: 55px;
-  }
-
-  .redes {
-    width: 40%;
-    height: 70%;
-    margin: 0;
-    transform: unset;
-  }
-
-  .redes .redes_sociales {
-    margin: 10px 0;
-    padding: 0;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .redes_sociales img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-  }
-}
-/* REDES PARA DESKTOP 1280px */
-@media screen and (min-width: 1280px) {
-  .redes {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 10px;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 100px);
-    justify-content: unset;
-    align-items: unset;
-    row-gap: 20px;
-    align-content: center;
-    transform: unset;
-  }
-
-  .redes .redes_sociales {
-    height: 100%;
-    margin: 0;
-  }
-
-  .redes_sociales img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-  }
-}
 .medios_pago {
   display: flex;
   justify-content: space-evenly;
@@ -499,10 +370,10 @@ main .contenedor-principal {
 /* ICONO WHATS APP */
 .whats_app {
   position: fixed;
-  left: 15px;
-  bottom: 15px;
-  width: 45px;
-  height: 45px;
+  right: 1.8rem;
+  bottom: 1.8rem;
+  width: 3.6rem;
+  height: 3.6rem;
   z-index: 300;
 }
 
@@ -524,22 +395,163 @@ main .contenedor-principal {
     height: 60px;
   }
 }
-/* FOOTER */
-footer {
+.title-help-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  padding-bottom: 1rem;
+  width: 100vw;
+  box-sizing: border-box;
+  height: 30%;
+}
+
+.title-help-container h2 {
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.776);
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+  font-family: "Bebas Neue", cursive;
+}
+
+.fa-paper-plane::before {
+  display: block;
+  color: #fff000;
+  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.776);
+  font-size: 2rem;
+}
+
+/* TITLE PARA TABLET 780px */
+@media screen and (min-width: 780px) {
+  .title-help-container h2 {
+    font-size: 3rem;
+  }
+
+  .fa-paper-plane::before {
+    font-size: 3rem;
+  }
+}
+/* TITLE PARA DESKTOP 1280px */
+@media screen and (min-width: 1280px) {
+  .title-help-container {
+    flex-direction: row;
+    justify-content: center;
+    height: 30vh;
+  }
+
+  .fa-paper-plane::before {
+    margin-left: 2rem;
+  }
+}
+.boxFormContainer {
+  padding: 2rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 1.5rem 1.5rem;
+  border-radius: 8px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  box-shadow: 1px 1px 18px -2px black;
+}
+
+.form-floating, .form-select {
+  margin-bottom: 2rem;
+}
+
+.radioContainer {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.radioContainer div {
+  margin-right: 1rem;
+}
+
+.titleRadio {
+  margin-bottom: 0.5rem;
+}
+
+.textArea {
+  resize: none;
+  overflow-y: auto;
+}
+
+.submitButton {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-footer p {
-  padding: 10px 40px;
-  text-align: center;
+
+.footerContainer {
+  padding: 1rem;
+  height: 30%;
+  background-color: rgba(10, 10, 10, 0.885);
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  box-shadow: 1px 1px 18px -2px black;
+}
+.footerContainer .box {
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 1rem;
+}
+.footerContainer .box h3 {
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
+  margin-bottom: 1.5rem;
+  font-family: "Shadows Into Light", cursive;
+  font-size: 1.6rem;
+}
+.footerContainer .box ul {
+  list-style: none;
+  padding: 0;
+}
+.footerContainer .box ul li {
+  margin-bottom: 0.4rem;
+}
+.footerContainer .box ul li a {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+.footerContainer .box ul li a:hover {
+  color: rgba(255, 255, 255, 0.3);
+}
+.footerContainer .bar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  height: 0;
+  width: 50%;
+  transform: translateX(50%);
+  margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 1280px) {
-  footer p {
-    font-size: 2rem;
-  }
-}/*# sourceMappingURL=estilos-nuevos.css.map */
+.redesSociales {
+  display: flex;
+  justify-content: flex-end;
+}
+.redesSociales .fa-facebook-square {
+  margin-right: 1rem;
+  font-size: 1.55rem;
+  color: #fff;
+}
+.redesSociales .fa-instagram-square {
+  margin-right: 1rem;
+  font-size: 1.55rem;
+  color: #fff;
+}
+.redesSociales .fa-twitter {
+  margin-right: 1rem;
+  font-size: 1.55rem;
+  color: #fff;
+}
+
+.footerContainer p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  text-align: center;
+}
+.footerContainer p::after {
+  content: "  DeliveryPetFood.com";
+  color: #aaa000;
+}/*# sourceMappingURL=estilos_nuevos.css.map */
