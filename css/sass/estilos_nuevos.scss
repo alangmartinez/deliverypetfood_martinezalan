@@ -7,6 +7,7 @@ $font: "Bebas Neue", cursive;
 $backgroundColorBox:  rgba(255, 255, 255, .6);
 $borderRadius: 8px;
 $fontSizeSubTitle: 1.6rem;
+$inter: 'Inter', sans-serif;
 
 
 
@@ -472,17 +473,101 @@ main{
 
 // MARKET
 
-.marcasPerrosContainer{
-    margin: 1.5rem 1.5rem;
-    padding: 1.5rem;
-    background-color: $backgroundColorBox;
-    border-radius: $borderRadius;
-    width: calc(100% - 3rem);
-    height: auto;
-    -webkit-box-shadow: 1px 1px 18px -2px rgba(0,0,0,1);
-    -moz-box-shadow: 1px 1px 18px -2px rgba(0,0,0,1);
-    box-shadow: 1px 1px 18px -2px rgba(0,0,0,1);
-}
+    .perros{
+        width: 100%;
+        
+        .subtitle{
+            color: #f5f5f5;
+            margin-top: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        span{
+            height: 0;
+            border-bottom: 2px solid #f5f5f5;
+            display: block;
+            margin: 0 2rem 1rem 1.5rem;
+        }
+        
+        .cardContainer{
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: .8rem;
+            padding: .8rem;
+            padding-top: 0;
+
+            .card{
+                width: 100%;
+                @include bordes-sombras();
+                background-color: transparent;
+                border: none;
+
+                img{
+                    width: 100%;
+                    height: auto;
+                    background-color: $white;
+                }
+                .card-body{
+                    padding: .5rem;
+                    padding-bottom: .8rem;
+                    font-family: $inter;
+                    color: $black;
+                    background-color: rgba(255, 255, 255, .75);
+                    border-top: 1px solid rgba(0, 0, 0, .05);
+                    border-radius: 0 0 6px 6px;
+
+                    .card-title{
+                        text-align: center;
+                    }
+
+                    .card-text{
+                        text-align: center;
+                        margin-bottom: .8rem;
+                    }
+
+                    div{
+                        @include flex();
+                        width: 100%;
+                        height: auto;
+
+                        input{
+                            width: 100%;
+                            height: 3.5rem;
+                            margin-right: .3rem;
+                            border-radius: 0;
+                            border-style: none;
+                            border: 1px solid rgba(0, 0, 0, .35);
+                            color: #777;
+                            text-align: center;
+                        }
+                        a{
+                            width: 100%;
+                            height: 3.5rem;
+                            font-family: $inter;
+                            font-size: .72rem;
+                            border-style: none;
+                            border-radius: 0;
+                            padding: .5357142857rem .9rem;
+                            text-align: center;
+                            background-color: #ffbd35;
+                            
+                            .fa-cart-plus{
+                                font-size: .8rem;
+                            }
+                            
+                            &:hover{
+                                
+                                opacity: .76;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 // HELP
 

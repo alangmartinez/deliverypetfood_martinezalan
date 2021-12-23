@@ -403,14 +403,91 @@ main .contenedor-principal {
     height: 60px;
   }
 }
-.marcasPerrosContainer {
-  margin: 1.5rem 1.5rem;
-  padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 8px;
-  width: calc(100% - 3rem);
+.perros {
+  width: 100%;
+}
+.perros .subtitle {
+  color: #f5f5f5;
+  margin-top: 1.5rem;
+  padding-left: 1.5rem;
+}
+.perros span {
+  height: 0;
+  border-bottom: 2px solid #f5f5f5;
+  display: block;
+  margin: 0 2rem 1rem 1.5rem;
+}
+.perros .cardContainer {
+  width: 100%;
   height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.8rem;
+  padding: 0.8rem;
+  padding-top: 0;
+}
+.perros .cardContainer .card {
+  width: 100%;
   box-shadow: 1px 1px 18px -2px black;
+  border-radius: 6px;
+  background-color: transparent;
+  border: none;
+}
+.perros .cardContainer .card img {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+}
+.perros .cardContainer .card .card-body {
+  padding: 0.5rem;
+  padding-bottom: 0.8rem;
+  font-family: "Inter", sans-serif;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0 0 6px 6px;
+}
+.perros .cardContainer .card .card-body .card-title {
+  text-align: center;
+}
+.perros .cardContainer .card .card-body .card-text {
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+.perros .cardContainer .card .card-body div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+.perros .cardContainer .card .card-body div input {
+  width: 100%;
+  height: 3.5rem;
+  margin-right: 0.3rem;
+  border-radius: 0;
+  border-style: none;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  color: #777;
+  text-align: center;
+}
+.perros .cardContainer .card .card-body div a {
+  width: 100%;
+  height: 3.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  border-style: none;
+  border-radius: 0;
+  padding: 0.5357142857rem 0.9rem;
+  text-align: center;
+  background-color: #ffbd35;
+}
+.perros .cardContainer .card .card-body div a .fa-cart-plus {
+  font-size: 0.8rem;
+}
+.perros .cardContainer .card .card-body div a:hover {
+  opacity: 0.76;
 }
 
 .title-help-container {
