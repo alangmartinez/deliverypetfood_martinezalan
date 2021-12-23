@@ -44,6 +44,7 @@ header .navBar .menuMobile {
   padding: 0 1.5rem;
   margin: 0;
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 55px;
@@ -90,6 +91,7 @@ header .navBar .menuMobile .userIcon .fa-user {
   background-color: #000;
   width: 100vw;
   height: 100vh;
+  padding: 0;
   opacity: 0;
   transform: translateX(100%);
   transition: all 0.5s;
@@ -212,6 +214,7 @@ main .contenedor-principal {
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
+  box-shadow: 1px 1px 18px -2px black;
 }
 
 .contenedor-superior > h1 {
@@ -251,7 +254,7 @@ main .contenedor-principal {
   }
 }
 /* SALE */
-.carousel {
+.saleCarousel {
   padding: 0.8rem;
   box-shadow: 1px 1px 18px -2px black;
 }
@@ -346,27 +349,63 @@ main .contenedor-principal {
     display: none;
   }
 }
-.medios_pago {
+.containerMediosPago {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100px;
+  padding: 1rem;
+}
+.containerMediosPago .mediosPago {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 1px 1px 18px -2px black;
+  border-radius: 6px;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  height: auto;
+}
+.containerMediosPago .mediosPago h3 {
+  font-size: 2rem;
+  color: #111;
+  text-transform: uppercase;
+  text-align: center;
+  width: 60%;
+  margin-bottom: 1.5rem;
+}
+.containerMediosPago .mediosPago h3::after {
+  content: " de pago";
+  text-transform: uppercase;
+  color: #ffc107;
+}
+.containerMediosPago .mediosPago ul {
+  width: 100%;
+}
+.containerMediosPago .mediosPago ul li {
+  font-family: "Inter", sans-serif;
+}
+.containerMediosPago .mediosPago img {
+  width: 100%;
+  height: auto;
+}
+.containerMediosPago .mediosPago button {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 5rem;
+  box-shadow: 1px 1px 18px -2px black;
+  border-radius: 6px;
+  background-color: #ffc107;
+  color: #000;
+}
+.containerMediosPago .mediosPago button a {
+  color: #000;
+}
+.containerMediosPago .mediosPago button a:hover {
+  color: rgba(0, 0, 0, 0.78);
 }
 
-.medios_pago img {
-  width: 60px;
-  height: 50px;
-}
-
-/* MEDIOS PAGO PARA DESKTOP 1280px */
-@media screen and (min-width: 1280px) {
-  .medios_pago {
-    justify-content: space-around;
-    width: 800px;
-    margin: auto;
-  }
-}
 /* ICONO WHATS APP */
 .whats_app {
   position: fixed;
@@ -395,6 +434,16 @@ main .contenedor-principal {
     height: 60px;
   }
 }
+.marcasPerrosContainer {
+  margin: 1.5rem 1.5rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  width: calc(100% - 3rem);
+  height: auto;
+  box-shadow: 1px 1px 18px -2px black;
+}
+
 .title-help-container {
   display: flex;
   flex-direction: column;
@@ -451,9 +500,9 @@ main .contenedor-principal {
   padding: 2rem 1.5rem;
   background-color: rgba(255, 255, 255, 0.6);
   margin: 1.5rem 1.5rem;
-  border-radius: 8px;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   box-shadow: 1px 1px 18px -2px black;
+  border-radius: 6px;
 }
 
 .form-floating, .form-select {

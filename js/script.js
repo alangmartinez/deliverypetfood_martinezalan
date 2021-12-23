@@ -1,3 +1,12 @@
+// Loader spin
+
+window.addEventListener("load", function(){
+    const loader = document.getElementsByClassName(".contentLoader");
+    loader.style.opacity = 0;
+    loader.style.visibiilty = "hidden";
+})
+
+
 
 // Evento para desplazar menu side al hacer "click" en btnMenu.
 
@@ -10,9 +19,44 @@ let main = document.getElementById("main");
 
 btnMenu.addEventListener("click", function(){
 
-    if(window.innerWidth >= 1280)
-        body.classList.toggle("noScroll");
-        menuSide.classList.toggle("mostrar");
-        userIcon.classList.toggle("oculto");
-        main.classList.toggle("moveRight");
-    });
+if(window.innerWidth >= 1280)
+    body.classList.toggle("noScroll");
+    menuSide.classList.toggle("mostrar");
+    userIcon.classList.toggle("oculto");
+    main.classList.toggle("moveRight");
+});
+
+// function saludar(nombre){
+//     let frase = `¡Hola ${nombre}! ¿Como estas?`;
+//     document.write(frase);
+// }
+
+// // saludar("Alan");
+
+// // document.write("<br>")
+
+// // function suma(num1, num2){
+// //     let resultado = num1 + num2;
+// //     return resultado;
+// // }
+
+// // let res = suma(1, 4);
+
+// // document.write(res);
+
+let free = false;
+
+function time(){
+    if(edad >= 18){
+        document.write("Podes pasar bro.");
+    
+    if (time >= 2 && time <= 7 && free == false){
+        document.write("Pasas gratis sos el primero en llegar. Manito picante");
+        }
+    }
+    else{
+        document.write("No podes pasar nenito. Sos menor");
+    }
+}
+
+time()

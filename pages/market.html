@@ -25,7 +25,7 @@
     <!--Font Awesome Icons-->
     <script src="https://kit.fontawesome.com/95674ce697.js" crossorigin="anonymous"></script>
     <!--Hoja de Estilos-->
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/sass/estilos_nuevos.css">
     <!--Head Icon-->
     <link rel="shortcut icon" href="../assets/img/icono.png" type="image/x-icon">
     <title>Delivery Pet Food</title>
@@ -85,124 +85,38 @@
             <a href="#"><img class="img-fluid" src="../assets/img/sale/big sale.png" alt="sale"></a>
         </div>
 
-        <!-- Titulo Marcas de Perros -->
-        <div class="contenedor-titulo">
-            <h2 class="titulo">Marcas de Perros</h2>
-        </div>
-
-        <!-- Cards Marcas de Perros -->
-        <div class="contenedor-cards">
-
-            <!-- Icono Flecha Izquierda -->
-            <i class="fas fa-angle-left"></i>
-
-            <!-- Pro Plan Card -->
-            <div class="card pro-plan-card">
-                <div class="img-container">
-                    <img src="../assets/img/market/pro_plan.png" class="card-img-top img-fluid" alt="pro plan">
-                </div>
-                <div class="card-body">
-                <h5 class="card-title">Pro Plan</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="botton-container">
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-                </div>
+        <section class="marcasPerrosContainer">        
+            
+            <div class="titleBox">
+                <h3 class="title">Marcas de Perros</h3>
+                <img class="imgTitle" src="" alt="">
             </div>
 
-            <!-- Dog Chow Card -->
-            <div class="card dog-chow-card">
-                <div class="img-container">
-                    <div class="img-container">
-                        <img src="../assets/img/market/dog_chow.png" class="card-img-top img-fluid" alt="dog chow">
-                    </div>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="../assets/img/market/royal_canin.png" class="d-block w-100" alt="royal canin">
                 </div>
-                <div class="card-body">
-                <h5 class="card-title">Dog Chow</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="botton-container">
-                    <a href="#" class="btn btn-primary">Comprar</a>
+                <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
                 </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
+    
+            </div>   
+        </section>
 
-            <!-- Royal Canin -->
-            <div class="card royal-canin-card">
-                <div class="img-container">
-                    <img src="../assets/img/market/royal_canin.png" class="card-img-top img-fluid" alt="royal canin">
-                </div>
-                <div class="card-body">
-                <h5 class="card-title">Royal Canin</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="botton-container">
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-                </div>
-            </div>
-
-            <!-- Icono Flecha Derecha -->
-            <i class="fas fa-angle-right"></i>
-
-        </div>   
-
-
-        <!-- Titulo Marcas de Gatos -->
-        <div class="contenedor-titulo">
-            <h2 class="titulo">Marcas de Gatos</h2>
-        </div>
-
-        <!-- Cards Marcas de Gatos -->
-        <div class="contenedor-cards">
-
-            <!-- Icono Flecha Izquierda -->
-            <i class="fas fa-angle-left"></i>
-
-            <!-- Infinity Gatos Card -->
-            <div class="card infinity-card">
-                <div class="img-container">
-                    <img src="../assets/img/market/infinity gatos.png" class="card-img-top img-fluid" alt="pro plan">
-                </div>
-                <div class="card-body">
-                <h5 class="card-title">Infinity</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="botton-container">
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-                </div>
-            </div>
-
-            <!-- Agility Gatos Card -->
-            <div class="card agility-card">
-                <div class="img-container">
-                    <img src="../assets/img/market/agility gatos.png" class="card-img-top img-fluid" alt="dog chow">
-                </div>
-                <div class="card-body">
-                <h5 class="card-title">Agility</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="botton-container">
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-                </div>
-            </div>
-
-            <!-- Whiskas -->
-            <div class="card whiskas-card">
-                <div class="img-container">
-                    <img src="../assets/img/market/whiskas.png" class="card-img-top img-fluid" alt="royal canin">
-                </div>
-                <div class="card-body">
-                <h5 class="card-title">Whiskas</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="botton-container">
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-                </div>
-            </div>
-
-            <!-- Icono Flecha Derecha -->
-            <i class="fas fa-angle-right"></i>
-
-        </div>  
     </main>
 
         <!--Footer-->
