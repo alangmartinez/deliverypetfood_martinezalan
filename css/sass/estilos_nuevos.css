@@ -437,7 +437,8 @@ main .contenedor-principal {
 .perros .cardContainer .card img {
   width: 100%;
   height: auto;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding-top: 0.8rem;
 }
 .perros .cardContainer .card .card-body {
   padding: 0.5rem;
@@ -445,7 +446,6 @@ main .contenedor-principal {
   font-family: "Inter", sans-serif;
   color: #000;
   background-color: rgba(255, 255, 255, 0.75);
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 0 0 6px 6px;
 }
 .perros .cardContainer .card .card-body .card-title {
