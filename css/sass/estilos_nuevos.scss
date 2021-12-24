@@ -4,35 +4,10 @@ $black: #000;
 $white: #fff;
 $backgroundImg: url(../../assets/img/dog/fondo/fondo_dog.jpg);
 $font: "Bebas Neue", cursive;
-$backgroundColorBox:  rgba(255, 255, 255, .6);
+$backgroundColorBox:  rgba(255, 255, 255, .75);
 $borderRadius: 8px;
 $fontSizeSubTitle: 1.6rem;
 $inter: 'Inter', sans-serif;
-
-
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-}
-a{
-    text-decoration: none;
-    color: $white;
-}
-body{
-    background-color: $black;
-    background-image: $backgroundImg;
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: $font;
-}
-.noScroll{
-    overflow: hidden;
-}
 
 // MIXIN
 
@@ -58,6 +33,31 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+    color: $white;
+}
+body{
+    background-color: $black;
+    background-image: $backgroundImg;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: $font;
+}
+.noScroll{
+    overflow: hidden;
+}
+
 
 header{
     position: fixed;
@@ -187,71 +187,22 @@ header{
         }
     }
 }
-/* --------------------------------------------------------------------------------- */
 
-/* MAIN */
+// MAIN
 
 main{
     margin-top: 55px;
     
-    .contenedor-principal{
-        width: 100vw;
+    @media screen and (min-width: 780px) {
+        .flexContainer{
+            @include flex();
+            height: 25rem;
+        }
     }
 }
 
-/* MAIN PARA MOBILES GRANDES 480px */
 
-@media screen and (min-width:480px) {
-    .contenedor-flex-2{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 400px;
-    }
-}
-
-/* MAIN PARA TABLET 780px */
-
-@media screen and (min-width:780px){
-    .contenedor-flex-1{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 400px;
-        width: 100%;
-    }
-    .contenedor-flex-2{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin: 10px 0px;
-        height: 450px;
-    }
-}
-
-/* MAIN PARA DESKTOP 1280px */
-
-@media screen and (min-width:1280px) {
-    .contenedor-flex-desktop{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100vw;
-        height: 400px;
-        margin: 20px 0;
-    }
-    .contenedor-flex-1{
-        width: auto;
-        height: 100%;
-    }
-    .contenedor-flex-2{
-        height: 100%;
-        width: calc(100% / 3);
-        margin: 0;
-    }
-}
-
-/* BANNER */
+// BANNER
 
 .contenedor-superior{
     width: 100vw;
@@ -262,21 +213,22 @@ main{
     background-position: center;
     position: relative;
     @include sombras();
+    
+    h1{
+        width: 300px;
+        margin-top: 30px;
+        color: $white;
+        font-family: 'Kaushan Script', cursive;
+        font-size: 40px;
+        text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        letter-spacing: 2px;
+    }
 }
 
-.contenedor-superior > h1{
-    width: 300px;
-    margin-top: 30px;
-    color: $white;
-    font-family: 'Kaushan Script', cursive;
-    font-size: 40px;
-    text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    letter-spacing: 2px;
-}
 
 /* BANNER PARA MOBILES GRANDES 480px */
 
@@ -303,7 +255,7 @@ main{
     }
 }
 
-/* SALE */
+// SALE
 
 .saleCarousel{
     padding: .8rem;
@@ -313,6 +265,7 @@ main{
     @include bordes();
 }
 
+
 /* MAPA */
 
 .mapa{
@@ -320,6 +273,12 @@ main{
     height: 300px;
     padding: 1rem;
     @include sombras();
+
+    @media screen and (min-width: 780px) {
+        height: 100%;
+        width: 50%;
+        padding-right: .5rem;
+    }
     
     iframe{
         width: 100%;
@@ -329,49 +288,17 @@ main{
     }
 }
 
-/* MAPA PARA MOBILE GRANDES 480px */
-
-@media screen and (min-width:480px) {
-    .mapa{
-        width: 100vw;
-        max-width: 600px;
-        height: 400px;
-        max-height: 400px;
-        margin: auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-}
-
-/* MAPA PARA TABLET 780px */
-
-@media screen and (min-width:780px) {
-    .mapa{
-        width: 50%;
-        padding: 10px 10px 10px 5px;
-        box-sizing: border-box;
-    }
-}
-
-/* MAPA PARA DESKTOP 1280px */
-
-@media screen and (min-width:1280px) {
-    .mapa{
-        height: 100%;
-        width: 50%;
-        margin: 0;
-        padding: 10px;
-        box-sizing: border-box;
-        max-height: none;
-        max-width: none;
-    }
-}
-
 // MEDIOS DE PAGO
 
 .containerMediosPago{
     @include flex();
     padding: 1rem;
+
+    @media screen and (min-width: 780px) {
+        height: 100%;
+        width: 50%;
+        padding-left: .5rem;
+    }
     
     .mediosPago{
         @include flex();
@@ -381,6 +308,10 @@ main{
         background-color: $backgroundColorBox;
         width: 100%;
         height: auto;
+
+        @media screen and (min-width: 780px) {
+            height: 100%;
+        }
 
         h3{
             font-size: 2rem;
@@ -477,16 +408,19 @@ main{
         width: 100%;
         
         .subtitle{
-            color: #f5f5f5;
+            color: #fff;
             margin-top: 1.5rem;
-            padding-left: 1.5rem;
+            padding-left: .8rem;
+            font-size: 2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, .776);
         }
 
         span{
             height: 0;
             border-bottom: 2px solid #f5f5f5;
             display: block;
-            margin: 0 2rem 1rem 1.5rem;
+            margin: 0 .8rem;
+            margin-bottom: 1.5rem;
         }
         
         .cardContainer{
@@ -508,7 +442,7 @@ main{
                 img{
                     width: 100%;
                     height: auto;
-                    background-color: rgba(255, 255, 255, .75);
+                    background-color: $backgroundColorBox;
                     padding-top: .8rem;
                 }
                 .card-body{
@@ -535,7 +469,7 @@ main{
                         height: auto;
 
                         input{
-                            width: 100%;
+                            width: 40%;
                             height: 3.5rem;
                             margin-right: .3rem;
                             border-radius: 0;
@@ -545,7 +479,7 @@ main{
                             text-align: center;
                         }
                         a{
-                            width: 100%;
+                            width: 60%;
                             height: 3.5rem;
                             font-family: $inter;
                             font-size: .72rem;
