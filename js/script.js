@@ -1,10 +1,12 @@
 // Loader spin
 
-window.addEventListener("load", function(){
-    const loader = document.getElementsByClassName(".contentLoader");
+
+window.onload = function(){
+    const loader = document.getElementById("containerLoader");
     loader.style.opacity = 0;
-    loader.style.visibiilty = "hidden";
-})
+    loader.style.visibility = "hidden";
+    loader.style.position = "absolute";
+}
 
 
 
@@ -18,8 +20,6 @@ let main = document.getElementById("main");
 
 
 btnMenu.addEventListener("click", function(){
-
-if(window.innerWidth >= 1280)
     body.classList.toggle("noScroll");
     menuSide.classList.toggle("mostrar");
     userIcon.classList.toggle("oculto");
@@ -44,19 +44,19 @@ if(window.innerWidth >= 1280)
 
 // // document.write(res);
 
-let free = false;
+// let free = false;
 
-function time(){
-    if(edad >= 18){
-        document.write("Podes pasar bro.");
+// function time(){
+//     if(edad >= 18){
+//         document.write("Podes pasar bro.");
     
-    if (time >= 2 && time <= 7 && free == false){
-        document.write("Pasas gratis sos el primero en llegar. Manito picante");
-        }
-    }
-    else{
-        document.write("No podes pasar nenito. Sos menor");
-    }
-}
+//     if (time >= 2 && time <= 7 && free == false){
+//         document.write("Pasas gratis sos el primero en llegar. Manito picante");
+//         }
+//     }
+//     else{
+//         document.write("No podes pasar nenito. Sos menor");
+//     }
+// }
 
-time()
+// time()

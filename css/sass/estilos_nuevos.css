@@ -6,6 +6,45 @@
   scroll-behavior: smooth;
 }
 
+.containerLoader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  position: relative;
+  z-index: 9999;
+  transition: all 1.5s;
+}
+.containerLoader .loader {
+  width: 70px;
+  height: 70px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  border-left-color: transparent;
+  border-left-style: groove;
+  -webkit-animation: loader infinite 1.5s linear;
+          animation: loader infinite 1.5s linear;
+}
+
+@-webkit-keyframes loader {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes loader {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
 a {
   text-decoration: none;
   color: #fff;
@@ -206,20 +245,20 @@ main {
   }
 }
 .saleCarousel {
-  padding: 0.8rem;
-  box-shadow: 1px 1px 18px -2px black;
+  padding: 1rem;
+  padding-bottom: 0;
 }
 
-.d-block {
+.carousel-inner {
+  box-shadow: 1px 1px 18px -2px black;
   border-radius: 6px;
 }
 
-/* MAPA */
 .mapa {
   width: 100vw;
   height: 300px;
   padding: 1rem;
-  box-shadow: 1px 1px 18px -2px black;
+  padding-bottom: 0;
 }
 @media screen and (min-width: 780px) {
   .mapa {
@@ -232,6 +271,7 @@ main {
   width: 100%;
   height: 100%;
   border: none;
+  box-shadow: 1px 1px 18px -2px black;
   border-radius: 6px;
 }
 
@@ -353,7 +393,7 @@ main {
 }
 .perros span {
   height: 0;
-  border-bottom: 2px solid #f5f5f5;
+  border-bottom: 2px solid #fff;
   display: block;
   margin: 0 0.8rem;
   margin-bottom: 1.5rem;
@@ -422,7 +462,9 @@ main {
   border-radius: 0;
   padding: 0.5357142857rem 0.9rem;
   text-align: center;
-  background-color: #ffbd35;
+  background-color: #ffc107;
+  display: inline;
+  vertical-align: middle;
 }
 .perros .cardContainer .card .card-body div a .fa-cart-plus {
   font-size: 0.8rem;
