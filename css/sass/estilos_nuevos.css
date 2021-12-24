@@ -381,24 +381,50 @@ main {
     height: 60px;
   }
 }
-.perros {
+.saleBox {
+  width: 100%;
+  height: 250h;
+}
+.saleBox a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.saleBox a .sales {
+  box-shadow: 1px 1px 18px -2px black;
+  width: 100%;
+  height: 100%;
+}
+
+.perros, .gatos {
   width: 100%;
 }
-.perros .subtitle {
+.perros .subtitle, .gatos .subtitle {
   color: #fff;
   margin-top: 1.5rem;
   padding-left: 0.8rem;
   font-size: 2rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.776);
 }
-.perros span {
+@media screen and (min-width: 1280px) {
+  .perros .subtitle, .gatos .subtitle {
+    padding-left: 2.4rem;
+    font-size: 2.5rem;
+  }
+}
+.perros span, .gatos span {
   height: 0;
   border-bottom: 2px solid #fff;
   display: block;
   margin: 0 0.8rem;
   margin-bottom: 1.5rem;
 }
-.perros .cardContainer {
+@media screen and (min-width: 1280px) {
+  .perros span, .gatos span {
+    margin: 0 2.4rem 2.4rem 2.4rem;
+  }
+}
+.perros .cardContainer, .gatos .cardContainer {
   width: 100%;
   height: auto;
   display: grid;
@@ -408,20 +434,41 @@ main {
   padding: 0.8rem;
   padding-top: 0;
 }
-.perros .cardContainer .card {
+@media screen and (min-width: 1280px) {
+  .perros .cardContainer, .gatos .cardContainer {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2.4rem;
+    padding-top: 0;
+  }
+}
+.perros .cardContainer .card, .gatos .cardContainer .card {
   width: 100%;
+  height: 330px;
   box-shadow: 1px 1px 18px -2px black;
   border-radius: 6px;
   background-color: transparent;
   border: none;
 }
-.perros .cardContainer .card img {
+@media screen and (min-width: 1280px) {
+  .perros .cardContainer .card, .gatos .cardContainer .card {
+    width: 250px;
+    height: 410px;
+    max-height: 410px;
+    justify-self: center;
+    transition: all 1.5s ease-in-out;
+  }
+  .perros .cardContainer .card:hover, .gatos .cardContainer .card:hover {
+    transform: translateY(-60%);
+  }
+}
+.perros .cardContainer .card img, .gatos .cardContainer .card img {
   width: 100%;
-  height: auto;
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.75);
   padding-top: 0.8rem;
 }
-.perros .cardContainer .card .card-body {
+.perros .cardContainer .card .card-body, .gatos .cardContainer .card .card-body {
   padding: 0.5rem;
   padding-bottom: 0.8rem;
   font-family: "Inter", sans-serif;
@@ -429,21 +476,21 @@ main {
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 0 0 6px 6px;
 }
-.perros .cardContainer .card .card-body .card-title {
+.perros .cardContainer .card .card-body .card-title, .gatos .cardContainer .card .card-body .card-title {
   text-align: center;
 }
-.perros .cardContainer .card .card-body .card-text {
+.perros .cardContainer .card .card-body .card-text, .gatos .cardContainer .card .card-body .card-text {
   text-align: center;
   margin-bottom: 0.8rem;
 }
-.perros .cardContainer .card .card-body div {
+.perros .cardContainer .card .card-body div, .gatos .cardContainer .card .card-body div {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: auto;
 }
-.perros .cardContainer .card .card-body div input {
+.perros .cardContainer .card .card-body div input, .gatos .cardContainer .card .card-body div input {
   width: 40%;
   height: 3.5rem;
   margin-right: 0.3rem;
@@ -453,7 +500,7 @@ main {
   color: #777;
   text-align: center;
 }
-.perros .cardContainer .card .card-body div a {
+.perros .cardContainer .card .card-body div a, .gatos .cardContainer .card .card-body div a {
   width: 60%;
   height: 3.5rem;
   font-family: "Inter", sans-serif;
@@ -463,13 +510,27 @@ main {
   padding: 0.5357142857rem 0.9rem;
   text-align: center;
   background-color: #ffc107;
-  display: inline;
-  vertical-align: middle;
+  align-self: center;
 }
-.perros .cardContainer .card .card-body div a .fa-cart-plus {
+@media screen and (min-width: 1280px) {
+  .perros .cardContainer .card .card-body div a, .gatos .cardContainer .card .card-body div a {
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+}
+.perros .cardContainer .card .card-body div a .fa-cart-plus, .gatos .cardContainer .card .card-body div a .fa-cart-plus {
   font-size: 0.8rem;
 }
-.perros .cardContainer .card .card-body div a:hover {
+@media screen and (min-width: 1280px) {
+  .perros .cardContainer .card .card-body div a .fa-cart-plus, .gatos .cardContainer .card .card-body div a .fa-cart-plus {
+    margin-right: 0.2rem;
+    font-size: 1.4rem;
+  }
+}
+.perros .cardContainer .card .card-body div a:hover, .gatos .cardContainer .card .card-body div a:hover {
   opacity: 0.76;
 }
 
@@ -563,73 +624,94 @@ main {
   align-items: center;
 }
 
-.footerContainer {
-  padding: 1rem;
-  height: 30%;
+footer {
   background-color: rgba(10, 10, 10, 0.885);
+  box-shadow: 1px 1px 18px -2px black;
+  height: 30%;
+}
+@media screen and (min-width: 1280px) {
+  footer {
+    height: 40%;
+  }
+}
+footer .footerContainer {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   font-family: "Inter", sans-serif;
-  box-shadow: 1px 1px 18px -2px black;
 }
-.footerContainer .box {
+@media screen and (min-width: 1280px) {
+  footer .footerContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1rem;
+  }
+}
+footer .footerContainer .box {
   padding: 0.75rem 1.5rem;
   margin-bottom: 1rem;
 }
-.footerContainer .box h3 {
+footer .footerContainer .box h3 {
   color: #fff;
   margin-bottom: 1.5rem;
   font-family: "Shadows Into Light", cursive;
   font-size: 1.6rem;
 }
-.footerContainer .box ul {
+footer .footerContainer .box ul {
   list-style: none;
   padding: 0;
 }
-.footerContainer .box ul li {
+footer .footerContainer .box ul li {
   margin-bottom: 0.4rem;
 }
-.footerContainer .box ul li a {
+footer .footerContainer .box ul li a {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.85);
 }
-.footerContainer .box ul li a:hover {
+footer .footerContainer .box ul li a:hover {
   color: rgba(255, 255, 255, 0.3);
 }
-.footerContainer .bar {
+footer .footerContainer .bar {
   border-bottom: 1px solid rgba(255, 255, 255, 0.85);
   height: 0;
   width: 50%;
   transform: translateX(50%);
   margin-bottom: 1rem;
 }
-
-.redesSociales {
+@media screen and (min-width: 1280px) {
+  footer .footerContainer .bar {
+    display: none;
+  }
+}
+footer .redesSociales {
   display: flex;
   justify-content: flex-end;
 }
-.redesSociales .fa-facebook-square {
+footer .redesSociales .fa-facebook-square {
   margin-right: 1rem;
   font-size: 1.55rem;
   color: #fff;
 }
-.redesSociales .fa-instagram-square {
+footer .redesSociales .fa-instagram-square {
   margin-right: 1rem;
   font-size: 1.55rem;
   color: #fff;
 }
-.redesSociales .fa-twitter {
+footer .redesSociales .fa-twitter {
   margin-right: 1rem;
   font-size: 1.55rem;
   color: #fff;
 }
-
-.footerContainer p {
+footer p {
   color: rgba(255, 255, 255, 0.7);
+  font-family: "Inter", sans-serif;
   font-size: 0.85rem;
   text-align: center;
+  margin: 0;
+  padding: 0 1rem 1rem 1rem;
 }
-.footerContainer p::after {
+footer p::after {
   content: "  DeliveryPetFood.com";
   color: #aaa000;
 }/*# sourceMappingURL=estilos_nuevos.css.map */

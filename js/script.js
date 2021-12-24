@@ -26,6 +26,8 @@ btnMenu.addEventListener("click", function(){
     main.classList.toggle("moveRight");
 });
 
+
+
 // function saludar(nombre){
 //     let frase = `¡Hola ${nombre}! ¿Como estas?`;
 //     document.write(frase);
