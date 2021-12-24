@@ -539,11 +539,13 @@ main{
 
                 img{
                     width: 100%;
-                    height: 100%;
+                    height: 55%;
                     background-color: $backgroundColorBox;
                     padding-top: .8rem;
+                    object-fit: fill;
                 }
                 .card-body{
+                    height: 45%;
                     padding: .5rem;
                     padding-bottom: .8rem;
                     font-family: $inter;
@@ -551,24 +553,31 @@ main{
                     background-color: rgba(255, 255, 255, .75);
                     border: none;
                     border-radius: 0 0 6px 6px;
+                    @include flex();
+                    flex-direction: column;
+                    justify-content: space-between;
 
                     .card-title{
+                        height: 40%;
                         text-align: center;
+                        font-size: 1rem;
+                        margin-bottom: .3rem;
                     }
 
                     .card-text{
+                        height: 25%;
                         text-align: center;
-                        margin-bottom: .8rem;
+                        margin-bottom: .4rem;
                     }
 
                     div{
                         @include flex();
                         width: 100%;
-                        height: auto;
+                        height: 35%;
 
                         input{
                             width: 40%;
-                            height: 3.5rem;
+                            height: 100%;
                             margin-right: .3rem;
                             border-radius: 0;
                             border-style: none;
@@ -578,12 +587,12 @@ main{
                         }
                         a{
                             width: 60%;
-                            height: 3.5rem;
+                            height: 100%;
                             font-family: $inter;
                             font-size: .72rem;
                             border-style: none;
                             border-radius: 0;
-                            padding: .5357142857rem .9rem;
+                            padding: .25rem .9rem;
                             text-align: center;
                             background-color: #ffc107;
                             align-self: center;

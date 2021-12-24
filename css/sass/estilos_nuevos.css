@@ -464,11 +464,14 @@ main {
 }
 .perros .cardContainer .card img, .gatos .cardContainer .card img {
   width: 100%;
-  height: 100%;
+  height: 55%;
   background-color: rgba(255, 255, 255, 0.75);
   padding-top: 0.8rem;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 .perros .cardContainer .card .card-body, .gatos .cardContainer .card .card-body {
+  height: 45%;
   padding: 0.5rem;
   padding-bottom: 0.8rem;
   font-family: "Inter", sans-serif;
@@ -476,24 +479,33 @@ main {
   background-color: rgba(255, 255, 255, 0.75);
   border: none;
   border-radius: 0 0 6px 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .perros .cardContainer .card .card-body .card-title, .gatos .cardContainer .card .card-body .card-title {
+  height: 40%;
   text-align: center;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
 }
 .perros .cardContainer .card .card-body .card-text, .gatos .cardContainer .card .card-body .card-text {
+  height: 25%;
   text-align: center;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
 }
 .perros .cardContainer .card .card-body div, .gatos .cardContainer .card .card-body div {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: auto;
+  height: 35%;
 }
 .perros .cardContainer .card .card-body div input, .gatos .cardContainer .card .card-body div input {
   width: 40%;
-  height: 3.5rem;
+  height: 100%;
   margin-right: 0.3rem;
   border-radius: 0;
   border-style: none;
@@ -503,12 +515,12 @@ main {
 }
 .perros .cardContainer .card .card-body div a, .gatos .cardContainer .card .card-body div a {
   width: 60%;
-  height: 3.5rem;
+  height: 100%;
   font-family: "Inter", sans-serif;
   font-size: 0.72rem;
   border-style: none;
   border-radius: 0;
-  padding: 0.5357142857rem 0.9rem;
+  padding: 0.25rem 0.9rem;
   text-align: center;
   background-color: #ffc107;
   align-self: center;
