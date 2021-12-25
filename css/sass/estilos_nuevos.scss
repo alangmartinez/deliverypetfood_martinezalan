@@ -42,7 +42,7 @@ $fontSizeSubTitle: 1.6rem;
     padding: 0;
     scroll-behavior: smooth;
 }
-.containerLoader{
+.loaderContainer{
     width: 100vw;
     height: 100vh;
     @include flex();
@@ -51,7 +51,7 @@ $fontSizeSubTitle: 1.6rem;
     z-index: 9999;
     transition: all 1.5s;
     
-    .loader{
+    &__loader{
         width: 70px;
         height: 70px;
         border: 6px solid #fff;
@@ -112,20 +112,20 @@ body{
 }
 
 
-header{
+.header{
     position: fixed;
     top: 0;
     height: 55px;
     width: 100%;
     z-index: 1000;
 
-        .navBar{
+        &__nav{
             position: fixed;
             top: 0;
             height: 55px;
             width: 100%;
-        
-            .menuMobile{
+            
+            &__mobile{
                 position: fixed;
                 top: 0;
                 padding: 0 1.5rem;
@@ -137,7 +137,7 @@ header{
                 background-color: $black;
                 z-index: 1000;
                 @include sombras();
-
+                
                     .btnMenu{
                         display: flex;
                         justify-content: center;
@@ -150,12 +150,12 @@ header{
                             cursor: pointer;
                         }
                     }
-
+                    
                     .userIcon{
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                            
+                        
                         .fa-user{
                             display: block;
                             color: $white;
@@ -163,62 +163,65 @@ header{
                             cursor: pointer;
                         }
                     }
+                }
+                &__menuSide{
+                    position: absolute;
+                    z-index: 900;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    list-style: none;
+                    background-color: $black;
+                    width: 100vw;
+                    height: 100vh;
+                    padding: 0;
+                    opacity: 0;
+                    transform: translateX(100%);
+                    transition: all .5s;
+                    
+                    .list-item{
+                        text-align: center;
+                        padding: 1rem 0;
+                        font-size: 2rem;
+                        margin-top: 1rem;
+                        font-family: $font; 
+                        
+                        .subMenu_container{
+                            
+                            &__subMenu{
+                                display: none;
+                            }
+                        }
+                        
+                        &:hover{
+                            border-bottom: 2px solid #fff;
+                            
+                            a{  
+                                color: #555;
+                            }
+                        }
+                    }
+                }
+                &__iconContainer{
+                    display: none;
+                }
             }
         }
-}
 .oculto{
-    visibility: hidden;
-}
-.menuSide{
-    position: absolute;
-    z-index: 900;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    background-color: $black;
-    width: 100vw;
-    height: 100vh;
-    padding: 0;
-    opacity: 0;
-    transform: translateX(100%);
-    transition: all .5s;
-
-    li{
-        text-align: center;
-        padding: 1rem 0;
-        font-size: 2rem;
-        margin-top: 1rem;
-        font-family: $font; 
-
-        &:hover{
-            border-bottom: 2px solid #fff;
-            
-            a{  
-                color: #555;
-            }
-        }
-    }
-}
-.sub-menu{
-    display: none;
+        visibility: hidden;
 }
 .mostrar{
-    transform: translateX(0);
-    opacity: 1;
+transform: translateX(0);
+opacity: 1;
 }
-.contenedor-iconos{
-    display: none;
-}
-
 
 /* ! Media Queries ¡ sirve para realizar condiciones en nuestro proyecto, en este caso a partir de 480px en adalente, nuestro diseño sera el mencionado dentro de este media queries */
 
 /* BARRA DE NAVEGACION TABLET 780px */
 
 @media screen and (min-width: 780px){
-    .contenedor-iconos{
+    .header__nav__iconContainer{
         width: 250px;
         display: flex;
         justify-content: space-between;
@@ -255,56 +258,44 @@ main{
 }
 
 
-// BANNER
+.container{
+    width: 100%;
+    height: 5.3rem;
+    padding: 1rem;
+    @include flex();
 
-.contenedor-superior{
-    width: 100vw;
-    height: 70vh;
-    background-image: url(../../assets/img/banner/banner.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    @include sombras();
-    
-    h1{
-        width: 300px;
-        margin-top: 30px;
-        color: $white;
-        font-family: 'Kaushan Script', cursive;
-        font-size: 40px;
-        text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        letter-spacing: 2px;
-    }
-}
+    &__search-box{
+        height: 100%;
+        width: 100%;
+        border-radius: 40px;
+        background-color: $backgroundColorBox;
+        padding: .3rem 1.2rem;
+        @include sombras();
+        @include flex();
+        position: relative;
+        
 
+        &__text{
+            height: 100%;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-family: $inter;
+            font-size: 1.2rem;
+        }
 
-/* BANNER PARA MOBILES GRANDES 480px */
-
-@media screen and (min-width:480px) {
-    .contenedor-superior{
-        height: 70vh;
-    }
-}
-
-/* BANNER PARA DESKTOP 1280px */
-
-@media screen and (min-width:1280px){
-    .contenedor-superior{
-        height: 100vh;
-        grid-column: 1 / span 3;
-    }
-    .contenedor-superior h1{
-        width: 600px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 56px;
-        text-align: center;
+        &__icon{
+            @include flex();
+            height: 100%;
+            
+            &:hover{
+                color: $white;
+            }
+            
+            .fa-search{
+                font-size: 1.5rem;
+            }
+        }
     }
 }
 
@@ -313,9 +304,26 @@ main{
 .saleCarousel{
     padding: 1rem;
     padding-bottom: 0;
-}
-.carousel-inner{
-    @include bordes-sombras();
+    height: 38vh;
+    
+    .carousel-indicators{
+        margin-bottom: .5rem;
+        padding: 0;
+        align-items: flex-end
+    }
+
+    .carousel-inner{
+        @include bordes-sombras();
+        height: 100%;
+
+        .carousel-item{
+            height: 100%;
+
+            img{
+                height: 100%;
+            }
+        }
+    }
 }
 
 
@@ -330,7 +338,9 @@ main{
     @media screen and (min-width: 780px) {
         height: 100%;
         width: 50%;
+        padding: 1rem;
         padding-right: .5rem;
+
     }
     
     iframe{
@@ -504,10 +514,13 @@ main{
         .cardContainer{
             width: 100%;
             height: auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: .8rem;
+            // display: grid;
+            // grid-template-columns: repeat(2, 1fr);
+            // grid-template-rows: repeat(2, 1fr);
+            // gap: .8rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
             padding: .8rem;
             padding-top: 0;
 
@@ -520,10 +533,13 @@ main{
 
             .card{
                 width: 100%;
+                max-width: 250px;
                 height: 330px;
                 @include bordes-sombras();
                 background-color: transparent;
                 border: none;
+                margin-right: .8rem;
+                margin-bottom: .8rem;
 
                 @media screen and (min-width: 1280px) {
                     width: 250px;
@@ -557,11 +573,15 @@ main{
                     flex-direction: column;
                     justify-content: space-between;
 
-                    .card-title{
-                        height: 40%;
-                        text-align: center;
-                        font-size: 1rem;
+                    &__box-title{
+                        @include flex();
                         margin-bottom: .3rem;
+                        height: 40%;
+
+                        .card-title{
+                            text-align: center;
+                            font-size: 1rem;
+                        }
                     }
 
                     .card-text{
@@ -596,6 +616,7 @@ main{
                             text-align: center;
                             background-color: #ffc107;
                             align-self: center;
+                        
                             
                             @media screen and (min-width: 1280px){
                                 font-size: .8rem;

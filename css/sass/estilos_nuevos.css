@@ -6,7 +6,7 @@
   scroll-behavior: smooth;
 }
 
-.containerLoader {
+.loaderContainer {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -17,7 +17,7 @@
   z-index: 9999;
   transition: all 1.5s;
 }
-.containerLoader .loader {
+.loaderContainer__loader {
   width: 70px;
   height: 70px;
   border: 6px solid #fff;
@@ -64,20 +64,20 @@ body {
   overflow: hidden;
 }
 
-header {
+.header {
   position: fixed;
   top: 0;
   height: 55px;
   width: 100%;
   z-index: 1000;
 }
-header .navBar {
+.header__nav {
   position: fixed;
   top: 0;
   height: 55px;
   width: 100%;
 }
-header .navBar .menuMobile {
+.header__nav__mobile {
   position: fixed;
   top: 0;
   padding: 0 1.5rem;
@@ -92,34 +92,29 @@ header .navBar .menuMobile {
   z-index: 1000;
   box-shadow: 1px 1px 18px -2px black;
 }
-header .navBar .menuMobile .btnMenu {
+.header__nav__mobile .btnMenu {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header .navBar .menuMobile .btnMenu .fa-bars {
+.header__nav__mobile .btnMenu .fa-bars {
   display: block;
   color: #fff;
   font-size: 26px;
   cursor: pointer;
 }
-header .navBar .menuMobile .userIcon {
+.header__nav__mobile .userIcon {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header .navBar .menuMobile .userIcon .fa-user {
+.header__nav__mobile .userIcon .fa-user {
   display: block;
   color: #fff;
   font-size: 26px;
   cursor: pointer;
 }
-
-.oculto {
-  visibility: hidden;
-}
-
-.menuSide {
+.header__nav__menuSide {
   position: absolute;
   z-index: 900;
   display: flex;
@@ -135,22 +130,28 @@ header .navBar .menuMobile .userIcon .fa-user {
   transform: translateX(100%);
   transition: all 0.5s;
 }
-.menuSide li {
+.header__nav__menuSide .list-item {
   text-align: center;
   padding: 1rem 0;
   font-size: 2rem;
   margin-top: 1rem;
   font-family: "Bebas Neue", cursive;
 }
-.menuSide li:hover {
+.header__nav__menuSide .list-item .subMenu_container__subMenu {
+  display: none;
+}
+.header__nav__menuSide .list-item:hover {
   border-bottom: 2px solid #fff;
 }
-.menuSide li:hover a {
+.header__nav__menuSide .list-item:hover a {
   color: #555;
 }
-
-.sub-menu {
+.header__nav__iconContainer {
   display: none;
+}
+
+.oculto {
+  visibility: hidden;
 }
 
 .mostrar {
@@ -158,14 +159,10 @@ header .navBar .menuMobile .userIcon .fa-user {
   opacity: 1;
 }
 
-.contenedor-iconos {
-  display: none;
-}
-
 /* ! Media Queries ¡ sirve para realizar condiciones en nuestro proyecto, en este caso a partir de 480px en adalente, nuestro diseño sera el mencionado dentro de este media queries */
 /* BARRA DE NAVEGACION TABLET 780px */
 @media screen and (min-width: 780px) {
-  .contenedor-iconos {
+  .header__nav__iconContainer {
     width: 250px;
     display: flex;
     justify-content: space-between;
@@ -173,12 +170,12 @@ header .navBar .menuMobile .userIcon .fa-user {
     position: absolute;
     right: 60px;
   }
-  .contenedor-iconos .search {
+  .header__nav__iconContainer .search {
     height: 26px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
   }
-  .contenedor-iconos .fa-cart-plus {
+  .header__nav__iconContainer .fa-cart-plus {
     color: #fff;
     font-size: 26px;
     margin-left: 15px;
@@ -198,60 +195,67 @@ main {
   }
 }
 
-.contenedor-superior {
-  width: 100vw;
-  height: 70vh;
-  background-image: url(../../assets/img/banner/banner.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
+.container {
+  width: 100%;
+  height: 5.3rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container__search-box {
+  height: 100%;
+  width: 100%;
+  border-radius: 40px;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 0.3rem 1.2rem;
   box-shadow: 1px 1px 18px -2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
-.contenedor-superior h1 {
-  width: 300px;
-  margin-top: 30px;
+.container__search-box__text {
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+}
+.container__search-box__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.container__search-box__icon:hover {
   color: #fff;
-  font-family: "Kaushan Script", cursive;
-  font-size: 40px;
-  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.776);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  letter-spacing: 2px;
+}
+.container__search-box__icon .fa-search {
+  font-size: 1.5rem;
 }
 
-/* BANNER PARA MOBILES GRANDES 480px */
-@media screen and (min-width: 480px) {
-  .contenedor-superior {
-    height: 70vh;
-  }
-}
-/* BANNER PARA DESKTOP 1280px */
-@media screen and (min-width: 1280px) {
-  .contenedor-superior {
-    height: 100vh;
-    grid-column: 1/span 3;
-  }
-
-  .contenedor-superior h1 {
-    width: 600px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 56px;
-    text-align: center;
-  }
-}
 .saleCarousel {
   padding: 1rem;
   padding-bottom: 0;
+  height: 38vh;
 }
-
-.carousel-inner {
+.saleCarousel .carousel-indicators {
+  margin-bottom: 0.5rem;
+  padding: 0;
+  align-items: flex-end;
+}
+.saleCarousel .carousel-inner {
   box-shadow: 1px 1px 18px -2px black;
   border-radius: 6px;
+  height: 100%;
+}
+.saleCarousel .carousel-inner .carousel-item {
+  height: 100%;
+}
+.saleCarousel .carousel-inner .carousel-item img {
+  height: 100%;
 }
 
 .mapa {
@@ -264,6 +268,7 @@ main {
   .mapa {
     height: 100%;
     width: 50%;
+    padding: 1rem;
     padding-right: 0.5rem;
   }
 }
@@ -427,10 +432,9 @@ main {
 .perros .cardContainer, .gatos .cardContainer {
   width: 100%;
   height: auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   padding: 0.8rem;
   padding-top: 0;
 }
@@ -444,11 +448,14 @@ main {
 }
 .perros .cardContainer .card, .gatos .cardContainer .card {
   width: 100%;
+  max-width: 250px;
   height: 330px;
   box-shadow: 1px 1px 18px -2px black;
   border-radius: 6px;
   background-color: transparent;
   border: none;
+  margin-right: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 @media screen and (min-width: 1280px) {
   .perros .cardContainer .card, .gatos .cardContainer .card {
@@ -485,11 +492,16 @@ main {
   flex-direction: column;
   justify-content: space-between;
 }
-.perros .cardContainer .card .card-body .card-title, .gatos .cardContainer .card .card-body .card-title {
+.perros .cardContainer .card .card-body__box-title, .gatos .cardContainer .card .card-body__box-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.3rem;
   height: 40%;
+}
+.perros .cardContainer .card .card-body__box-title .card-title, .gatos .cardContainer .card .card-body__box-title .card-title {
   text-align: center;
   font-size: 1rem;
-  margin-bottom: 0.3rem;
 }
 .perros .cardContainer .card .card-body .card-text, .gatos .cardContainer .card .card-body .card-text {
   height: 25%;

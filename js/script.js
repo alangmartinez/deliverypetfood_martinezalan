@@ -2,7 +2,7 @@
 
 
 window.onload = function(){
-    const loader = document.getElementById("containerLoader");
+    const loader = document.getElementById("loaderContainer");
     loader.style.opacity = 0;
     loader.style.visibility = "hidden";
     loader.style.position = "absolute";

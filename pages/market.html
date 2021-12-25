@@ -33,14 +33,14 @@
 <body id="body">
 
     <!-- Loader Spin -->
-    <div class="containerLoader" id="containerLoader">
-        <div class="loader"></div>
+    <div class="loaderContainer" id="loaderContainer">
+        <div class="loaderContainer__loader"></div>
     </div>
 
-    <header>
-        <nav class="navBar">
+    <header class="header">
+        <nav class="header__nav">
             <!-- Menu Mobile -->
-            <div class="menuMobile">
+            <div class="header__nav__mobile">
                 <div class="userIcon" id="userIcon">
                     <i class="fas fa-user"></i>
                 </div>
@@ -48,32 +48,32 @@
                     <i class="fas fa-bars" id="btnMenu"></i>
                 </div>
             </div>
-            <!--Comienzo Menu-->
-            <ul class="menuSide" id="menuSide">
-                <li><a href="../index.html">Home</a></li>
-                <li class="container-sub-menu">
+            <!-- Menu Aside -->
+            <ul class="header__nav__menuSide" id="menuSide">
+                <li class="list-item"><a href="../index.html">Home</a></li>
+                <li class="subMenu_container list-item">
                     <a href="dog.html">Dog</a>
-                    <ul class="sub-menu">
+                    <ul class="subMenu_container__subMenu">
                         <li><a href="#">Dog +7</a></li>
                         <li><a href="#">Adult Dog</a></li>
                         <li><a href="#">Puppy</a></li>
                         <li><a href="#">Special Dog</a></li>
                     </ul>
                 </li>
-                <li class="container-sub-menu">
+                <li class="subMenu_container list-item">
                     <a href="cat.html">Cat</a>
-                    <ul class="sub-menu">
+                    <ul class="subMenu_container__subMenu">
                         <li><a href="#">Cat +7</a></li>
                         <li><a href="#">Adult Cat</a></li>
                         <li><a href="#">Kitten</a></li>
                         <li><a href="#">Special Cat</a></li>
                     </ul>
                 </li>
-                <li><a href="market.html">Market</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-                <li><a href="help.html">Help</a></li>
+                <li class="list-item"><a href="market.html">Market</a></li>
+                <li class="list-item"><a href="about_us.html">About Us</a></li>
+                <li class="list-item"><a href="help.html">Help</a></li>
             </ul>
-            <div class="contenedor-iconos">
+            <div class="header__nav__iconContainer">
                 <i class="fas fa-cart-plus"></i>
                 <label class="contenedor-search" for="buscador">
                     <input class="search" type="search" name="buscador" placeholder="Search">
@@ -97,7 +97,9 @@
                 <div class="card">
                     <img src="../assets/img/market/pro_plan.png" class="card-img-top" alt="pro plan">
                     <div class="card-body">
-                        <h5 class="card-title">Pro Plan Puppy</h5>
+                        <div class="card-body__box-title">
+                            <h5 class="card-title">Pro Plan Puppy</h5>
+                        </div>
                         <p class="card-text">$3.450,00</p>
                         <div>
                             <input type="number" min="0" max="100" value="0">
@@ -108,7 +110,9 @@
                 <div class="card">
                     <img src="../assets/img/market/pro-adult-15kg.png" class="card-img-top" alt="pro plan">
                     <div class="card-body">
-                        <h5 class="card-title">Pro Plan Adult</h5>
+                        <div class="card-body__box-title">
+                            <h5 class="card-title">Pro Plan Adult</h5>
+                        </div>
                         <p class="card-text">$4.300,00</p>
                         <div>
                             <input type="number" min="0" max="100" value="0">
@@ -119,7 +123,9 @@
                 <div class="card">
                     <img src="../assets/img/market/pro_plan.png" class="card-img-top" alt="pro plan">
                     <div class="card-body">
-                        <h5 class="card-title">Pro Plan Puppy</h5>
+                        <div class="card-body__box-title">
+                            <h5 class="card-title">Pro Plan Puppy</h5>
+                        </div>
                         <p class="card-text">$3.450,00</p>
                         <div>
                             <input type="number" min="0" max="100" value="0">
@@ -130,7 +136,9 @@
                 <div class="card">
                     <img src="../assets/img/market/pro_plan.png" class="card-img-top" alt="pro plan">
                     <div class="card-body">
-                        <h5 class="card-title">Pro Plan Puppy</h5>
+                        <div class="card-body__box-title">
+                            <h5 class="card-title">Pro Plan Puppy</h5>
+                        </div>
                         <p class="card-text">$3.450,00</p>
                         <div>
                             <input type="number" min="0" max="100" value="0">
@@ -148,7 +156,9 @@
                 <div class="card">
                     <img src="../assets/img/market/pro-plan-cat.png" class="card-img-top" alt="pro plan">
                     <div class="card-body">
-                        <h5 class="card-title">Pro Plan Cat</h5>
+                        <div class="card-body__box-title">
+                            <h5 class="card-title">Pro Plan Gatos</h5>
+                        </div>
                         <p class="card-text">$6.300,00</p>
                         <div>
                             <input type="number" min="0" max="100" value="0">
@@ -159,7 +169,9 @@
                 <div class="card">
                     <img src="../assets/img/market/complete-kitten.png" class="card-img-top" alt="complete kitten 1.5kg">
                     <div class="card-body">
-                        <h5 class="card-title">Complete Kitten 1.5kg</h5>
+                        <div class="card-body__box-title">
+                            <h5 class="card-title">Complete Kitten 1.5kg</h5>
+                        </div>
                         <p class="card-text">$1.980,00</p>
                         <div>
                             <input type="number" min="0" max="100" value="0">
@@ -168,10 +180,12 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="../assets/img/market/pro_plan.png" class="card-img-top" alt="pro plan">
+                    <img src="../assets/img/market/whiskas-adulto-carne-8kg.png" class="card-img-top" alt="whiskas sabor carnet 8kg">
                     <div class="card-body">
-                        <h5 class="card-title">Pro Plan Puppy</h5>
-                        <p class="card-text">$3.450</p>
+                        <div class="card-body__box-title">
+                            <h5 class="card-title">Whiskas Adulto Sabor Carne 8kg</h5>
+                        </div>
+                        <p class="card-text">$4.300,00</p>
                         <div>
                             <input type="number" min="0" max="100" value="0">
                             <a href="#" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Añadir al carrito</a>
@@ -181,7 +195,9 @@
                 <div class="card">
                     <img src="../assets/img/market/pro_plan.png" class="card-img-top" alt="pro plan">
                     <div class="card-body">
-                        <h5 class="card-title">Pro Plan Puppy</h5>
+                        <div class="card-body__box-title">
+                            <h5 class="card-title">Pro Plan Puppy</h5>
+                        </div>
                         <p class="card-text">$3.450</p>
                         <div>
                             <input type="number" min="0" max="100" value="0">
