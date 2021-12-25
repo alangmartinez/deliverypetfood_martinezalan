@@ -276,17 +276,20 @@ main{
         
 
         &__text{
-            height: 100%;
             border: none;
             outline: none;
             background-color: transparent;
             font-family: $inter;
-            font-size: 1.2rem;
+            float: left;
+            height: 100%;
+            font-size: 1.1rem;
+            color: #555;
         }
 
         &__icon{
+            float: right;
             @include flex();
-            height: 100%;
+            
             
             &:hover{
                 color: $white;

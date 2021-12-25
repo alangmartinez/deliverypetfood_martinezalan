@@ -216,18 +216,20 @@ main {
   position: relative;
 }
 .container__search-box__text {
-  height: 100%;
   border: none;
   outline: none;
   background-color: transparent;
   font-family: "Inter", sans-serif;
-  font-size: 1.2rem;
+  float: left;
+  height: 100%;
+  font-size: 1.1rem;
+  color: #555;
 }
 .container__search-box__icon {
+  float: right;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 .container__search-box__icon:hover {
   color: #fff;
