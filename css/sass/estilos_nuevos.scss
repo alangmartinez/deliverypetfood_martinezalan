@@ -4,11 +4,13 @@ $black: #000;
 $white: #fff;
 $buttonColor: #ffc107;
 $backgroundColorBox:  rgba(255, 255, 255, .75);
+$shadow-2: 0px 3px 8px 0px rgba(17,19,27,.3);
 $backgroundImg: url(../../assets/img/dog/fondo/fondo_dog.jpg);
 $font: "Bebas Neue", cursive;
 $inter: 'Inter', sans-serif;
 $borderRadius: 8px;
 $fontSizeSubTitle: 1.6rem;
+$tablet: 780px;
 
 // MIXIN
 
@@ -134,7 +136,7 @@ body{
                 width: 100%;
                 height: 55px;
                 justify-content: space-between;
-                background-color: $black;
+                background-color: rgba($color: #000, $alpha: .92);
                 z-index: 1000;
                 @include sombras();
                 
@@ -216,44 +218,16 @@ transform: translateX(0);
 opacity: 1;
 }
 
-/* ! Media Queries ¡ sirve para realizar condiciones en nuestro proyecto, en este caso a partir de 480px en adalente, nuestro diseño sera el mencionado dentro de este media queries */
-
-/* BARRA DE NAVEGACION TABLET 780px */
-
-@media screen and (min-width: 780px){
-    .header__nav__iconContainer{
-        width: 250px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: absolute;
-        right: 60px;
-        
-        .search{
-            height: 26px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
-        }
-        .fa-cart-plus{
-            color: $white;
-            font-size: 26px;
-            margin-left: 15px;
-            cursor: pointer;
-            margin-left: 15px;
-        }
-    }
-}
-
 // MAIN
 
 main{
     margin-top: 55px;
     
-    @media screen and (min-width: 780px) {
-        .flexContainer{
-            @include flex();
-            height: 25rem;
-        }
+    @media screen and (min-width: 780px){
+            .flexContainer{
+                @include flex();
+                height: 400px;
+            }
     }
 }
 
@@ -261,8 +235,13 @@ main{
 .container{
     width: 100%;
     height: 5.3rem;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     @include flex();
+    max-width: unset;
+
+    @media screen and (min-width: $tablet) {
+        width: 90%;
+    }
 
     &__search-box{
         height: 100%;
@@ -272,6 +251,7 @@ main{
         padding: .3rem 1.2rem;
         @include sombras();
         @include flex();
+        justify-content: space-between;
         position: relative;
         
 
@@ -338,7 +318,7 @@ main{
     padding: 1rem;
     padding-bottom: 0;
 
-    @media screen and (min-width: 780px) {
+    @media screen and (min-width: $tablet) {
         height: 100%;
         width: 50%;
         padding: 1rem;
@@ -488,6 +468,7 @@ main{
     }
     .perros, .gatos{
         width: 100%;
+        margin-bottom: 2rem;
         
         .subtitle{
             color: $white;
@@ -517,13 +498,10 @@ main{
         .cardContainer{
             width: 100%;
             height: auto;
-            // display: grid;
-            // grid-template-columns: repeat(2, 1fr);
-            // grid-template-rows: repeat(2, 1fr);
-            // gap: .8rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: .8rem;
             padding: .8rem;
             padding-top: 0;
 
@@ -541,8 +519,11 @@ main{
                 @include bordes-sombras();
                 background-color: transparent;
                 border: none;
-                margin-right: .8rem;
-                margin-bottom: .8rem;
+                transition: all .2s ease;
+
+                &:hover{
+                    box-shadow: $shadow-2;
+                }
 
                 @media screen and (min-width: 1280px) {
                     width: 250px;
