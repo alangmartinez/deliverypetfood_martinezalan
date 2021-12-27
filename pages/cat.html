@@ -25,94 +25,96 @@
     <!--Font Awesome Icons-->
     <script src="https://kit.fontawesome.com/95674ce697.js" crossorigin="anonymous"></script>
     <!--Hoja de Estilos-->
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/sass/estilos_nuevos.css">
     <!--Icono-->
     <link rel="shortcut icon" href="../assets/img/icono.png" type="image/x-icon">
     <title>Delivery Pet Food</title>
 </head>
 <body id="body">
 
-<header>
-    <nav class="navBar">
-        <!-- Menu Mobile -->
-        <div class="menuMobile">
-            <div class="userIcon" id="userIcon">
-                <i class="fas fa-user"></i>
+    <!-- Loader Spin -->
+    <div class="loaderContainer" id="loaderContainer">
+        <div class="loaderContainer__loader"></div>
+    </div>
+
+    <header class="header">
+        <nav class="header__nav">
+            <!-- Menu Mobile -->
+            <div class="header__nav__mobile">
+                <div class="userIcon" id="userIcon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="btnMenu">
+                    <i class="fas fa-bars" id="btnMenu"></i>
+                </div>
             </div>
-            <div class="btnMenu">
-                <i class="fas fa-bars" id="btnMenu"></i>
+            <!-- Menu Aside -->
+            <ul class="header__nav__menuSide" id="menuSide">
+                <li class="list-item"><a href="../index.html">Home</a></li>
+                <li class="subMenu_container list-item">
+                    <a href="dog.html">Dog</a>
+                    <ul class="subMenu_container__subMenu">
+                        <li><a href="#">Dog +7</a></li>
+                        <li><a href="#">Adult Dog</a></li>
+                        <li><a href="#">Puppy</a></li>
+                        <li><a href="#">Special Dog</a></li>
+                    </ul>
+                </li>
+                <li class="subMenu_container list-item">
+                    <a href="cat.html">Cat</a>
+                    <ul class="subMenu_container__subMenu">
+                        <li><a href="#">Cat +7</a></li>
+                        <li><a href="#">Adult Cat</a></li>
+                        <li><a href="#">Kitten</a></li>
+                        <li><a href="#">Special Cat</a></li>
+                    </ul>
+                </li>
+                <li class="list-item"><a href="market.html">Market</a></li>
+                <li class="list-item"><a href="about_us.html">About Us</a></li>
+                <li class="list-item"><a href="help.html">Help</a></li>
+            </ul>
+            <div class="header__nav__iconContainer">
+                <i class="fas fa-cart-plus"></i>
+                <label class="contenedor-search" for="buscador">
+                    <input class="search" type="search" name="buscador" placeholder="Search">
+                </label>
             </div>
-        </div>
-        <!--Comienzo Menu-->
-        <ul class="menuSide" id="menuSide">
-            <li><a href="../index.html">Home</a></li>
-            <li class="container-sub-menu">
-                <a href="dog.html">Dog</a>
-                <ul class="sub-menu">
-                    <li><a href="#">Dog +7</a></li>
-                    <li><a href="#">Adult Dog</a></li>
-                    <li><a href="#">Puppy</a></li>
-                    <li><a href="#">Special Dog</a></li>
-                </ul>
-            </li>
-            <li class="container-sub-menu">
-                <a href="cat.html">Cat</a>
-                <ul class="sub-menu">
-                    <li><a href="#">Cat +7</a></li>
-                    <li><a href="#">Adult Cat</a></li>
-                    <li><a href="#">Kitten</a></li>
-                    <li><a href="#">Special Cat</a></li>
-                </ul>
-            </li>
-            <li><a href="market.html">Market</a></li>
-            <li><a href="about_us.html">About Us</a></li>
-            <li><a href="help.html">Help</a></li>
-        </ul>
-        <div class="contenedor-iconos">
-            <i class="fas fa-cart-plus"></i>
-            <label class="contenedor-search" for="buscador">
-                <input class="search" type="search" name="buscador" placeholder="Search">
-            </label>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
 
 
     <main>
-        <!--Comienzo Contenedor Principal-->
-        <div class="contenedor-principal-gatos">
+        <div class="catContainer">
 
-            <!--Banner Gatos +7-->
-            <div class="gatos-viejos">
+            <!-- Gatos +7 -->
+            <div class="catContainer__gatosViejos">
                 <a href="#">
                     <img src="../assets/img/gatos/gatos_+7.png" alt="gatos viejos">
                     <p>Cat +7</p>
                 </a>
             </div>
-            <!--Banner Gatos Adultos-->
-            <div class="gatos-adultos">
+            <!-- Gatos Adultos -->
+            <div class="catContainer__gatosAdultos">
                 <a href="#">
                     <img src="../assets/img/gatos/gatos_adultos.png" alt="gatos viejos">
                     <p>Adult Cat</p>
                 </a>
             </div>
-            <!--Banner Gatitos-->
-            <div class="gatitos">
+            <!-- Gatitos -->
+            <div class="catContainer__gatitos">
                 <a href="#">
                     <img src="../assets/img/gatos/gatos_bebes.png" alt="gatos viejos">
                     <p>Kitten</p>
                 </a>
             </div>
-            <!--Banner Gatos Especiales-->
-            <div class="gatos-especiales">
+            <!-- Gatos Especiales -->
+            <div class="catContainer__gatosEspeciales">
                 <a href="#">
                     <img src="../assets/img/gatos/gatos_especiales.png" alt="gatos viejos">
                     <p>Special Cat</p>
                 </a>
             </div>
-
         </div>
-        <!--Fin Contenedor Principal-->
     </main>
 
 
@@ -150,6 +152,11 @@
             </div>
             <p>Copyright © 2021 | All right reserved.</p>
         </footer>
+
+            <!-- Boton animado Whats App -->
+    <a href="https://wa.me/5492914467013/?text=Hola,%20quiero%20hacer%20un%20pedido%20!" target="_blank">
+        <img class="whats_app" src="../assets/img/iconos/whats app.png" alt="whats app icono">
+    </a>
     
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="../js/script.js"></script>

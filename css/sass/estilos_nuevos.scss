@@ -231,6 +231,10 @@ main{
     }
 }
 
+// INDEX.HTML
+
+
+// BUSCADOR
 
 .container{
     width: 100%;
@@ -415,7 +419,8 @@ main{
     }
 }
 
-/* ICONO WHATS APP */
+// ICONO WHATS APP
+
 .whats_app{
     position: fixed;
     right: 1.8rem;
@@ -423,32 +428,112 @@ main{
     width: 3.6rem;
     height: 3.6rem;
     z-index: 300;
-}
-
-/* ICONO WHATS APP TABLET 780px */
-
-@media screen and (min-width:780px) {
-    .whats_app{
-        left: 20px;
-        bottom: 20px;
-        height: 50px;
-        width: 50px;
+    
+    @media screen and (min-width:1280px) {
+        .whats_app{
+            left: 25px;
+            bottom: 25px;
+            width: 60px;
+            height: 60px;
+        }
     }
 }
 
-/* ICONO WHATS APP DESKTOP 1280px */
+// DOG.HTML
 
-@media screen and (min-width:1280px) {
-    .whats_app{
-        left: 25px;
-        bottom: 25px;
-        width: 60px;
-        height: 60px;
+.dogContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__perrosViejos, &__perrosAdultos, &__perrosCachorros, &__perrosEspeciales{
+        width: 100vw;
+        height: 300px;
+        position: relative;
+        
+        @media screen and (min-width: 1280px) {
+            height: 450px;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            filter: brightness(70%);
+            object-fit: fill;
+
+            @media screen and (min-width: 1280px) {
+                transition: all 500ms;
+
+                &:hover{
+                    filter: brightness(100%);
+                }
+            }
+        }
+        p{
+            font-size: 2rem;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, .776);
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+
+            @media screen and (min-width: 1280px) {
+                font-size: 3rem;
+            }
+        }    
     }
 }
 
+// CAT.HTML
 
-// MARKET
+.catContainer{
+    @include flex();
+    flex-direction: column;
+
+    &__gatosViejos, &__gatosAdultos, &__gatitos, &__gatosEspeciales{
+        width: 100vw;
+        height: 300px;
+        position: relative;
+        
+        @media screen and (min-width:1280px) {
+            height: 450px;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            filter: brightness(70%);
+            object-fit: fill;
+
+            @media screen and (min-width: 1280px) {
+                transition: all 500ms;
+
+                &:hover{
+                    filter: brightness(100%);
+                }
+            }
+        }
+        p{
+            font-size: 2rem;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, .776);
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+
+            @media screen and (min-width: 1280px) {
+                font-size: 3rem;
+            }
+        }
+    }
+}
+
+// MARKET.HTML
 
     .saleBox{
         width: 100%;
@@ -629,6 +714,109 @@ main{
         }
     }
 
+// ABOUTUS.HTML
+
+.titleContainer{
+    @include flex();
+    padding: 2rem;
+    padding-bottom: 1rem;
+    box-sizing: border-box;
+    width: 100vw;
+    
+    h2{
+        color: $white;
+        font-size: 40px;
+        text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+
+        @media screen and (min-width:1280px){
+            font-size: 50px;
+        }
+    }
+    .fa-lightbulb{
+        display: block;
+        color: $buttonColor;
+        font-size: 35px;
+        margin-left: 1rem;
+        height: 45px;
+        text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+        animation-name: rotation;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+
+        @media screen and (min-width:1280px){
+            font-size: 50px;
+            height: 60px;
+        }
+    }
+}
+
+@keyframes rotation{
+    from{transform: rotateY(0deg);}
+    to{transform: rotateY(360deg);}
+}
+
+
+.box-container{
+    width: 100vw;
+    padding: 1rem;
+    
+    .float-box{
+        width: 100%;
+        height: 500px;
+        overflow-y: scroll;
+        padding: 2rem;
+        background-color: $backgroundColorBox;
+        @include bordes-sombras();
+
+        @media screen and (min-width: $tablet) {
+            height: unset;
+        }
+        
+        .float-img{
+            width: 100px;
+            height: 150px;
+            margin: .5rem;
+            float: left;
+            
+            @media screen and (min-width:780px){
+                width: 150px;
+                height: 200px;
+            }
+            @media screen and (min-width:1280px) {
+                width: 170px;
+                height: 220px;
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    p{
+        color: $black;
+        font-family: $inter;
+    }
+}
+
+// VIDEO
+
+.video{
+    width: 100vw;
+    height: 400px;
+    box-sizing: border-box;
+    
+    @media screen and (min-width:1280px) {
+        padding: 2rem;
+    }
+    
+    iframe{
+        width: 100%;
+        height: 100%;
+    }
+}
+
 // HELP
 
 .title-help-container{
@@ -641,67 +829,64 @@ main{
     width: 100vw;
     box-sizing: border-box;
     height: 30%;
-}
-.title-help-container h2{
-    color: $white;
-    font-size: 2rem;
-    text-align: center;
-    text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
-    text-align: center;
-    letter-spacing: 2px;
-    margin-bottom: .75rem;
-    font-family: "Bebas Neue", cursive;
-}
-.fa-paper-plane::before{
-    display: block;
-    color: #fff000;
-    text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
-    font-size: 2rem;
-}
-
-/* TITLE PARA TABLET 780px */
-
-@media screen and (min-width:780px) {
-    .title-help-container h2{
-        font-size: 3rem;
+    
+    @media screen and (min-width:780px) {
+        .title-help-container h2{
+            font-size: 3rem;
+        }
+        .fa-paper-plane{
+            font-size: 2rem;
+        }
     }
-    .fa-paper-plane::before{
-        font-size: 3rem;
+    @media screen and (min-width:1280px) {
+        .title-help-container{
+            flex-direction: row;
+            justify-content: center;
+            height: 30vh;
+        }
+        .fa-paper-plane{
+            margin-left: 2rem;
+        }
     }
-}
-
-/* TITLE PARA DESKTOP 1280px */
-
-@media screen and (min-width:1280px) {
-    .title-help-container{
-        flex-direction: row;
-        justify-content: center;
-        height: 30vh;
+    
+    h2{
+        color: $white;
+        font-size: 2rem;
+        text-align: center;
+        text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+        text-align: center;
+        letter-spacing: 2px;
+        margin-bottom: .75rem;
+        font-family: "Bebas Neue", cursive;
     }
-    .fa-paper-plane::before{
-        margin-left: 2rem;
+    .fa-paper-plane{
+        display: block;
+        color: $buttonColor;
+        text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+        font-size: 2rem;
     }
 }
-
 .boxFormContainer{
-    padding: 2rem 1.5rem;
+    padding: 1rem;
     background-color: rgba(255, 255, 255, .6);
-    margin: 1.5rem 1.5rem;
+    margin: 1rem;
     font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     @include bordes-sombras();
+    
+    .form-floating, .form-select{
+        margin-bottom: 2rem;
+    }
+    .radioContainer{
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+        
+        div{
+            margin-right: 1rem;
+        }
+    }
 }
 
-.form-floating, .form-select{
-    margin-bottom: 2rem;
-}
-.radioContainer{
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-}
-.radioContainer div{
-    margin-right: 1rem;
-}
 .titleRadio{
     margin-bottom: .5rem;
 }
@@ -709,15 +894,26 @@ main{
     resize: none;
     overflow-y: auto;
 }
-.submitButton{
+.submitBtn{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: .8rem;
+
+    &__btn{
+        background-color: $buttonColor;
+        outline: none;
+        border: none;
+        padding: .5rem 2rem;
+
+        &:hover{
+            background-color: $buttonColor;
+            filter: brightness(70%);
+        }
+    }
 }
 
-
 // FOOTER 
-
 
 footer{
     background-color: rgba(10, 10, 10, .885);

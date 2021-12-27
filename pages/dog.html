@@ -25,18 +25,22 @@
     <!--Font Awesome Iconos-->
     <script src="https://kit.fontawesome.com/95674ce697.js" crossorigin="anonymous"></script>
     <!--Hoja de Estilos-->
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/sass/estilos_nuevos.css">
     <!--Head Icon-->
     <link rel="shortcut icon" href="../assets/img/icono.png" type="image/x-icon">
     <title>Delivery Pet Food</title>
 </head>
 <body id="body">
 
+    <!-- Loader Spin -->
+    <div class="loaderContainer" id="loaderContainer">
+        <div class="loaderContainer__loader"></div>
+    </div>
 
-    <header>
-        <nav class="navBar">
+    <header class="header">
+        <nav class="header__nav">
             <!-- Menu Mobile -->
-            <div class="menuMobile">
+            <div class="header__nav__mobile">
                 <div class="userIcon" id="userIcon">
                     <i class="fas fa-user"></i>
                 </div>
@@ -44,32 +48,32 @@
                     <i class="fas fa-bars" id="btnMenu"></i>
                 </div>
             </div>
-            <!--Comienzo Menu-->
-            <ul class="menuSide" id="menuSide">
-                <li><a href="../index.html">Home</a></li>
-                <li class="container-sub-menu">
+            <!-- Menu Aside -->
+            <ul class="header__nav__menuSide" id="menuSide">
+                <li class="list-item"><a href="../index.html">Home</a></li>
+                <li class="subMenu_container list-item">
                     <a href="dog.html">Dog</a>
-                    <ul class="sub-menu">
+                    <ul class="subMenu_container__subMenu">
                         <li><a href="#">Dog +7</a></li>
                         <li><a href="#">Adult Dog</a></li>
                         <li><a href="#">Puppy</a></li>
                         <li><a href="#">Special Dog</a></li>
                     </ul>
                 </li>
-                <li class="container-sub-menu">
+                <li class="subMenu_container list-item">
                     <a href="cat.html">Cat</a>
-                    <ul class="sub-menu">
+                    <ul class="subMenu_container__subMenu">
                         <li><a href="#">Cat +7</a></li>
                         <li><a href="#">Adult Cat</a></li>
                         <li><a href="#">Kitten</a></li>
                         <li><a href="#">Special Cat</a></li>
                     </ul>
                 </li>
-                <li><a href="market.html">Market</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-                <li><a href="help.html">Help</a></li>
+                <li class="list-item"><a href="market.html">Market</a></li>
+                <li class="list-item"><a href="about_us.html">About Us</a></li>
+                <li class="list-item"><a href="help.html">Help</a></li>
             </ul>
-            <div class="contenedor-iconos">
+            <div class="header__nav__iconContainer">
                 <i class="fas fa-cart-plus"></i>
                 <label class="contenedor-search" for="buscador">
                     <input class="search" type="search" name="buscador" placeholder="Search">
@@ -80,40 +84,37 @@
 
 
     <main>
-        <!--Contenedor Principal-->
-        <div class="contenedor-dog">
+        <div class="dogContainer">
 
             <!--Banner Perros +7-->
-            <div class="perros-viejos">
+            <div class="dogContainer__perrosViejos">
                 <a href="perros+7.html">
                     <img src="../assets/img/dog/perros +7-mobile.png" alt="perros viejos">
                     <p>Dog + 7</p>
                 </a>
             </div>
             <!--Banner Perros Adultos-->
-            <div class="perros-adultos">
+            <div class="dogContainer__perrosAdultos">
                 <a href="#">
                     <img src="../assets/img/dog/perros raza grande-mobile.png" alt="perros adultos">
                     <p>Adult Dog</p>
                 </a>
             </div>
             <!--Banner Perros Cachorros-->
-            <div class="perros-cachorros">
+            <div class="dogContainer__perrosCachorros">
                 <a href="#">
                     <img src="../assets/img/dog/perros cachorros-mobile.png" alt="perros cachorros">
                     <p>Puppy</p>
                 </a>
             </div>
             <!--Banner Perros Especiales-->
-            <div class="perros-especiales">
+            <div class="dogContainer__perrosEspeciales">
                 <a href="#">
                     <img src="../assets/img/dog/perros especiales-mobile.png" alt="perros especiales">
                     <p>Special Dogs</p>
                 </a>
             </div>
-
         </div>
-        <!--Fin Contenedor Principal-->
     </main>
 
     
@@ -151,6 +152,11 @@
             </div>
             <p>Copyright © 2021 | All right reserved.</p>
         </footer>
+
+            <!-- Boton animado Whats App -->
+    <a href="https://wa.me/5492914467013/?text=Hola,%20quiero%20hacer%20un%20pedido%20!" target="_blank">
+        <img class="whats_app" src="../assets/img/iconos/whats app.png" alt="whats app icono">
+    </a>
     
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="../js/script.js"></script>
