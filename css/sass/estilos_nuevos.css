@@ -206,6 +206,8 @@ main {
   justify-content: center;
   align-items: center;
   max-width: unset;
+  margin-top: 6rem;
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 780px) {
   .container {
@@ -275,12 +277,12 @@ main {
 .saleCarousel {
   padding: 1rem;
   padding-bottom: 0;
-  height: 38vh;
+  height: 65vh;
   min-width: 365px;
 }
 @media screen and (min-width: 1280px) {
   .saleCarousel {
-    height: 70vh;
+    height: 75vh;
   }
 }
 .saleCarousel .carousel-indicators {
@@ -812,7 +814,7 @@ main {
     padding: 1rem;
   }
 }
-.video iframe {
+.video video {
   width: 100%;
   height: 100%;
 }
