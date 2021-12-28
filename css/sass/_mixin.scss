@@ -1,0 +1,24 @@
+// Mixin
+
+@mixin sombras {
+    -webkit-box-shadow: 1px 1px 18px -2px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 1px 18px -2px rgba(0,0,0,1);
+    box-shadow: 1px 1px 18px -2px rgba(0,0,0,1);
+}
+
+@mixin bordes {
+    border-radius: 6px;
+}
+
+@mixin bordes-sombras {
+    -webkit-box-shadow: 1px 1px 18px -2px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 1px 18px -2px rgba(0,0,0,1);
+    box-shadow: 1px 1px 18px -2px rgba(0,0,0,1);
+    border-radius: 6px;
+}
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
