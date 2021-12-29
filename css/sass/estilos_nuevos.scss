@@ -204,8 +204,7 @@ main{
     padding: 1rem 1.5rem;
     @include flex();
     max-width: unset;
-    margin-top: 6rem;
-    margin-bottom: 1rem;
+    margin-top: 4rem;
 
     @media screen and (min-width: $tablet) {
         width: 100%;
