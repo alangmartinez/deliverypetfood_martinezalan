@@ -50,7 +50,7 @@ a {
 
 body {
   background-color: black;
-  background-image: url(../../assets/img/dog/fondo/fondo_dog.jpg);
+  background-image: url(../../assets/img/wallpaper/wallpaper.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -430,6 +430,8 @@ main {
   width: 100vw;
   height: 300px;
   position: relative;
+  padding: 2rem 2rem;
+  padding-bottom: 0;
 }
 @media screen and (min-width: 1280px) {
   .dogContainer__perrosViejos, .dogContainer__perrosAdultos, .dogContainer__perrosCachorros, .dogContainer__perrosEspeciales {
@@ -442,14 +444,17 @@ main {
   filter: brightness(70%);
   -o-object-fit: fill;
      object-fit: fill;
+  box-shadow: 1px 1px 18px -2px black;
+  border-radius: 6px;
 }
 @media screen and (min-width: 1280px) {
   .dogContainer__perrosViejos img, .dogContainer__perrosAdultos img, .dogContainer__perrosCachorros img, .dogContainer__perrosEspeciales img {
     filter: brightness(50%);
-    transition: all 500ms;
+    transition: filter 500ms, transform 700ms;
   }
   .dogContainer__perrosViejos img:hover, .dogContainer__perrosAdultos img:hover, .dogContainer__perrosCachorros img:hover, .dogContainer__perrosEspeciales img:hover {
     filter: brightness(100%);
+    transform: scale(1.02);
   }
 }
 .dogContainer__perrosViejos p, .dogContainer__perrosAdultos p, .dogContainer__perrosCachorros p, .dogContainer__perrosEspeciales p {
@@ -467,6 +472,9 @@ main {
     font-size: 3rem;
   }
 }
+.dogContainer__perrosEspeciales {
+  padding-bottom: 2rem;
+}
 
 .catContainer {
   display: flex;
@@ -478,6 +486,8 @@ main {
   width: 100vw;
   height: 300px;
   position: relative;
+  padding: 2rem 2rem;
+  padding-bottom: 0;
 }
 @media screen and (min-width: 1280px) {
   .catContainer__gatosViejos, .catContainer__gatosAdultos, .catContainer__gatitos, .catContainer__gatosEspeciales {
@@ -490,14 +500,17 @@ main {
   filter: brightness(70%);
   -o-object-fit: fill;
      object-fit: fill;
+  box-shadow: 1px 1px 18px -2px black;
+  border-radius: 6px;
 }
 @media screen and (min-width: 1280px) {
   .catContainer__gatosViejos img, .catContainer__gatosAdultos img, .catContainer__gatitos img, .catContainer__gatosEspeciales img {
     filter: brightness(50%);
-    transition: all 500ms;
+    transition: filter 500ms, transform 700ms;
   }
   .catContainer__gatosViejos img:hover, .catContainer__gatosAdultos img:hover, .catContainer__gatitos img:hover, .catContainer__gatosEspeciales img:hover {
     filter: brightness(100%);
+    transform: scale(1.02);
   }
 }
 .catContainer__gatosViejos p, .catContainer__gatosAdultos p, .catContainer__gatitos p, .catContainer__gatosEspeciales p {
@@ -514,6 +527,9 @@ main {
   .catContainer__gatosViejos p, .catContainer__gatosAdultos p, .catContainer__gatitos p, .catContainer__gatosEspeciales p {
     font-size: 3rem;
   }
+}
+.catContainer__gatosEspeciales {
+  padding-bottom: 2rem;
 }
 
 .saleBox {
@@ -603,10 +619,6 @@ main {
     height: 410px;
     max-height: 410px;
     justify-self: center;
-    transition: all 1.5s ease-in-out;
-  }
-  .perros .cardContainer .card:hover, .gatos .cardContainer .card:hover {
-    transform: translateY(-60%);
   }
 }
 .perros .cardContainer .card img, .gatos .cardContainer .card img {

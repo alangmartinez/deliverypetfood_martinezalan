@@ -439,6 +439,8 @@ main{
         width: 100vw;
         height: 300px;
         position: relative;
+        padding: 2rem 2rem;
+        padding-bottom: 0;
         
         @media screen and (min-width: 1280px) {
             height: 450px;
@@ -449,13 +451,15 @@ main{
             height: 100%;
             filter: brightness(70%);
             object-fit: fill;
+            @include bordes-sombras();
 
             @media screen and (min-width: 1280px) {
                 filter: brightness(50%);
-                transition: all 500ms;
+                transition: filter 500ms, transform 700ms;
 
                 &:hover{
                     filter: brightness(100%);
+                    transform: scale(1.02);
                 }
             }
         }
@@ -474,6 +478,9 @@ main{
             }
         }    
     }
+    &__perrosEspeciales{
+        padding-bottom: 2rem;
+    }
 }
 
 // CAT.HTML
@@ -486,6 +493,8 @@ main{
         width: 100vw;
         height: 300px;
         position: relative;
+        padding: 2rem 2rem;
+        padding-bottom: 0;
         
         @media screen and (min-width:1280px) {
             height: 450px;
@@ -496,13 +505,15 @@ main{
             height: 100%;
             filter: brightness(70%);
             object-fit: fill;
+            @include bordes-sombras();
 
             @media screen and (min-width: 1280px) {
                 filter: brightness(50%);
-                transition: all 500ms;
+                transition: filter 500ms, transform 700ms;
 
                 &:hover{
                     filter: brightness(100%);
+                    transform: scale(1.02);
                 }
             }
         }
@@ -520,6 +531,9 @@ main{
                 font-size: 3rem;
             }
         }
+    }
+    &__gatosEspeciales{
+        padding-bottom: 2rem;
     }
 }
 
@@ -609,11 +623,6 @@ main{
                     height: 410px;
                     max-height: 410px;
                     justify-self: center;
-                    transition: all 1.5s ease-in-out;
-
-                    &:hover{
-                        transform: translateY(-60%);
-                    }
                 }
 
                 img{
