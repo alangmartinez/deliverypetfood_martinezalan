@@ -420,25 +420,30 @@ main {
   }
 }
 
-.dogContainer {
+.dogContainer, .catContainer {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-.dogContainer__perrosViejos, .dogContainer__perrosAdultos, .dogContainer__perrosCachorros, .dogContainer__perrosEspeciales {
+@media screen and (min-width: 1280px) {
+  .dogContainer__perrosEspeciales {
+    padding-bottom: 2rem;
+  }
+}
+.dogContainer__perrosViejos, .catContainer__gatosViejos, .catContainer__gatosAdultos, .catContainer__gatitos, .catContainer__gatosEspeciales, .dogContainer__perrosAdultos, .dogContainer__perrosCachorros, .dogContainer__perrosEspeciales {
   width: 100vw;
-  height: 300px;
+  height: 230px;
   position: relative;
-  padding: 2rem 2rem;
+  padding: 1rem;
   padding-bottom: 0;
 }
 @media screen and (min-width: 1280px) {
-  .dogContainer__perrosViejos, .dogContainer__perrosAdultos, .dogContainer__perrosCachorros, .dogContainer__perrosEspeciales {
+  .dogContainer__perrosViejos, .catContainer__gatosViejos, .catContainer__gatosAdultos, .catContainer__gatitos, .catContainer__gatosEspeciales, .dogContainer__perrosAdultos, .dogContainer__perrosCachorros, .dogContainer__perrosEspeciales {
     height: 450px;
   }
 }
-.dogContainer__perrosViejos img, .dogContainer__perrosAdultos img, .dogContainer__perrosCachorros img, .dogContainer__perrosEspeciales img {
+.dogContainer__perrosViejos img, .catContainer__gatosViejos img, .catContainer__gatosAdultos img, .catContainer__gatitos img, .catContainer__gatosEspeciales img, .dogContainer__perrosAdultos img, .dogContainer__perrosCachorros img, .dogContainer__perrosEspeciales img {
   width: 100%;
   height: 100%;
   filter: brightness(70%);
@@ -448,16 +453,16 @@ main {
   border-radius: 6px;
 }
 @media screen and (min-width: 1280px) {
-  .dogContainer__perrosViejos img, .dogContainer__perrosAdultos img, .dogContainer__perrosCachorros img, .dogContainer__perrosEspeciales img {
+  .dogContainer__perrosViejos img, .catContainer__gatosViejos img, .catContainer__gatosAdultos img, .catContainer__gatitos img, .catContainer__gatosEspeciales img, .dogContainer__perrosAdultos img, .dogContainer__perrosCachorros img, .dogContainer__perrosEspeciales img {
     filter: brightness(50%);
     transition: filter 500ms, transform 700ms;
   }
-  .dogContainer__perrosViejos img:hover, .dogContainer__perrosAdultos img:hover, .dogContainer__perrosCachorros img:hover, .dogContainer__perrosEspeciales img:hover {
+  .dogContainer__perrosViejos img:hover, .catContainer__gatosViejos img:hover, .catContainer__gatosAdultos img:hover, .catContainer__gatitos img:hover, .catContainer__gatosEspeciales img:hover, .dogContainer__perrosAdultos img:hover, .dogContainer__perrosCachorros img:hover, .dogContainer__perrosEspeciales img:hover {
     filter: brightness(100%);
     transform: scale(1.02);
   }
 }
-.dogContainer__perrosViejos p, .dogContainer__perrosAdultos p, .dogContainer__perrosCachorros p, .dogContainer__perrosEspeciales p {
+.dogContainer__perrosViejos p, .catContainer__gatosViejos p, .catContainer__gatosAdultos p, .catContainer__gatitos p, .catContainer__gatosEspeciales p, .dogContainer__perrosAdultos p, .dogContainer__perrosCachorros p, .dogContainer__perrosEspeciales p {
   font-size: 2rem;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.776);
   color: #fff;
@@ -468,26 +473,24 @@ main {
   text-align: center;
 }
 @media screen and (min-width: 1280px) {
-  .dogContainer__perrosViejos p, .dogContainer__perrosAdultos p, .dogContainer__perrosCachorros p, .dogContainer__perrosEspeciales p {
+  .dogContainer__perrosViejos p, .catContainer__gatosViejos p, .catContainer__gatosAdultos p, .catContainer__gatitos p, .catContainer__gatosEspeciales p, .dogContainer__perrosAdultos p, .dogContainer__perrosCachorros p, .dogContainer__perrosEspeciales p {
     font-size: 3rem;
   }
 }
 .dogContainer__perrosEspeciales {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
-.catContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+@media screen and (min-width: 1280px) {
+  .catContainer__gatosEspeciales {
+    padding-bottom: 2rem;
+  }
 }
-.catContainer__gatosViejos, .catContainer__gatosAdultos, .catContainer__gatitos, .catContainer__gatosEspeciales {
-  width: 100vw;
-  height: 300px;
-  position: relative;
-  padding: 2rem 2rem;
-  padding-bottom: 0;
+@media screen and (min-width: 1280px) {
+  .catContainer__gatosViejos, .catContainer__gatosAdultos, .catContainer__gatitos, .catContainer__gatosEspeciales {
+    padding: 2rem;
+    padding-bottom: 0;
+  }
 }
 @media screen and (min-width: 1280px) {
   .catContainer__gatosViejos, .catContainer__gatosAdultos, .catContainer__gatitos, .catContainer__gatosEspeciales {
@@ -529,7 +532,7 @@ main {
   }
 }
 .catContainer__gatosEspeciales {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .saleBox {

@@ -430,16 +430,20 @@ main{
 // DOG.HTML
 
 .dogContainer{
-    display: flex;
+    @include flex();
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+    @media screen and (min-width: $desktop){
+        &__perrosEspeciales{
+            padding-bottom: 2rem;
+        }
+    }
 
     &__perrosViejos, &__perrosAdultos, &__perrosCachorros, &__perrosEspeciales{
         width: 100vw;
-        height: 300px;
+        height: 230px;
         position: relative;
-        padding: 2rem 2rem;
+        padding: 1rem;
         padding-bottom: 0;
         
         @media screen and (min-width: 1280px) {
@@ -479,22 +483,28 @@ main{
         }    
     }
     &__perrosEspeciales{
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
     }
 }
 
 // CAT.HTML
 
 .catContainer{
-    @include flex();
-    flex-direction: column;
+    @extend .dogContainer;
+
+    @media screen and (min-width: $desktop){
+        &__gatosEspeciales{
+            padding-bottom: 2rem;
+        }
+    }
 
     &__gatosViejos, &__gatosAdultos, &__gatitos, &__gatosEspeciales{
-        width: 100vw;
-        height: 300px;
-        position: relative;
-        padding: 2rem 2rem;
-        padding-bottom: 0;
+        @extend .dogContainer__perrosViejos;
+
+        @media screen and (min-width: $desktop) {
+            padding: 2rem;
+            padding-bottom: 0;
+        }
         
         @media screen and (min-width:1280px) {
             height: 450px;
@@ -533,7 +543,7 @@ main{
         }
     }
     &__gatosEspeciales{
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
     }
 }
 
