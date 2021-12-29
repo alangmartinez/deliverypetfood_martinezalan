@@ -51,7 +51,7 @@ body{
     overflow: hidden;
 }
 
-
+// HEADER
 .header{
     position: fixed;
     top: 0;
@@ -181,7 +181,6 @@ opacity: 1;
 }
 
 // MAIN
-
 main{
     margin-top: 55px;
     
@@ -191,775 +190,820 @@ main{
                 height: 400px;
             }
     }
-}
-
-// INDEX.HTML
-
-
-// BUSCADOR
-
-.container{
-    width: 100%;
-    height: 5.3rem;
-    padding: 1rem 1.5rem;
-    @include flex();
-    max-width: unset;
-    margin-top: 4rem;
-
-    @media screen and (min-width: $tablet) {
+    // INDEX.HTML
+    
+    // Buscador
+    .container{
         width: 100%;
-        margin: 0;
-        padding: 1rem 5rem;
-    }
-    @media screen and (min-width: $desktop){
-        height: 6rem;
-        margin-top: 5rem;
-        margin-bottom: 1rem;
-        padding: 1rem 6rem;
-    }
-
-    &__search-box{
-        height: 100%;
-        width: 100%;
-        border-radius: 40px;
-        background-color: $bg-color-box;
-        padding: .3rem 1.2rem;
-        @include sombras();
+        height: 5.3rem;
+        padding: 1rem 1.5rem;
         @include flex();
-        justify-content: space-between;
-        position: relative;
-        
-
-        &__text{
-            border: none;
-            outline: none;
-            background-color: transparent;
-            font-family: $inter;
-            float: left;
-            height: 100%;
-            font-size: 1.1rem;
-            color: #555;
-            
-            @media screen and (min-width: $desktop) {
-                font-size: 1.5rem;
-                width: 80%;
-                padding-left: 1.5rem;
-            }
-        }
-
-
-        &__icon{
-            float: right;
-            @include flex();
-            
-            &:hover{
-                color: $white;
-            }
-            
-            .fa-search{
-                font-size: 1.5rem;
-                padding-right: .5rem;
-                
-                @media screen and (min-width: $desktop) {
-                    font-size: 1.7rem;
-                    padding-right: 1rem;
-                }
-            }
-        }
-    }
-}
-
-// SALE
-
-.saleCarousel{
-    padding: 1rem;
-    padding-bottom: 0;
-    height: 65vh;
-    min-width: 365px;
+        max-width: unset;
+        margin-top: 4rem;
     
-    @media screen and (min-width: $desktop){
-        height: 75vh;
-    }
-
-    .carousel-indicators{
-        margin-bottom: .5rem;
-        padding: 0;
-        align-items: flex-end
-    }
-
-    .carousel-inner{
-        @include bordes-sombras();
-        height: 100%;
-
-        .carousel-item{
-            height: 100%;
-
-            img{
-                height: 100%;
-            }
-        }
-    }
-}
-
-
-// MAPA
-
-.mapa{
-    width: 100vw;
-    min-width: 365px;
-    height: 300px;
-    padding: 1rem;
-    padding-bottom: 0;
-
-    @media screen and (min-width: $tablet) {
-        height: 100%;
-        width: 50%;
-        padding: 1rem;
-        padding-right: .5rem;
-
-    }
-    
-    iframe{
-        width: 100%;
-        height: 100%;
-        border: none;
-        @include bordes-sombras();
-    }
-}
-
-// MEDIOS DE PAGO
-
-.containerMediosPago{
-    @include flex();
-    padding: 1rem;
-    min-width: 365px;    
-
-    @media screen and (min-width: 780px) {
-        height: 100%;
-        width: 50%;
-        padding-left: .5rem;
-    }
-    
-    .mediosPago{
-        @include flex();
-        flex-direction: column;
-        @include bordes-sombras();
-        padding: 1.5rem;
-        background-color: $bg-color-box;
-        width: 100%;
-        height: auto;
-
-        @media screen and (min-width: 780px) {
-            height: 100%;
-        }
-
-        h3{
-            font-size: 2rem;
-            color: #111;
-            text-transform: uppercase;
-            text-align: center;
-            width: 60%;
-            margin-bottom: 1.5rem;
-
-            &::after{
-                content: " de pago";
-                text-transform: uppercase;
-                color: #ffc107;
-            }
-        }
-        ul{
-            width: 100%;
-            padding-left: 1.5rem;
-
-            .listItem{
-                font-family: 'Inter', sans-serif;
-                text-align: start;
-            }
-            .firstListItem{
-
-                &::after{
-                    content: " Mercado Pago.";
-                    text-transform: uppercase;
-                    font-family: 'Fjalla One', sans-serif;
-                    font-size: .9rem;
-                    color: #333;
-                }
-            }
-        }
-        img{
-            width: 100%;
-            height: auto;
-        }
-        button{
-            margin-top: 1.5rem;
-            margin-bottom: .5rem;
-            padding: .5rem 5rem;
-            @include bordes-sombras();
-            background-color: #ffc107;
-            color: $black;
-
-            a{
-                color: $black;
-
-                &:hover{
-                    color: rgba(0, 0, 0, .78);
-                }
-            }
-        }
-    }
-}
-
-// ICONO WHATS APP
-
-.whats_app{
-    position: fixed;
-    right: 1.8rem;
-    bottom: 1.8rem;
-    width: 3.6rem;
-    height: 3.6rem;
-    z-index: 300;
-    
-    @media screen and (min-width: $desktop) {
-            left: 25px;
-            bottom: 25px;
-            width: 60px;
-            height: 60px;
-    }
-}
-
-// DOG.HTML
-
-.dogContainer{
-    @include flex();
-    flex-direction: column;
-
-    @media screen and (min-width: $desktop){
-        &__perrosEspeciales{
-            padding-bottom: 2rem;
-        }
-    }
-
-    &__perrosViejos, &__perrosAdultos, &__perrosCachorros, &__perrosEspeciales{
-        width: 100vw;
-        height: 230px;
-        position: relative;
-        padding: 1rem;
-        padding-bottom: 0;
-        
-        @media screen and (min-width: 1280px) {
-            height: 450px;
-        }
-
-        img{
-            width: 100%;
-            height: 100%;
-            filter: brightness(70%);
-            object-fit: fill;
-            @include bordes-sombras();
-
-            @media screen and (min-width: 1280px) {
-                filter: brightness(50%);
-                transition: filter 500ms, transform 700ms;
-
-                &:hover{
-                    filter: brightness(100%);
-                    transform: scale(1.02);
-                }
-            }
-        }
-        p{
-            font-size: 2rem;
-            text-shadow: 2px 2px 3px rgba(0, 0, 0, .776);
-            color: #fff;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-
-            @media screen and (min-width: 1280px) {
-                font-size: 3rem;
-            }
-        }    
-    }
-    &__perrosEspeciales{
-        padding-bottom: 1rem;
-    }
-}
-
-// CAT.HTML
-
-.catContainer{
-    @extend .dogContainer;
-
-    @media screen and (min-width: $desktop){
-        &__gatosEspeciales{
-            padding-bottom: 2rem;
-        }
-    }
-
-    &__gatosViejos, &__gatosAdultos, &__gatitos, &__gatosEspeciales{
-        @extend .dogContainer__perrosViejos;
-
-        @media screen and (min-width: $desktop) {
-            padding: 2rem;
-            padding-bottom: 0;
-        }
-        
-        @media screen and (min-width:1280px) {
-            height: 450px;
-        }
-
-        img{
-            width: 100%;
-            height: 100%;
-            filter: brightness(70%);
-            object-fit: fill;
-            @include bordes-sombras();
-
-            @media screen and (min-width: 1280px) {
-                filter: brightness(50%);
-                transition: filter 500ms, transform 700ms;
-
-                &:hover{
-                    filter: brightness(100%);
-                    transform: scale(1.02);
-                }
-            }
-        }
-        p{
-            font-size: 2rem;
-            text-shadow: 2px 2px 3px rgba(0, 0, 0, .776);
-            color: #fff;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-
-            @media screen and (min-width: 1280px) {
-                font-size: 3rem;
-            }
-        }
-    }
-    &__gatosEspeciales{
-        padding-bottom: 1rem;
-    }
-}
-
-// MARKET.HTML
-
-    .saleBox{
-        width: 100%;
-        height: 20vh;
-        @include sombras();
-
-        @media screen and (min-width: $desktop) {
-            height: 45vh;
-        }
-        a{
-            display: block;
-            width: 100%;
-            height: 100%;
-
-            .sales{
-            @include sombras();
-            width: 100%;
-            height: 100%;
-            }
-        }
-    }
-    .perros, .gatos{
-        width: 100%;
-        margin-bottom: 2rem;
-        
-        .subtitle{
-            color: $white;
-            margin-top: 1.5rem;
-            padding-left: .8rem;
-            font-size: 2rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, .776);
-
-            @media screen and (min-width: 1280px) {
-                padding-left: 2.4rem;
-                font-size: 2.5rem;
-            }
-        }
-
-        span{
-            height: 0;
-            border-bottom: 2px solid $white;
-            display: block;
-            margin: 0 .8rem;
-            margin-bottom: 1.5rem;
-
-            @media screen and (min-width: 1280px) {
-                margin: 0 2.4rem 2.4rem 2.4rem;
-            }
-        }
-        
-        .cardContainer{
-            width: 100%;
-            height: auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: .8rem;
-            padding: .8rem;
-            padding-top: 0;
-
-            @media screen and (min-width: 1280px) {
-                grid-template-rows: 1fr;
-                grid-template-columns: repeat(4, 1fr);
-                padding: 2.4rem;
-                padding-top: 0;
-            }
-
-            .card{
-                width: 100%;
-                max-width: 250px;
-                height: 330px;
-                @include bordes-sombras();
-                background-color: transparent;
-                border: none;
-                transition: all .2s ease;
-
-                &:hover{
-                    box-shadow: $shadow-2;
-                }
-
-                @media screen and (min-width: 1280px) {
-                    width: 250px;
-                    height: 410px;
-                    max-height: 410px;
-                    justify-self: center;
-                }
-
-                img{
-                    width: 100%;
-                    height: 55%;
-                    background-color: $bg-color-box;
-                    padding-top: .8rem;
-                    object-fit: fill;
-                }
-                .card-body{
-                    height: 45%;
-                    padding: .5rem;
-                    padding-bottom: .8rem;
-                    font-family: $inter;
-                    color: $black;
-                    background-color: rgba(255, 255, 255, .75);
-                    border: none;
-                    border-radius: 0 0 6px 6px;
-                    @include flex();
-                    flex-direction: column;
-                    justify-content: space-between;
-
-                    &__box-title{
-                        @include flex();
-                        margin-bottom: .3rem;
-                        height: 40%;
-
-                        .card-title{
-                            text-align: center;
-                            font-size: 1rem;
-                        }
-                    }
-
-                    .card-text{
-                        height: 25%;
-                        text-align: center;
-                        margin-bottom: .4rem;
-                    }
-
-                    div{
-                        @include flex();
-                        width: 100%;
-                        height: 35%;
-
-                        input{
-                            width: 40%;
-                            height: 100%;
-                            margin-right: .3rem;
-                            border-radius: 0;
-                            border-style: none;
-                            border: 1px solid rgba(0, 0, 0, .35);
-                            color: #777;
-                            text-align: center;
-                        }
-                        a{
-                            width: 60%;
-                            height: 100%;
-                            font-family: $inter;
-                            font-size: .72rem;
-                            border-style: none;
-                            border-radius: 0;
-                            padding: .25rem .9rem;
-                            text-align: center;
-                            background-color: #ffc107;
-                            align-self: center;
-                        
-                            
-                            @media screen and (min-width: 1280px){
-                                font-size: .8rem;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                flex-wrap: nowrap;
-                            }
-                            
-                            .fa-cart-plus{
-                                font-size: .8rem;
-                                
-                                @media screen and (min-width: 1280px) {
-                                    margin-right: .2rem;
-                                    font-size: 1.4rem;
-                                }
-                            }
-                            
-                            &:hover{
-                                opacity: .76;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-// ABOUTUS.HTML
-
-.titleContainer{
-    @include flex();
-    padding: 2rem;
-    padding-bottom: 1rem;
-    box-sizing: border-box;
-    width: 100vw;
-    
-    h2{
-        color: $white;
-        font-size: 40px;
-        text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
-
-        @media screen and (min-width:1280px){
-            font-size: 50px;
-        }
-    }
-    .fa-lightbulb{
-        display: block;
-        color: $btn-color;
-        font-size: 35px;
-        margin-left: 1rem;
-        height: 45px;
-        text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
-        animation-name: rotation;
-        animation-iteration-count: infinite;
-        animation-duration: 2s;
-        animation-timing-function: ease-in-out;
-
-        @media screen and (min-width:1280px){
-            font-size: 50px;
-            height: 60px;
-        }
-    }
-}
-
-@keyframes rotation{
-    from{transform: rotateY(0deg);}
-    to{transform: rotateY(360deg);}
-}
-
-
-.box-container{
-    width: 100vw;
-    padding: 1rem;
-    
-    .float-box{
-        width: 100%;
-        height: 500px;
-        overflow-y: scroll;
-        padding: 2rem;
-        background-color: $bg-color-box;
-        @include bordes-sombras();
-
         @media screen and (min-width: $tablet) {
-            height: unset;
-        }
-        
-        .float-img{
-            width: 100px;
-            height: 150px;
-            margin: .5rem;
-            float: left;
-            
-            @media screen and (min-width:780px){
-                width: 150px;
-                height: 200px;
-            }
-            @media screen and (min-width:1280px) {
-                width: 170px;
-                height: 220px;
-            }
-
-            img{
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-    p{
-        color: $black;
-        font-family: $inter;
-    }
-}
-
-// VIDEO
-
-.video{
-    width: 100vw;
-    height: 400px;
-    box-sizing: border-box;
-    
-    @media screen and (min-width:1280px) {
-        padding: 1rem;
-    }
-    
-    video{
-        width: 100%;
-        height: 100%;
-    }
-}
-
-// HELP
-
-.title-help-container{
-    @include flex();
-    flex-direction: column;
-    padding: 2rem;
-    padding-bottom: 1rem;
-    width: 100vw;
-    height: 30%;
-
-    @media screen and (min-width:1280px) {
-            flex-direction: row;
-            justify-content: center;
-            height: 20vh;
-            padding: 1rem;
-    }
-    h2{
-        color: $white;
-        font-size: 2rem;
-        text-align: center;
-        text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
-        text-align: center;
-        letter-spacing: 2px;
-        margin-bottom: .75rem;
-        font-family: "Bebas Neue", cursive;
-
-        @media screen and (min-width: $tablet) {
-            font-size: 3rem;
+            width: 100%;
+            margin: 0;
+            padding: 1rem 5rem;
         }
         @media screen and (min-width: $desktop){
-            margin: 0;
+            height: 6rem;
+            margin-top: 5rem;
+            margin-bottom: 1rem;
+            padding: 1rem 6rem;
         }
-    }
-    .fa-paper-plane{
-        display: block;
-        color: $btn-color;
-        text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
-        font-size: 2rem;
-
-        @media screen and (min-width: $tablet){
-            font-size: 2.5rem;
-        }
-        @media screen and (min-width: $desktop) {
-            margin-left: 2rem;
-            font-size: 3rem;
-        }
-    }
-}
-.boxFormContainer{
-    padding: 1rem;
-    background-color: $bg-color-box;
-    margin: 1rem;
-    font-family: $inter;
-    @include bordes-sombras();
     
-    @media screen and (min-width: $desktop) {
-        padding: 2rem;
-        @include flex();
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-    }
-    .form-floating{
-        margin-bottom: 2rem;
-
-        @media screen and (min-width: $desktop) {
-            width: 40%;
-            min-width: 40%;
-            display: inline-block;
-            margin: 1rem;
-        }
-    }
-    .form-select{
-        @extend .form-floating;
-
-        @media screen and (min-width: $desktop) {
-            margin-left: 0;
-        }
-    }
-    .form-floating-4{
-        .floatingSelect{
-
-            @media screen and (min-width: $desktop) {
-                transform: scale(.85) translateY(.5rem) translateX(.15rem);
+        &__search-box{
+            height: 100%;
+            width: 100%;
+            border-radius: 40px;
+            background-color: $bg-color-box;
+            padding: .3rem 1.2rem;
+            @include sombras();
+            @include flex();
+            justify-content: space-between;
+            position: relative;
+            
+    
+            &__text{
+                border: none;
+                outline: none;
+                background-color: transparent;
+                font-family: $inter;
+                float: left;
+                height: 100%;
+                font-size: 1.1rem;
+                color: #555;
+                
+                @media screen and (min-width: $desktop) {
+                    font-size: 1.5rem;
+                    width: 80%;
+                    padding-left: 1.5rem;
+                }
+            }
+    
+    
+            &__icon{
+                float: right;
+                @include flex();
+                
+                &:hover{
+                    color: $white;
+                }
+                
+                .fa-search{
+                    font-size: 1.5rem;
+                    padding-right: .5rem;
+                    
+                    @media screen and (min-width: $desktop) {
+                        font-size: 1.7rem;
+                        padding-right: 1rem;
+                    }
+                }
             }
         }
     }
-    .radioContainer{
-        @extend .form-floating;
-        @include flex();
+    
+    // Carousel
+    .saleCarousel{
+        padding: 1rem;
+        padding-bottom: 0;
+        height: 65vh;
+        min-width: 365px;
         
-        div{
-            margin-right: 1rem;
+        @media screen and (min-width: $desktop){
+            height: 75vh;
         }
-    }
-    .titleRadio{
-        margin-bottom: .5rem;
-    }
-    .textArea-container{
-        width: 100%;
-
-        .textArea{
-            resize: none;
-            overflow-y: auto;
     
-            @media screen and (min-width: $desktop) {
-                width: 100%;
+        .carousel-indicators{
+            margin-bottom: .5rem;
+            padding: 0;
+            align-items: flex-end
+        }
+    
+        .carousel-inner{
+            @include bordes-sombras();
+            height: 100%;
+    
+            .carousel-item{
+                height: 100%;
+    
+                img{
+                    height: 100%;
+                }
             }
         }
     }
-    .submitBtn{
-        @include flex();
-        margin-bottom: .8rem;
     
-        &__btn{
-            background-color: $btn-color;
-            outline: none;
+    // Perros
+    .dog-box{
+        @include padding();
+        padding-bottom: 0;
+        width: 100%;
+        height: 300px;
+        @include bordes();
+        position: relative;
+    
+        // &:hover img{
+            
+        // }
+    
+        p{
+            text-transform: uppercase;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: $white;
+            margin: 0;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, .776);
+            font-size: $fontSizeSubTitle;
+            text-align: center;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            @include bordes-sombras();
+        }
+    }
+    // Gatos
+    .cat-box{
+        @extend .dog-box;
+
+        p{
+            text-transform: uppercase;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: $white;
+            margin: 0;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, .776);
+            font-size: $fontSizeSubTitle;
+            text-align: center;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            @include bordes-sombras();
+        }
+    }
+    
+    // Mapa
+    .mapa{
+        width: 100vw;
+        min-width: 365px;
+        height: 300px;
+        padding: 1rem;
+        padding-bottom: 0;
+    
+        @media screen and (min-width: $tablet) {
+            height: 100%;
+            width: 50%;
+            padding: 1rem;
+            padding-right: .5rem;
+    
+        }
+        
+        iframe{
+            width: 100%;
+            height: 100%;
             border: none;
-            padding: .5rem 2rem;
+            @include bordes-sombras();
+        }
+    }
     
-            &:hover{
-                background-color: $btn-color;
+    // Medios de Pago
+    .containerMediosPago{
+        @include flex();
+        padding: 1rem;
+        min-width: 365px;    
+    
+        @media screen and (min-width: 780px) {
+            height: 100%;
+            width: 50%;
+            padding-left: .5rem;
+        }
+        
+        .mediosPago{
+            @include flex();
+            flex-direction: column;
+            @include bordes-sombras();
+            padding: 1.5rem;
+            background-color: $bg-color-box;
+            width: 100%;
+            height: auto;
+    
+            @media screen and (min-width: 780px) {
+                height: 100%;
+            }
+    
+            h3{
+                font-size: 2rem;
+                color: #111;
+                text-transform: uppercase;
+                text-align: center;
+                width: 60%;
+                margin-bottom: 1.5rem;
+    
+                &::after{
+                    content: " de pago";
+                    text-transform: uppercase;
+                    color: #ffc107;
+                }
+            }
+            ul{
+                width: 100%;
+                padding-left: 1.5rem;
+    
+                .listItem{
+                    font-family: 'Inter', sans-serif;
+                    text-align: start;
+                }
+                .firstListItem{
+    
+                    &::after{
+                        content: " Mercado Pago.";
+                        text-transform: uppercase;
+                        font-family: 'Fjalla One', sans-serif;
+                        font-size: .9rem;
+                        color: #333;
+                    }
+                }
+            }
+            img{
+                width: 100%;
+                height: auto;
+            }
+            button{
+                margin-top: 1.5rem;
+                margin-bottom: .5rem;
+                padding: .5rem 5rem;
+                @include bordes-sombras();
+                background-color: #ffc107;
+                color: $black;
+    
+                a{
+                    color: $black;
+    
+                    &:hover{
+                        color: rgba(0, 0, 0, .78);
+                    }
+                }
+            }
+        }
+    }
+    
+    // Icono Whats App
+    .whats_app{
+        position: fixed;
+        right: 1.8rem;
+        bottom: 1.8rem;
+        width: 3.6rem;
+        height: 3.6rem;
+        z-index: 300;
+        
+        @media screen and (min-width: $desktop) {
+                left: 25px;
+                bottom: 25px;
+                width: 60px;
+                height: 60px;
+        }
+    }
+    
+    // DOG.HTML
+    
+    .dogContainer{
+        @include flex();
+        flex-direction: column;
+    
+        @media screen and (min-width: $desktop){
+            &__perrosEspeciales{
+                padding-bottom: 2rem;
+            }
+        }
+    
+        &__perrosViejos, &__perrosAdultos, &__perrosCachorros, &__perrosEspeciales{
+            width: 100vw;
+            height: 230px;
+            position: relative;
+            padding: 1rem;
+            padding-bottom: 0;
+            
+            @media screen and (min-width: 1280px) {
+                height: 450px;
+            }
+    
+            img{
+                width: 100%;
+                height: 100%;
                 filter: brightness(70%);
+                object-fit: fill;
+                @include bordes-sombras();
+    
+                @media screen and (min-width: 1280px) {
+                    filter: brightness(50%);
+                    transition: filter 500ms, transform 700ms;
+    
+                    &:hover{
+                        filter: brightness(100%);
+                        transform: scale(1.02);
+                    }
+                }
+            }
+            p{
+                font-size: 2rem;
+                text-shadow: 2px 2px 3px rgba(0, 0, 0, .776);
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+    
+                @media screen and (min-width: 1280px) {
+                    font-size: 3rem;
+                }
+            }    
+        }
+        &__perrosEspeciales{
+            padding-bottom: 1rem;
+        }
+    }
+    
+    // CAT.HTML
+    
+    .catContainer{
+        @extend .dogContainer;
+    
+        @media screen and (min-width: $desktop){
+            &__gatosEspeciales{
+                padding-bottom: 2rem;
+            }
+        }
+    
+        &__gatosViejos, &__gatosAdultos, &__gatitos, &__gatosEspeciales{
+            @extend .dogContainer__perrosViejos;
+    
+            @media screen and (min-width: $desktop) {
+                padding: 2rem;
+                padding-bottom: 0;
+            }
+            
+            @media screen and (min-width:1280px) {
+                height: 450px;
+            }
+    
+            img{
+                width: 100%;
+                height: 100%;
+                filter: brightness(70%);
+                object-fit: fill;
+                @include bordes-sombras();
+    
+                @media screen and (min-width: 1280px) {
+                    filter: brightness(50%);
+                    transition: filter 500ms, transform 700ms;
+    
+                    &:hover{
+                        filter: brightness(100%);
+                        transform: scale(1.02);
+                    }
+                }
+            }
+            p{
+                font-size: 2rem;
+                text-shadow: 2px 2px 3px rgba(0, 0, 0, .776);
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+    
+                @media screen and (min-width: 1280px) {
+                    font-size: 3rem;
+                }
+            }
+        }
+        &__gatosEspeciales{
+            padding-bottom: 1rem;
+        }
+    }
+    
+    // MARKET.HTML
+    
+        .saleBox{
+            width: 100%;
+            height: 20vh;
+            @include sombras();
+    
+            @media screen and (min-width: $desktop) {
+                height: 45vh;
+            }
+            a{
+                display: block;
+                width: 100%;
+                height: 100%;
+    
+                .sales{
+                @include sombras();
+                width: 100%;
+                height: 100%;
+                }
+            }
+        }
+        .perros, .gatos{
+            width: 100%;
+            margin-bottom: 2rem;
+            
+            //Sub Title
+            .subtitle{
+                color: $white;
+                margin-top: 1.5rem;
+                padding-left: .8rem;
+                font-size: 2rem;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, .776);
+    
+                @media screen and (min-width: 1280px) {
+                    padding-left: 2.4rem;
+                    font-size: 2.5rem;
+                }
+            }
+    
+            span{
+                height: 0;
+                border-bottom: 2px solid $white;
+                display: block;
+                margin: 0 .8rem;
+                margin-bottom: 1.5rem;
+    
+                @media screen and (min-width: 1280px) {
+                    margin: 0 2.4rem 2.4rem 2.4rem;
+                }
+            }
+            
+            .cardContainer{
+                width: 100%;
+                height: auto;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: .8rem;
+                padding: .8rem;
+                padding-top: 0;
+    
+                @media screen and (min-width: 1280px) {
+                    grid-template-rows: 1fr;
+                    grid-template-columns: repeat(4, 1fr);
+                    padding: 2.4rem;
+                    padding-top: 0;
+                }
+    
+                .card{
+                    width: 100%;
+                    max-width: 250px;
+                    height: 330px;
+                    @include bordes-sombras();
+                    background-color: transparent;
+                    border: none;
+                    transition: all .2s ease;
+    
+                    &:hover{
+                        box-shadow: $shadow-2;
+                    }
+    
+                    @media screen and (min-width: 1280px) {
+                        width: 250px;
+                        height: 410px;
+                        max-height: 410px;
+                        justify-self: center;
+                    }
+    
+                    img{
+                        width: 100%;
+                        height: 55%;
+                        background-color: $bg-color-box;
+                        padding-top: .8rem;
+                        object-fit: fill;
+                    }
+                    .card-body{
+                        height: 45%;
+                        padding: .5rem;
+                        padding-bottom: .8rem;
+                        font-family: $inter;
+                        color: $black;
+                        background-color: rgba(255, 255, 255, .75);
+                        border: none;
+                        border-radius: 0 0 6px 6px;
+                        @include flex();
+                        flex-direction: column;
+                        justify-content: space-between;
+    
+                        &__box-title{
+                            @include flex();
+                            margin-bottom: .3rem;
+                            height: 40%;
+    
+                            .card-title{
+                                text-align: center;
+                                font-size: 1rem;
+                            }
+                        }
+    
+                        .card-text{
+                            height: 25%;
+                            text-align: center;
+                            margin-bottom: .4rem;
+                        }
+    
+                        div{
+                            @include flex();
+                            width: 100%;
+                            height: 35%;
+    
+                            input{
+                                width: 40%;
+                                height: 100%;
+                                margin-right: .3rem;
+                                border-radius: 0;
+                                border-style: none;
+                                border: 1px solid rgba(0, 0, 0, .35);
+                                color: #777;
+                                text-align: center;
+                            }
+                            a{
+                                width: 60%;
+                                height: 100%;
+                                font-family: $inter;
+                                font-size: .72rem;
+                                border-style: none;
+                                border-radius: 0;
+                                padding: .25rem .9rem;
+                                text-align: center;
+                                background-color: #ffc107;
+                                align-self: center;
+                            
+                                
+                                @media screen and (min-width: 1280px){
+                                    font-size: .8rem;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    flex-wrap: nowrap;
+                                }
+                                
+                                .fa-cart-plus{
+                                    font-size: .8rem;
+                                    
+                                    @media screen and (min-width: 1280px) {
+                                        margin-right: .2rem;
+                                        font-size: 1.4rem;
+                                    }
+                                }
+                                
+                                &:hover{
+                                    opacity: .76;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+    // ABOUTUS.HTML
+    
+    .titleContainer{
+        @include flex();
+        padding: 2rem;
+        padding-bottom: 1rem;
+        box-sizing: border-box;
+        width: 100vw;
+        
+        h2{
+            color: $white;
+            font-size: 40px;
+            text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+    
+            @media screen and (min-width:1280px){
+                font-size: 50px;
+            }
+        }
+        .fa-lightbulb{
+            display: block;
+            color: $btn-color;
+            font-size: 35px;
+            margin-left: 1rem;
+            height: 45px;
+            text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+            animation-name: rotation;
+            animation-iteration-count: infinite;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+    
+            @media screen and (min-width:1280px){
+                font-size: 50px;
+                height: 60px;
+            }
+        }
+    }
+    
+    @keyframes rotation{
+        from{transform: rotateY(0deg);}
+        to{transform: rotateY(360deg);}
+    }
+    
+    
+    .box-container{
+        width: 100vw;
+        padding: 1rem;
+        
+        .float-box{
+            width: 100%;
+            height: 500px;
+            overflow-y: scroll;
+            padding: 2rem;
+            background-color: $bg-color-box;
+            @include bordes-sombras();
+    
+            @media screen and (min-width: $tablet) {
+                height: unset;
+            }
+            
+            .float-img{
+                width: 100px;
+                height: 150px;
+                margin: .5rem;
+                float: left;
+                
+                @media screen and (min-width:780px){
+                    width: 150px;
+                    height: 200px;
+                }
+                @media screen and (min-width:1280px) {
+                    width: 170px;
+                    height: 220px;
+                }
+    
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        p{
+            color: $black;
+            font-family: $inter;
+        }
+    }
+    
+    // VIDEO
+    
+    .video{
+        width: 100vw;
+        height: 400px;
+        box-sizing: border-box;
+        
+        @media screen and (min-width:1280px) {
+            padding: 1rem;
+        }
+        
+        video{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    // HELP
+    
+    .title-help-container{
+        @include flex();
+        flex-direction: column;
+        padding: 2rem;
+        padding-bottom: 1rem;
+        width: 100vw;
+        height: 30%;
+    
+        @media screen and (min-width:1280px) {
+                flex-direction: row;
+                justify-content: center;
+                height: 20vh;
+                padding: 1rem;
+        }
+        h2{
+            color: $white;
+            font-size: 2rem;
+            text-align: center;
+            text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+            text-align: center;
+            letter-spacing: 2px;
+            margin-bottom: .75rem;
+            font-family: "Bebas Neue", cursive;
+    
+            @media screen and (min-width: $tablet) {
+                font-size: 3rem;
+            }
+            @media screen and (min-width: $desktop){
+                margin: 0;
+            }
+        }
+        .fa-paper-plane{
+            display: block;
+            color: $btn-color;
+            text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
+            font-size: 2rem;
+    
+            @media screen and (min-width: $tablet){
+                font-size: 2.5rem;
+            }
+            @media screen and (min-width: $desktop) {
+                margin-left: 2rem;
+                font-size: 3rem;
+            }
+        }
+    }
+    .boxFormContainer{
+        padding: 1rem;
+        background-color: $bg-color-box;
+        margin: 1rem;
+        font-family: $inter;
+        @include bordes-sombras();
+        
+        @media screen and (min-width: $desktop) {
+            padding: 2rem;
+            @include flex();
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        .form-floating{
+            margin-bottom: 2rem;
+    
+            @media screen and (min-width: $desktop) {
+                width: 40%;
+                min-width: 40%;
+                display: inline-block;
+                margin: 1rem;
+            }
+        }
+        .form-select{
+            @extend .form-floating;
+    
+            @media screen and (min-width: $desktop) {
+                margin-left: 0;
+            }
+        }
+        .form-floating-4{
+            .floatingSelect{
+    
+                @media screen and (min-width: $desktop) {
+                    transform: scale(.85) translateY(.5rem) translateX(.15rem);
+                }
+            }
+        }
+        .radioContainer{
+            @extend .form-floating;
+            @include flex();
+            
+            div{
+                margin-right: 1rem;
+            }
+        }
+        .titleRadio{
+            margin-bottom: .5rem;
+        }
+        .textArea-container{
+            width: 100%;
+    
+            .textArea{
+                resize: none;
+                overflow-y: auto;
+        
+                @media screen and (min-width: $desktop) {
+                    width: 100%;
+                }
+            }
+        }
+        .submitBtn{
+            @include flex();
+            margin-bottom: .8rem;
+        
+            &__btn{
+                background-color: $btn-color;
+                outline: none;
+                border: none;
+                padding: .5rem 2rem;
+        
+                &:hover{
+                    background-color: $btn-color;
+                    filter: brightness(70%);
+                }
             }
         }
     }
 }
-
 
 // FOOTER 
-
 footer{
     background-color: rgba(10, 10, 10, .885);
     @include sombras();
