@@ -185,10 +185,37 @@ main{
     margin-top: 55px;
     
     @media screen and (min-width: 780px){
-            .flexContainer{
-                @include flex();
-                height: 400px;
+        .grid-container{
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: 65% auto;
+            gap: 1rem;
+            padding: 1rem;
+            padding-bottom: 0;
+
+            .saleCarousel{
+                grid-row: 1 / 3;
+                padding: 0;
+                height: 100%;
+
             }
+            .dog-box{
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+                padding: 0;
+                height: 100%;
+            }
+            .cat-box{
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+                padding: 0;
+                height: 100%;
+            }
+        }
+        .flexContainer{
+            @include flex();
+            height: 400px;
+        }
     }
     // INDEX.HTML
     
@@ -270,10 +297,6 @@ main{
         padding-bottom: 0;
         height: 65vh;
         min-width: 365px;
-        
-        @media screen and (min-width: $desktop){
-            height: 75vh;
-        }
     
         .carousel-indicators{
             margin-bottom: .5rem;
@@ -303,11 +326,7 @@ main{
         height: 300px;
         @include bordes();
         position: relative;
-    
-        // &:hover img{
-            
-        // }
-    
+        
         p{
             text-transform: uppercase;
             position: absolute;
@@ -324,29 +343,19 @@ main{
             width: 100%;
             height: 100%;
             @include bordes-sombras();
+            transition: all 500ms;
+            
+            @media screen and (min-width: $desktop) {  
+                &:hover{
+                    filter: grayscale(100%);
+                    transform: scale(1.02);
+                }
+            }
         }
     }
     // Gatos
     .cat-box{
         @extend .dog-box;
-
-        p{
-            text-transform: uppercase;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            color: $white;
-            margin: 0;
-            text-shadow: 2px 2px 3px rgba(0, 0, 0, .776);
-            font-size: $fontSizeSubTitle;
-            text-align: center;
-        }
-        img{
-            width: 100%;
-            height: 100%;
-            @include bordes-sombras();
-        }
     }
     
     // Mapa
@@ -356,15 +365,12 @@ main{
         height: 300px;
         padding: 1rem;
         padding-bottom: 0;
-    
         @media screen and (min-width: $tablet) {
             height: 100%;
             width: 50%;
             padding: 1rem;
             padding-right: .5rem;
-    
         }
-        
         iframe{
             width: 100%;
             height: 100%;
@@ -405,7 +411,6 @@ main{
                 text-align: center;
                 width: 60%;
                 margin-bottom: 1.5rem;
-    
                 &::after{
                     content: " de pago";
                     text-transform: uppercase;
@@ -421,7 +426,6 @@ main{
                     text-align: start;
                 }
                 .firstListItem{
-    
                     &::after{
                         content: " Mercado Pago.";
                         text-transform: uppercase;
@@ -445,7 +449,6 @@ main{
     
                 a{
                     color: $black;
-    
                     &:hover{
                         color: rgba(0, 0, 0, .78);
                     }
@@ -504,17 +507,16 @@ main{
                 @media screen and (min-width: 1280px) {
                     filter: brightness(50%);
                     transition: filter 500ms, transform 700ms;
-    
                     &:hover{
                         filter: brightness(100%);
-                        transform: scale(1.02);
+                        transform: scale(1.01);
                     }
                 }
             }
             p{
                 font-size: 2rem;
                 text-shadow: 2px 2px 3px rgba(0, 0, 0, .776);
-                color: #fff;
+                color: $white;
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -567,7 +569,7 @@ main{
     
                     &:hover{
                         filter: brightness(100%);
-                        transform: scale(1.02);
+                        transform: scale(1.01);
                     }
                 }
             }
