@@ -23,7 +23,13 @@ btnMenu.addEventListener("click", function(){
     body.classList.toggle("noScroll");
     menuSide.classList.toggle("mostrar");
     userIcon.classList.toggle("oculto");
-    main.classList.toggle("moveRight");
+});
+
+let btnUser = document.getElementById("btnUser");
+let login = document.getElementById("login");
+
+btnUser.addEventListener("click", function(){
+    login.classList.toggle("mostrarLogin");
 });
 
 

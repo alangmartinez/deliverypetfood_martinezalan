@@ -144,6 +144,21 @@ body {
     margin: 0;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.82);
+    position: relative;
+  }
+  .header__nav__menuSide .userIcon {
+    position: absolute;
+    right: 1.5rem;
+    z-index: 100;
+    color: white;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header__nav__menuSide .userIcon .fa-user {
+    cursor: pointer;
+    font-size: 1.7rem;
   }
 }
 .header__nav__menuSide .list-item {
@@ -186,10 +201,71 @@ body {
   opacity: 1;
 }
 
+.mostrarLogin {
+  transform: translateX(0%) !important;
+  opacity: 1 !important;
+}
+
 main {
   margin-top: 55px;
+  position: relative;
 }
 @media screen and (min-width: 780px) {
+  main .login-box {
+    padding: 2.5rem;
+    background-color: rgba(10, 10, 10, 0.885);
+    position: fixed;
+    top: 4.5rem;
+    right: 1.5rem;
+    height: 550px;
+    width: 400px;
+    z-index: 700;
+    box-shadow: 1px 1px 18px -2px black;
+    border-radius: 6px;
+    transform: translateX(150%);
+    opacity: 0;
+    transition: all 1000ms;
+  }
+  main .login-box__login__title {
+    color: white;
+    font-size: 1.6rem;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    margin-bottom: 0.12rem;
+  }
+  main .login-box__login .bar {
+    height: 0;
+    border-bottom: 1px solid white;
+    width: 100%;
+  }
+  main .login-box__login__subtitle {
+    color: white;
+    font-size: 1rem;
+    font-family: "Inter", sans-serif;
+    margin: 1rem 0 0.5rem 1rem;
+  }
+  main .login-box__login input {
+    margin-left: 1rem;
+    font-family: "Inter", sans-serif;
+    outline: none;
+    color: #999;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    height: 2rem;
+  }
+  main .login-box__login input::-moz-placeholder {
+    margin-left: 1rem;
+    font-size: 0.8rem;
+  }
+  main .login-box__login input:-ms-input-placeholder {
+    margin-left: 1rem;
+    font-size: 0.8rem;
+  }
+  main .login-box__login input::placeholder {
+    margin-left: 1rem;
+    font-size: 0.8rem;
+  }
   main .grid-container {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -473,11 +549,6 @@ main .dogContainer, main .catContainer {
   align-items: center;
   flex-direction: column;
 }
-@media screen and (min-width: 1280px) {
-  main .dogContainer__perrosEspeciales {
-    padding-bottom: 2rem;
-  }
-}
 main .dogContainer__perrosViejos, main .catContainer__gatosViejos, main .catContainer__gatosAdultos, main .catContainer__gatitos, main .catContainer__gatosEspeciales, main .dogContainer__perrosAdultos, main .dogContainer__perrosCachorros, main .dogContainer__perrosEspeciales {
   width: 100vw;
   height: 230px;
@@ -488,6 +559,8 @@ main .dogContainer__perrosViejos, main .catContainer__gatosViejos, main .catCont
 @media screen and (min-width: 1280px) {
   main .dogContainer__perrosViejos, main .catContainer__gatosViejos, main .catContainer__gatosAdultos, main .catContainer__gatitos, main .catContainer__gatosEspeciales, main .dogContainer__perrosAdultos, main .dogContainer__perrosCachorros, main .dogContainer__perrosEspeciales {
     height: 450px;
+    padding: 1rem 2rem;
+    padding-bottom: 0;
   }
 }
 main .dogContainer__perrosViejos img, main .catContainer__gatosViejos img, main .catContainer__gatosAdultos img, main .catContainer__gatitos img, main .catContainer__gatosEspeciales img, main .dogContainer__perrosAdultos img, main .dogContainer__perrosCachorros img, main .dogContainer__perrosEspeciales img {
@@ -528,18 +601,19 @@ main .dogContainer__perrosEspeciales {
   padding-bottom: 1rem;
 }
 @media screen and (min-width: 1280px) {
+  main .dogContainer__perrosEspeciales {
+    padding-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
   main .catContainer__gatosEspeciales {
     padding-bottom: 2rem;
   }
 }
 @media screen and (min-width: 1280px) {
   main .catContainer__gatosViejos, main .catContainer__gatosAdultos, main .catContainer__gatitos, main .catContainer__gatosEspeciales {
-    padding: 2rem;
+    padding: 1rem 2rem;
     padding-bottom: 0;
-  }
-}
-@media screen and (min-width: 1280px) {
-  main .catContainer__gatosViejos, main .catContainer__gatosAdultos, main .catContainer__gatitos, main .catContainer__gatosEspeciales {
     height: 450px;
   }
 }
@@ -579,6 +653,11 @@ main .catContainer__gatosViejos p, main .catContainer__gatosAdultos p, main .cat
 }
 main .catContainer__gatosEspeciales {
   padding-bottom: 1rem;
+}
+@media screen and (min-width: 1280px) {
+  main .catContainer__gatosEspeciales {
+    padding-bottom: 2rem;
+  }
 }
 main .saleBox {
   width: 100%;

@@ -133,6 +133,21 @@ body{
                         margin: 0;
                         align-items: center;
                         background-color: rgba(0, 0, 0, .82);
+                        position: relative;
+
+                        .userIcon{
+                            position: absolute;
+                            right: 1.5rem;
+                            z-index: 100;
+                            color: $white;
+                            height: 100%;
+                            @include flex();
+
+                            .fa-user{
+                                cursor: pointer;
+                                font-size: 1.7rem;
+                            }
+                        }
                     }
 
                     .list-item{
@@ -173,18 +188,72 @@ body{
             }
         }
 .oculto{
-        visibility: hidden;
+    visibility: hidden;
 }
 .mostrar{
-transform: translateX(0);
-opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
+}
+.mostrarLogin{
+    transform: translateX(0%) !important;
+    opacity: 1 !important;
 }
 
 // MAIN
 main{
     margin-top: 55px;
+    position: relative;
     
     @media screen and (min-width: 780px){
+        .login-box{
+            padding: 2.5rem;
+            background-color: $black-2;
+            position: fixed;
+            top: 4.5rem;
+            right: 1.5rem;
+            height: 550px;
+            width: 400px;
+            z-index: 700;
+            @include bordes-sombras();
+            transform: translateX(150%);
+            opacity: 0;
+            transition: all 1000ms;
+
+            &__login{
+                &__title{
+                    color: $white;
+                    font-size: $subtitle;
+                    width: 100%;
+                    height: auto;
+                    margin: 0;
+                    margin-bottom: .12rem;
+                }
+                .bar{
+                    height: 0;
+                    border-bottom: 1px solid $white;
+                    width: 100%;
+                }
+                &__subtitle{
+                    color: $white;
+                    font-size: 1rem;
+                    font-family: $inter;
+                    margin: 1rem 0 .5rem 1rem;
+                }
+                input{
+                    margin-left: 1rem;
+                    font-family: $inter;
+                    outline: none;
+                    color: #999;
+                    padding-left: .5rem;
+                    font-size: 1rem;
+                    height: 2rem;
+                    &::placeholder{
+                        margin-left: 1rem;
+                        font-size: .8rem;
+                    }
+                }
+            }
+        }
         .grid-container{
             display: grid;
             grid-template-rows: repeat(2, 1fr);
@@ -336,7 +405,7 @@ main{
             color: $white;
             margin: 0;
             text-shadow: 2px 2px 3px rgba(0, 0, 0, .776);
-            font-size: $fontSizeSubTitle;
+            font-size: $subtitle;
             text-align: center;
         }
         img{
@@ -480,21 +549,16 @@ main{
         @include flex();
         flex-direction: column;
     
-        @media screen and (min-width: $desktop){
-            &__perrosEspeciales{
-                padding-bottom: 2rem;
-            }
-        }
-    
         &__perrosViejos, &__perrosAdultos, &__perrosCachorros, &__perrosEspeciales{
             width: 100vw;
             height: 230px;
             position: relative;
             padding: 1rem;
             padding-bottom: 0;
-            
-            @media screen and (min-width: 1280px) {
+            @media screen and (min-width: $desktop) {
                 height: 450px;
+                padding: 1rem 2rem;
+                padding-bottom: 0;
             }
     
             img{
@@ -530,6 +594,9 @@ main{
         }
         &__perrosEspeciales{
             padding-bottom: 1rem;
+            @media screen and (min-width: $desktop) {
+                padding-bottom: 2rem;
+            }
         }
     }
     
@@ -546,27 +613,21 @@ main{
     
         &__gatosViejos, &__gatosAdultos, &__gatitos, &__gatosEspeciales{
             @extend .dogContainer__perrosViejos;
-    
             @media screen and (min-width: $desktop) {
-                padding: 2rem;
+                padding: 1rem 2rem;
                 padding-bottom: 0;
-            }
-            
-            @media screen and (min-width:1280px) {
                 height: 450px;
             }
-    
+
             img{
                 width: 100%;
                 height: 100%;
                 filter: brightness(70%);
                 object-fit: fill;
                 @include bordes-sombras();
-    
                 @media screen and (min-width: 1280px) {
                     filter: brightness(50%);
                     transition: filter 500ms, transform 700ms;
-    
                     &:hover{
                         filter: brightness(100%);
                         transform: scale(1.01);
@@ -590,6 +651,9 @@ main{
         }
         &__gatosEspeciales{
             padding-bottom: 1rem;
+            @media screen and (min-width: $desktop){
+                padding-bottom: 2rem;
+            }
         }
     }
     

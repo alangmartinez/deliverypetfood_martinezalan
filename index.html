@@ -56,6 +56,9 @@
             </div>
             <!-- Menu Aside -->
             <ul class="header__nav__menuSide" id="menuSide">
+                <div class="userIcon">
+                    <i class="fas fa-user" id="btnUser"></i>
+                </div>
                 <li class="list-item"><a href="index.html">Home</a></li>
                 <li class="subMenu_container list-item">
                     <a href="pages/dog.html">Dog</a>
@@ -86,8 +89,18 @@
     </header>
 
 
-    <main id="main">
+    <main id="main" class="main">
 
+        <div class="login-box" id="login">
+            <div class="login-box__login">
+                <p class="login-box__login__title">Login</p>
+                <div class="bar"></div>
+                <p class="login-box__login__subtitle">User Name</p>
+                <input type="text" placeholder="User Name" required>
+                <p class="login-box__login__subtitle">Password</p>
+                <input type="password" placeholder="Password" required>
+            </div>
+        </div>
         <!-- Search -->
             <div class="container">
                 <div class="container__search-box">
