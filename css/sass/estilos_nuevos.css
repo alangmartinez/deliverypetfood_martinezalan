@@ -188,6 +188,9 @@ body {
 .header__nav__menuSide .list-item:hover a {
   color: #555;
 }
+.header__nav__menuSide .userIcon {
+  display: none;
+}
 .header__nav__iconContainer {
   display: none;
 }
@@ -215,6 +218,7 @@ main .login-box {
 }
 @media screen and (min-width: 780px) {
   main .login-box {
+    display: block;
     padding: 2.5rem;
     background-color: rgba(10, 10, 10, 0.885);
     position: fixed;

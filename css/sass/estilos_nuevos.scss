@@ -122,7 +122,6 @@ body{
                     opacity: 0;
                     transform: translateX(100%);
                     transition: all .5s;
-                    
                     @media screen and (min-width: $desktop) {
                         flex-direction: row;
                         opacity: 1;
@@ -149,14 +148,13 @@ body{
                             }
                         }
                     }
-
                     .list-item{
                         text-align: center;
                         padding: 1rem 0;
                         font-size: 2rem;
                         margin-top: 1rem;
                         font-family: $font; 
-
+                        
                         @media screen and (min-width: $desktop) {
                             margin: 0 1.5rem;
                             padding: 0;
@@ -171,7 +169,7 @@ body{
                         
                         &:hover{
                             border-bottom: 2px solid #fff;
-
+                            
                             @media screen and (min-width: $desktop) {
                                 border: none;
                             }
@@ -180,6 +178,9 @@ body{
                                 color: #555;
                             }
                         }
+                    }
+                    .userIcon{
+                        display: none;
                     }
                 }
                 &__iconContainer{
@@ -208,6 +209,7 @@ main{
     }
     @media screen and (min-width: $tablet){
         .login-box{
+            display: block;
             padding: 2.5rem;
             background-color: $black-2;
             position: fixed;
