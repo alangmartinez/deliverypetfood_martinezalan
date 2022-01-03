@@ -133,6 +133,9 @@ body {
   transform: translateX(100%);
   transition: all 0.5s;
 }
+.header__nav__menuSide__userIcon {
+  display: none;
+}
 @media screen and (min-width: 1280px) {
   .header__nav__menuSide {
     flex-direction: row;
@@ -146,7 +149,7 @@ body {
     background-color: rgba(0, 0, 0, 0.82);
     position: relative;
   }
-  .header__nav__menuSide .userIcon {
+  .header__nav__menuSide__userIcon {
     position: absolute;
     right: 1.5rem;
     z-index: 100;
@@ -156,7 +159,7 @@ body {
     justify-content: center;
     align-items: center;
   }
-  .header__nav__menuSide .userIcon .fa-user {
+  .header__nav__menuSide__userIcon .fa-user {
     cursor: pointer;
     font-size: 1.7rem;
   }
@@ -187,12 +190,6 @@ body {
 }
 .header__nav__menuSide .list-item:hover a {
   color: #555;
-}
-.header__nav__menuSide .userIcon {
-  display: none;
-}
-.header__nav__iconContainer {
-  display: none;
 }
 
 .oculto {
@@ -334,7 +331,7 @@ main .container__search-box {
   height: 100%;
   width: 100%;
   border-radius: 40px;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.95);
   padding: 0.3rem 1.2rem;
   box-shadow: 1px 1px 18px -2px black;
   display: flex;
@@ -426,7 +423,7 @@ main .dog-box img, main .cat-box img {
   height: 100%;
   box-shadow: 1px 1px 18px -2px black;
   border-radius: 6px;
-  transition: all 500ms;
+  transition: all 400ms;
 }
 @media screen and (min-width: 1280px) {
   main .dog-box img:hover, main .cat-box img:hover {
@@ -478,7 +475,7 @@ main .containerMediosPago .mediosPago {
   box-shadow: 1px 1px 18px -2px black;
   border-radius: 6px;
   padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.85);
   width: 100%;
   height: auto;
 }
@@ -525,8 +522,13 @@ main .containerMediosPago .mediosPago button {
   padding: 0.5rem 5rem;
   box-shadow: 1px 1px 18px -2px black;
   border-radius: 6px;
+  box-shadow: 0, 0, 2px, 0 rgba(0, 0, 0, 0.85);
   background-color: #ffc107;
   color: black;
+  transition: all 300ms ease;
+}
+main .containerMediosPago .mediosPago button:hover {
+  box-shadow: 0px 3px 8px 0px rgba(17, 19, 27, 0.3);
 }
 main .containerMediosPago .mediosPago button a {
   color: black;
@@ -556,6 +558,15 @@ main .dogContainer, main .catContainer {
   align-items: center;
   flex-direction: column;
 }
+@media screen and (min-width: 780px) {
+  main .dogContainer, main .catContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
 main .dogContainer__perrosViejos, main .catContainer__gatosViejos, main .catContainer__gatosAdultos, main .catContainer__gatitos, main .catContainer__gatosEspeciales, main .dogContainer__perrosAdultos, main .dogContainer__perrosCachorros, main .dogContainer__perrosEspeciales {
   width: 100vw;
   height: 230px;
@@ -563,11 +574,13 @@ main .dogContainer__perrosViejos, main .catContainer__gatosViejos, main .catCont
   padding: 1rem;
   padding-bottom: 0;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 780px) {
   main .dogContainer__perrosViejos, main .catContainer__gatosViejos, main .catContainer__gatosAdultos, main .catContainer__gatitos, main .catContainer__gatosEspeciales, main .dogContainer__perrosAdultos, main .dogContainer__perrosCachorros, main .dogContainer__perrosEspeciales {
-    height: 450px;
-    padding: 1rem 2rem;
-    padding-bottom: 0;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    padding: 0;
   }
 }
 main .dogContainer__perrosViejos img, main .catContainer__gatosViejos img, main .catContainer__gatosAdultos img, main .catContainer__gatitos img, main .catContainer__gatosEspeciales img, main .dogContainer__perrosAdultos img, main .dogContainer__perrosCachorros img, main .dogContainer__perrosEspeciales img {
@@ -579,7 +592,7 @@ main .dogContainer__perrosViejos img, main .catContainer__gatosViejos img, main 
   box-shadow: 1px 1px 18px -2px black;
   border-radius: 6px;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 780px) {
   main .dogContainer__perrosViejos img, main .catContainer__gatosViejos img, main .catContainer__gatosAdultos img, main .catContainer__gatitos img, main .catContainer__gatosEspeciales img, main .dogContainer__perrosAdultos img, main .dogContainer__perrosCachorros img, main .dogContainer__perrosEspeciales img {
     filter: brightness(50%);
     transition: filter 500ms, transform 700ms;
@@ -604,24 +617,48 @@ main .dogContainer__perrosViejos p, main .catContainer__gatosViejos p, main .cat
     font-size: 3rem;
   }
 }
+@media screen and (min-width: 780px) {
+  main .dogContainer__perrosAdultos {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+}
+@media screen and (min-width: 780px) {
+  main .dogContainer__perrosCachorros {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
 main .dogContainer__perrosEspeciales {
   padding-bottom: 1rem;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 780px) {
   main .dogContainer__perrosEspeciales {
-    padding-bottom: 2rem;
+    padding: 0;
+    grid-column: 2/3;
+    grid-row: 2/3;
   }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 780px) {
+  main .catContainer__gatosViejos {
+    padding: 0;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  main .catContainer__gatosAdultos {
+    padding: 0;
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  main .catContainer__gatitos {
+    padding: 0;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
   main .catContainer__gatosEspeciales {
-    padding-bottom: 2rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  main .catContainer__gatosViejos, main .catContainer__gatosAdultos, main .catContainer__gatitos, main .catContainer__gatosEspeciales {
-    padding: 1rem 2rem;
-    padding-bottom: 0;
-    height: 450px;
+    padding: 0;
+    grid-column: 2/3;
+    grid-row: 2/3;
   }
 }
 main .catContainer__gatosViejos img, main .catContainer__gatosAdultos img, main .catContainer__gatitos img, main .catContainer__gatosEspeciales img {
@@ -661,9 +698,9 @@ main .catContainer__gatosViejos p, main .catContainer__gatosAdultos p, main .cat
 main .catContainer__gatosEspeciales {
   padding-bottom: 1rem;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 780px) {
   main .catContainer__gatosEspeciales {
-    padding-bottom: 2rem;
+    padding: 0;
   }
 }
 main .saleBox {
@@ -741,7 +778,7 @@ main .perros .cardContainer .card, main .gatos .cardContainer .card {
   border-radius: 6px;
   background-color: transparent;
   border: none;
-  transition: all 0.2s ease;
+  transition: all 450ms ease;
 }
 main .perros .cardContainer .card:hover, main .gatos .cardContainer .card:hover {
   box-shadow: 0px 3px 8px 0px rgba(17, 19, 27, 0.3);
@@ -757,7 +794,7 @@ main .perros .cardContainer .card:hover, main .gatos .cardContainer .card:hover 
 main .perros .cardContainer .card img, main .gatos .cardContainer .card img {
   width: 100%;
   height: 55%;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.95);
   padding-top: 0.8rem;
   -o-object-fit: fill;
      object-fit: fill;
@@ -843,120 +880,75 @@ main .perros .cardContainer .card .card-body div a .fa-cart-plus, main .gatos .c
 main .perros .cardContainer .card .card-body div a:hover, main .gatos .cardContainer .card .card-body div a:hover {
   opacity: 0.76;
 }
-main .titleContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  padding-bottom: 1rem;
-  box-sizing: border-box;
-  width: 100vw;
-}
-main .titleContainer h2 {
-  color: white;
-  font-size: 40px;
-  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.776);
-}
-@media screen and (min-width: 1280px) {
-  main .titleContainer h2 {
-    font-size: 50px;
+@media screen and (min-width: 780px) {
+  main .about-us {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
   }
 }
-main .titleContainer .fa-lightbulb {
-  display: block;
-  color: #ffc107;
-  font-size: 35px;
-  margin-left: 1rem;
-  height: 45px;
-  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.776);
-  -webkit-animation-name: rotation;
-          animation-name: rotation;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
+main .about-us__box-container {
+  width: 100%;
 }
-@media screen and (min-width: 1280px) {
-  main .titleContainer .fa-lightbulb {
-    font-size: 50px;
-    height: 60px;
+@media screen and (min-width: 780px) {
+  main .about-us__box-container {
+    grid-column: 1/2;
+    grid-row: 1/3;
   }
 }
-@-webkit-keyframes rotation {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-}
-@keyframes rotation {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-}
-main .box-container {
-  width: 100vw;
-  padding: 1rem;
-}
-main .box-container .float-box {
+main .about-us__box-container .float-box {
   width: 100%;
   height: 500px;
-  overflow-y: scroll;
+  overflow: hidden;
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 1px 1px 18px -2px black;
   border-radius: 6px;
 }
 @media screen and (min-width: 780px) {
-  main .box-container .float-box {
+  main .about-us__box-container .float-box {
     height: unset;
   }
 }
-main .box-container .float-box .float-img {
+main .about-us__box-container .float-box .float-img {
   width: 100px;
   height: 150px;
   margin: 0.5rem;
   float: left;
 }
 @media screen and (min-width: 780px) {
-  main .box-container .float-box .float-img {
+  main .about-us__box-container .float-box .float-img {
     width: 150px;
     height: 200px;
   }
 }
 @media screen and (min-width: 1280px) {
-  main .box-container .float-box .float-img {
+  main .about-us__box-container .float-box .float-img {
     width: 170px;
     height: 220px;
   }
 }
-main .box-container .float-box .float-img img {
+main .about-us__box-container .float-box .float-img img {
   width: 100%;
   height: 100%;
 }
-main .box-container p {
+main .about-us__box-container p {
   color: black;
   font-family: "Inter", sans-serif;
 }
 main .video {
-  width: 100vw;
-  height: 400px;
+  width: 100%;
   box-sizing: border-box;
-}
-@media screen and (min-width: 1280px) {
-  main .video {
-    padding: 1rem;
-  }
+  border-radius: 6px;
 }
 main .video video {
   width: 100%;
   height: 100%;
+  background-color: white;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 main .title-help-container {
   display: flex;
@@ -1015,7 +1007,7 @@ main .title-help-container .fa-paper-plane {
 }
 main .boxFormContainer {
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.95);
   margin: 1rem;
   font-family: "Inter", sans-serif;
   box-shadow: 1px 1px 18px -2px black;
@@ -1024,6 +1016,7 @@ main .boxFormContainer {
 @media screen and (min-width: 1280px) {
   main .boxFormContainer {
     padding: 2rem;
+    width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;

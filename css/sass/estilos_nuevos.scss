@@ -122,6 +122,10 @@ body{
                     opacity: 0;
                     transform: translateX(100%);
                     transition: all .5s;
+
+                    &__userIcon{
+                        display: none;
+                    }
                     @media screen and (min-width: $desktop) {
                         flex-direction: row;
                         opacity: 1;
@@ -134,7 +138,7 @@ body{
                         background-color: rgba(0, 0, 0, .82);
                         position: relative;
 
-                        .userIcon{
+                        &__userIcon{
                             position: absolute;
                             right: 1.5rem;
                             z-index: 100;
@@ -179,12 +183,6 @@ body{
                             }
                         }
                     }
-                    .userIcon{
-                        display: none;
-                    }
-                }
-                &__iconContainer{
-                    display: none;
                 }
             }
         }
@@ -416,7 +414,7 @@ main{
             width: 100%;
             height: 100%;
             @include bordes-sombras();
-            transition: all 500ms;
+            transition: all 400ms;
             
             @media screen and (min-width: $desktop) {  
                 &:hover{
@@ -430,7 +428,6 @@ main{
     .cat-box{
         @extend .dog-box;
     }
-    
     // Mapa
     .mapa{
         width: 100vw;
@@ -451,13 +448,11 @@ main{
             @include bordes-sombras();
         }
     }
-    
     // Medios de Pago
     .containerMediosPago{
         @include flex();
         padding: 1rem;
         min-width: 365px;    
-    
         @media screen and (min-width: 780px) {
             height: 100%;
             width: 50%;
@@ -469,7 +464,7 @@ main{
             flex-direction: column;
             @include bordes-sombras();
             padding: 1.5rem;
-            background-color: $bg-color-box;
+            background-color: rgba(255, 255, 255, .85);
             width: 100%;
             height: auto;
     
@@ -517,8 +512,13 @@ main{
                 margin-bottom: .5rem;
                 padding: .5rem 5rem;
                 @include bordes-sombras();
+                box-shadow: 0, 0, 2px, 0 rgba($color: #000000, $alpha: .85);
                 background-color: #ffc107;
                 color: $black;
+                transition: all 300ms ease;
+                &:hover{
+                    box-shadow: $shadow-2;
+                }
     
                 a{
                     color: $black;
@@ -552,6 +552,13 @@ main{
     .dogContainer{
         @include flex();
         flex-direction: column;
+        @media screen and (min-width: $tablet) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+        }
     
         &__perrosViejos, &__perrosAdultos, &__perrosCachorros, &__perrosEspeciales{
             width: 100vw;
@@ -559,20 +566,20 @@ main{
             position: relative;
             padding: 1rem;
             padding-bottom: 0;
-            @media screen and (min-width: $desktop) {
-                height: 450px;
-                padding: 1rem 2rem;
-                padding-bottom: 0;
+            @media screen and (min-width: $tablet) {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                    width: 100%;
+                    height: 100%;
+                    padding: 0;
             }
-    
             img{
                 width: 100%;
                 height: 100%;
                 filter: brightness(70%);
                 object-fit: fill;
                 @include bordes-sombras();
-    
-                @media screen and (min-width: 1280px) {
+                @media screen and (min-width: $tablet) {
                     filter: brightness(50%);
                     transition: filter 500ms, transform 700ms;
                     &:hover{
@@ -590,16 +597,29 @@ main{
                 left: 50%;
                 transform: translate(-50%, -50%);
                 text-align: center;
-    
                 @media screen and (min-width: 1280px) {
                     font-size: 3rem;
                 }
             }    
         }
+        &__perrosAdultos{
+            @media screen and (min-width: $tablet) {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+            }
+        }
+        &__perrosCachorros{
+            @media screen and (min-width: $tablet){
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+        }
         &__perrosEspeciales{
             padding-bottom: 1rem;
-            @media screen and (min-width: $desktop) {
-                padding-bottom: 2rem;
+            @media screen and (min-width: $tablet) {
+                padding: 0;
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
             }
         }
     }
@@ -608,20 +628,31 @@ main{
     
     .catContainer{
         @extend .dogContainer;
-    
-        @media screen and (min-width: $desktop){
+        @media screen and (min-width: $tablet){
+            &__gatosViejos{
+                padding: 0;
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+            &__gatosAdultos{
+                padding: 0;
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+            }
+            &__gatitos{
+                padding: 0;
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
             &__gatosEspeciales{
-                padding-bottom: 2rem;
+                padding: 0;
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
             }
         }
     
         &__gatosViejos, &__gatosAdultos, &__gatitos, &__gatosEspeciales{
             @extend .dogContainer__perrosViejos;
-            @media screen and (min-width: $desktop) {
-                padding: 1rem 2rem;
-                padding-bottom: 0;
-                height: 450px;
-            }
 
             img{
                 width: 100%;
@@ -629,7 +660,7 @@ main{
                 filter: brightness(70%);
                 object-fit: fill;
                 @include bordes-sombras();
-                @media screen and (min-width: 1280px) {
+                @media screen and (min-width: $desktop) {
                     filter: brightness(50%);
                     transition: filter 500ms, transform 700ms;
                     &:hover{
@@ -655,8 +686,8 @@ main{
         }
         &__gatosEspeciales{
             padding-bottom: 1rem;
-            @media screen and (min-width: $desktop){
-                padding-bottom: 2rem;
+            @media screen and (min-width: $tablet) {
+                padding: 0;
             }
         }
     }
@@ -695,7 +726,7 @@ main{
                 font-size: 2rem;
                 text-shadow: 1px 1px 3px rgba(0, 0, 0, .776);
     
-                @media screen and (min-width: 1280px) {
+                @media screen and (min-width: $desktop) {
                     padding-left: 2.4rem;
                     font-size: 2.5rem;
                 }
@@ -708,7 +739,7 @@ main{
                 margin: 0 .8rem;
                 margin-bottom: 1.5rem;
     
-                @media screen and (min-width: 1280px) {
+                @media screen and (min-width: $desktop) {
                     margin: 0 2.4rem 2.4rem 2.4rem;
                 }
             }
@@ -723,7 +754,7 @@ main{
                 padding: .8rem;
                 padding-top: 0;
     
-                @media screen and (min-width: 1280px) {
+                @media screen and (min-width: $desktop) {
                     grid-template-rows: 1fr;
                     grid-template-columns: repeat(4, 1fr);
                     padding: 2.4rem;
@@ -737,13 +768,13 @@ main{
                     @include bordes-sombras();
                     background-color: transparent;
                     border: none;
-                    transition: all .2s ease;
+                    transition: all 450ms ease;
     
                     &:hover{
                         box-shadow: $shadow-2;
                     }
     
-                    @media screen and (min-width: 1280px) {
+                    @media screen and (min-width: $desktop) {
                         width: 250px;
                         height: 410px;
                         max-height: 410px;
@@ -844,104 +875,68 @@ main{
     
     // ABOUTUS.HTML
     
-    .titleContainer{
-        @include flex();
-        padding: 2rem;
-        padding-bottom: 1rem;
-        box-sizing: border-box;
-        width: 100vw;
-        
-        h2{
-            color: $white;
-            font-size: 40px;
-            text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
-    
-            @media screen and (min-width:1280px){
-                font-size: 50px;
-            }
-        }
-        .fa-lightbulb{
-            display: block;
-            color: $btn-color;
-            font-size: 35px;
-            margin-left: 1rem;
-            height: 45px;
-            text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
-            animation-name: rotation;
-            animation-iteration-count: infinite;
-            animation-duration: 2s;
-            animation-timing-function: ease-in-out;
-    
-            @media screen and (min-width:1280px){
-                font-size: 50px;
-                height: 60px;
-            }
-        }
-    }
-    
-    @keyframes rotation{
-        from{transform: rotateY(0deg);}
-        to{transform: rotateY(360deg);}
-    }
-    
-    
-    .box-container{
-        width: 100vw;
-        padding: 1rem;
-        
-        .float-box{
-            width: 100%;
-            height: 500px;
-            overflow-y: scroll;
+    .about-us{
+        @media screen and (min-width: $tablet) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 1.5rem;
             padding: 2rem;
-            background-color: $bg-color-box;
-            @include bordes-sombras();
-    
-            @media screen and (min-width: $tablet) {
-                height: unset;
-            }
-            
-            .float-img{
-                width: 100px;
-                height: 150px;
-                margin: .5rem;
-                float: left;
-                
-                @media screen and (min-width:780px){
-                    width: 150px;
-                    height: 200px;
-                }
-                @media screen and (min-width:1280px) {
-                    width: 170px;
-                    height: 220px;
-                }
-    
-                img{
-                    width: 100%;
-                    height: 100%;
-                }
-            }
         }
-        p{
-            color: $black;
-            font-family: $inter;
+        &__box-container{
+            width: 100%;
+            @media screen and (min-width: $tablet) {
+                grid-column: 1 / 2;
+                grid-row: 1 / 3;
+            }
+            .float-box{
+                width: 100%;
+                height: 500px;
+                overflow: hidden;
+                padding: 2rem;
+                background-color: $bg-color-box;
+                @include bordes-sombras();
+                @media screen and (min-width: $tablet) {
+                    height: unset;
+                }
+                
+                .float-img{
+                    width: 100px;
+                    height: 150px;
+                    margin: .5rem;
+                    float: left;
+                    @media screen and (min-width:780px){
+                        width: 150px;
+                        height: 200px;
+                    }
+                    @media screen and (min-width:1280px) {
+                        width: 170px;
+                        height: 220px;
+                    }
+        
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            p{
+                color: $black;
+                font-family: $inter;
+            }
         }
     }
-    
-    // VIDEO
-    
     .video{
-        width: 100vw;
-        height: 400px;
+        width: 100%;
         box-sizing: border-box;
-        
-        @media screen and (min-width:1280px) {
-            padding: 1rem;
+        @include bordes();
+        @media screen and (min-width: $tablet) {
         }
-        
         video{
             width: 100%;
             height: 100%;
+            background-color: $white;
+            object-fit: cover;
         }
     }
     
@@ -954,7 +949,6 @@ main{
         padding-bottom: 1rem;
         width: 100vw;
         height: 30%;
-    
         @media screen and (min-width:1280px) {
                 flex-direction: row;
                 justify-content: center;
@@ -970,7 +964,6 @@ main{
             letter-spacing: 2px;
             margin-bottom: .75rem;
             font-family: "Bebas Neue", cursive;
-    
             @media screen and (min-width: $tablet) {
                 font-size: 3rem;
             }
@@ -983,7 +976,6 @@ main{
             color: $btn-color;
             text-shadow: 5px 5px 3px rgba(0, 0, 0, .776);
             font-size: 2rem;
-    
             @media screen and (min-width: $tablet){
                 font-size: 2.5rem;
             }
@@ -999,16 +991,15 @@ main{
         margin: 1rem;
         font-family: $inter;
         @include bordes-sombras();
-        
         @media screen and (min-width: $desktop) {
             padding: 2rem;
+            width: 60%;
             @include flex();
             justify-content: space-evenly;
             flex-wrap: wrap;
         }
         .form-floating{
             margin-bottom: 2rem;
-    
             @media screen and (min-width: $desktop) {
                 width: 40%;
                 min-width: 40%;
@@ -1018,14 +1009,13 @@ main{
         }
         .form-select{
             @extend .form-floating;
-    
             @media screen and (min-width: $desktop) {
                 margin-left: 0;
             }
         }
         .form-floating-4{
+
             .floatingSelect{
-    
                 @media screen and (min-width: $desktop) {
                     transform: scale(.85) translateY(.5rem) translateX(.15rem);
                 }
@@ -1048,7 +1038,6 @@ main{
             .textArea{
                 resize: none;
                 overflow-y: auto;
-        
                 @media screen and (min-width: $desktop) {
                     width: 100%;
                 }
