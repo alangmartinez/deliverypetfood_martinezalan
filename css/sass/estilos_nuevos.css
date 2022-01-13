@@ -1,10 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
-
 .loaderContainer {
   width: 100vw;
   height: 100vh;
@@ -43,7 +36,13 @@
     transform: rotateZ(360deg);
   }
 }
-a {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+* a {
   text-decoration: none;
   color: white;
 }
@@ -148,6 +147,7 @@ body {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.82);
     position: relative;
+    gap: 2.5rem;
   }
   .header__nav__menuSide__userIcon {
     position: absolute;
@@ -173,7 +173,7 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .header__nav__menuSide .list-item {
-    margin: 0 1.5rem;
+    margin: 0;
     padding: 0;
   }
 }
@@ -253,7 +253,7 @@ main .login-box {
     margin-left: 1rem;
     font-family: "Inter", sans-serif;
     outline: none;
-    color: #999;
+    color: #555;
     padding-left: 0.5rem;
     font-size: 1rem;
     height: 2rem;
@@ -299,6 +299,13 @@ main .login-box {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    height: 400px;
+  }
+}
+@media screen and (min-width: 780px) and (min-width: 1280px) {
+  main .flexContainer {
     height: 500px;
   }
 }
@@ -362,6 +369,7 @@ main .container__search-box__icon {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #555;
 }
 main .container__search-box__icon:hover {
   color: white;
@@ -432,7 +440,7 @@ main .dog-box img, main .cat-box img {
   }
 }
 main .mapa {
-  width: 100vw;
+  width: 100%;
   min-width: 365px;
   height: 300px;
   padding: 1rem;
@@ -442,8 +450,7 @@ main .mapa {
   main .mapa {
     height: 100%;
     width: 50%;
-    padding: 1rem;
-    padding-right: 0.5rem;
+    padding: 0;
   }
 }
 main .mapa iframe {
@@ -464,7 +471,7 @@ main .containerMediosPago {
   main .containerMediosPago {
     height: 100%;
     width: 50%;
-    padding-left: 0.5rem;
+    padding: 0;
   }
 }
 main .containerMediosPago .mediosPago {
@@ -498,9 +505,10 @@ main .containerMediosPago .mediosPago h3::after {
   text-transform: uppercase;
   color: #ffc107;
 }
-@media screen and (min-width: 780px) {
+@media screen and (min-width: 1280px) {
   main .containerMediosPago .mediosPago h3 {
     margin-top: 1rem;
+    font-size: 2.5rem;
   }
 }
 main .containerMediosPago .mediosPago ul {
@@ -511,6 +519,11 @@ main .containerMediosPago .mediosPago ul .listItem {
   font-family: "Inter", sans-serif;
   text-align: start;
 }
+@media screen and (min-width: 1280px) {
+  main .containerMediosPago .mediosPago ul .listItem {
+    font-size: 1.15rem;
+  }
+}
 main .containerMediosPago .mediosPago ul .firstListItem::after {
   content: " Mercado Pago.";
   text-transform: uppercase;
@@ -518,7 +531,7 @@ main .containerMediosPago .mediosPago ul .firstListItem::after {
   font-size: 0.9rem;
   color: #333;
 }
-@media screen and (min-width: 780px) {
+@media screen and (min-width: 1280px) {
   main .containerMediosPago .mediosPago ul .firstListItem {
     margin-bottom: 1rem;
   }
@@ -568,22 +581,22 @@ main .dogContainer, main .catContainer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
 }
 @media screen and (min-width: 780px) {
   main .dogContainer, main .catContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 1rem;
+    gap: 1.5rem;
+    padding: 1.5rem;
   }
 }
 main .dogContainer__perrosViejos, main .catContainer__gatosViejos, main .catContainer__gatosAdultos, main .catContainer__gatitos, main .catContainer__gatosEspeciales, main .dogContainer__perrosAdultos, main .dogContainer__perrosCachorros, main .dogContainer__perrosEspeciales {
-  width: 100vw;
+  width: 100%;
   height: 230px;
   position: relative;
-  padding: 1rem;
-  padding-bottom: 0;
 }
 @media screen and (min-width: 780px) {
   main .dogContainer__perrosViejos, main .catContainer__gatosViejos, main .catContainer__gatosAdultos, main .catContainer__gatitos, main .catContainer__gatosEspeciales, main .dogContainer__perrosAdultos, main .dogContainer__perrosCachorros, main .dogContainer__perrosEspeciales {
@@ -639,9 +652,6 @@ main .dogContainer__perrosViejos p, main .catContainer__gatosViejos p, main .cat
     grid-column: 1/2;
     grid-row: 2/3;
   }
-}
-main .dogContainer__perrosEspeciales {
-  padding-bottom: 1rem;
 }
 @media screen and (min-width: 780px) {
   main .dogContainer__perrosEspeciales {
@@ -704,14 +714,6 @@ main .catContainer__gatosViejos p, main .catContainer__gatosAdultos p, main .cat
 @media screen and (min-width: 1280px) {
   main .catContainer__gatosViejos p, main .catContainer__gatosAdultos p, main .catContainer__gatitos p, main .catContainer__gatosEspeciales p {
     font-size: 3rem;
-  }
-}
-main .catContainer__gatosEspeciales {
-  padding-bottom: 1rem;
-}
-@media screen and (min-width: 780px) {
-  main .catContainer__gatosEspeciales {
-    padding: 0;
   }
 }
 main .saleBox {
@@ -816,7 +818,7 @@ main .perros .cardContainer .card .card-body, main .gatos .cardContainer .card .
   padding-bottom: 0.8rem;
   font-family: "Inter", sans-serif;
   color: black;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.95);
   border: none;
   border-radius: 0 0 6px 6px;
   display: flex;
@@ -891,6 +893,14 @@ main .perros .cardContainer .card .card-body div a .fa-cart-plus, main .gatos .c
 main .perros .cardContainer .card .card-body div a:hover, main .gatos .cardContainer .card .card-body div a:hover {
   opacity: 0.76;
 }
+main .about-us {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.8rem;
+}
 @media screen and (min-width: 780px) {
   main .about-us {
     display: grid;
@@ -907,11 +917,12 @@ main .about-us__box-container {
   main .about-us__box-container {
     grid-column: 1/2;
     grid-row: 1/3;
+    height: 100%;
   }
 }
 main .about-us__box-container .float-box {
   width: 100%;
-  height: 500px;
+  height: auto;
   overflow: hidden;
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.95);
@@ -920,7 +931,7 @@ main .about-us__box-container .float-box {
 }
 @media screen and (min-width: 780px) {
   main .about-us__box-container .float-box {
-    height: unset;
+    height: 100%;
   }
 }
 main .about-us__box-container .float-box .float-img {
@@ -947,6 +958,13 @@ main .about-us__box-container .float-box .float-img img {
 }
 main .about-us__box-container p {
   color: black;
+  font-family: "Inter", sans-serif;
+}
+main .about-us__box-container h3 {
+  font-size: 1.15rem;
+  font-family: "Inter", sans-serif;
+}
+main .about-us__box-container ul {
   font-family: "Inter", sans-serif;
 }
 main .video {
@@ -1033,6 +1051,8 @@ main .boxFormContainer {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
   }
 }
 main .boxFormContainer .form-floating, main .boxFormContainer .radioContainer, main .boxFormContainer .form-select {

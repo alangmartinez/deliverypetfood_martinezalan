@@ -26,8 +26,11 @@ btnMenu.addEventListener("click", function(){
 });
 
 let btnUser = document.getElementById("btnUser");
-let login = document.getElementById("login");
+let loginUser = document.getElementById("login");
+let login = false;
 
-btnUser.addEventListener("click", function(){
-    login.classList.toggle("mostrarLogin");
-});
+if(login == false){
+    btnUser.addEventListener("click", function(){
+        loginUser.classList.toggle("mostrarLogin");
+    });
+}

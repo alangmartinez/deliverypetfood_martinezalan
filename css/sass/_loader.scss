@@ -1,0 +1,25 @@
+// Loader Spin
+
+.loaderContainer{
+    width: 100vw;
+    height: 100vh;
+    @include flex();
+    background-color: $black;
+    position: relative;
+    z-index: 9999;
+    transition: all 1.5s;
+    
+    &__loader{
+        width: 70px;
+        height: 70px;
+        border: 6px solid $white;
+        border-radius: 50%;
+        border-left-color: transparent;
+        animation: loader infinite 1.5s linear;
+    }
+}
+
+@keyframes loader {
+    from{transform: rotateZ(0deg);}
+    to{transform: rotateZ(360deg);}
+}
