@@ -7,7 +7,7 @@
   background-color: black;
   position: relative;
   z-index: 9999;
-  transition: all 1.5s;
+  transition: ease-in-out all 900ms;
 }
 .loaderContainer__loader {
   width: 70px;
@@ -194,16 +194,6 @@ body {
 
 .oculto {
   visibility: hidden;
-}
-
-.mostrar {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.mostrarLogin {
-  transform: translateX(0%) !important;
-  opacity: 1 !important;
 }
 
 main {
@@ -739,6 +729,7 @@ main .saleBox a .sales {
 main .perros, main .gatos {
   width: 100%;
   margin-bottom: 2rem;
+  padding-top: 0.1rem;
 }
 main .perros .subtitle, main .gatos .subtitle {
   color: white;
@@ -777,10 +768,8 @@ main .perros .cardContainer, main .gatos .cardContainer {
 }
 @media screen and (min-width: 1280px) {
   main .perros .cardContainer, main .gatos .cardContainer {
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 2.4rem;
-    padding-top: 0;
+    display: flex;
+    height: 420px;
   }
 }
 main .perros .cardContainer .card, main .gatos .cardContainer .card {
@@ -791,7 +780,12 @@ main .perros .cardContainer .card, main .gatos .cardContainer .card {
   border-radius: 6px;
   background-color: transparent;
   border: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   transition: all 450ms ease;
+  margin: auto;
 }
 main .perros .cardContainer .card:hover, main .gatos .cardContainer .card:hover {
   box-shadow: 0px 3px 8px 0px rgba(17, 19, 27, 0.3);
@@ -806,16 +800,15 @@ main .perros .cardContainer .card:hover, main .gatos .cardContainer .card:hover 
 }
 main .perros .cardContainer .card img, main .gatos .cardContainer .card img {
   width: 100%;
-  height: 55%;
+  height: 70%;
   background-color: rgba(255, 255, 255, 0.95);
   padding-top: 0.8rem;
   -o-object-fit: fill;
      object-fit: fill;
 }
 main .perros .cardContainer .card .card-body, main .gatos .cardContainer .card .card-body {
-  height: 45%;
   padding: 0.5rem;
-  padding-bottom: 0.8rem;
+  padding-bottom: 1rem;
   font-family: "Inter", sans-serif;
   color: black;
   background-color: rgba(255, 255, 255, 0.95);
@@ -832,14 +825,12 @@ main .perros .cardContainer .card .card-body__box-title, main .gatos .cardContai
   justify-content: center;
   align-items: center;
   margin-bottom: 0.3rem;
-  height: 40%;
 }
 main .perros .cardContainer .card .card-body__box-title .card-title, main .gatos .cardContainer .card .card-body__box-title .card-title {
   text-align: center;
   font-size: 1rem;
 }
 main .perros .cardContainer .card .card-body .card-text, main .gatos .cardContainer .card .card-body .card-text {
-  height: 25%;
   text-align: center;
   margin-bottom: 0.4rem;
 }
@@ -848,32 +839,21 @@ main .perros .cardContainer .card .card-body div, main .gatos .cardContainer .ca
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 35%;
+  height: 50%;
 }
-main .perros .cardContainer .card .card-body div input, main .gatos .cardContainer .card .card-body div input {
-  width: 40%;
-  height: 100%;
-  margin-right: 0.3rem;
-  border-radius: 0;
-  border-style: none;
-  border: 1px solid rgba(0, 0, 0, 0.35);
-  color: #777;
-  text-align: center;
-}
-main .perros .cardContainer .card .card-body div a, main .gatos .cardContainer .card .card-body div a {
-  width: 60%;
+main .perros .cardContainer .card .card-body div .btn, main .gatos .cardContainer .card .card-body div .btn {
+  border-radius: 6px;
+  width: 100%;
   height: 100%;
   font-family: "Inter", sans-serif;
-  font-size: 0.72rem;
-  border-style: none;
-  border-radius: 0;
-  padding: 0.25rem 0.9rem;
+  font-size: 12px;
   text-align: center;
   background-color: #ffc107;
-  align-self: center;
+  padding: 10px 20px;
+  border-style: none;
 }
 @media screen and (min-width: 1280px) {
-  main .perros .cardContainer .card .card-body div a, main .gatos .cardContainer .card .card-body div a {
+  main .perros .cardContainer .card .card-body div .btn, main .gatos .cardContainer .card .card-body div .btn {
     font-size: 0.8rem;
     display: flex;
     justify-content: center;
@@ -881,16 +861,7 @@ main .perros .cardContainer .card .card-body div a, main .gatos .cardContainer .
     flex-wrap: nowrap;
   }
 }
-main .perros .cardContainer .card .card-body div a .fa-cart-plus, main .gatos .cardContainer .card .card-body div a .fa-cart-plus {
-  font-size: 0.8rem;
-}
-@media screen and (min-width: 1280px) {
-  main .perros .cardContainer .card .card-body div a .fa-cart-plus, main .gatos .cardContainer .card .card-body div a .fa-cart-plus {
-    margin-right: 0.2rem;
-    font-size: 1.4rem;
-  }
-}
-main .perros .cardContainer .card .card-body div a:hover, main .gatos .cardContainer .card .card-body div a:hover {
+main .perros .cardContainer .card .card-body div .btn:hover, main .gatos .cardContainer .card .card-body div .btn:hover {
   opacity: 0.76;
 }
 main .about-us {
@@ -986,7 +957,7 @@ main .title-help-container {
   flex-direction: column;
   padding: 2rem;
   padding-bottom: 1rem;
-  width: 100vw;
+  width: 100%;
   height: 30%;
 }
 @media screen and (min-width: 1280px) {
@@ -994,7 +965,9 @@ main .title-help-container {
     flex-direction: row;
     justify-content: center;
     height: 20vh;
-    padding: 1rem;
+    padding: 0.5rem;
+    padding-bottom: 0;
+    box-sizing: content-box;
   }
 }
 main .title-help-container h2 {
@@ -1037,7 +1010,8 @@ main .title-help-container .fa-paper-plane {
 main .boxFormContainer {
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.95);
-  margin: 1rem;
+  margin: 2.5rem auto;
+  width: 80%;
   font-family: "Inter", sans-serif;
   box-shadow: 1px 1px 18px -2px black;
   border-radius: 6px;
@@ -1051,41 +1025,55 @@ main .boxFormContainer {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin: 0 auto;
-    margin-bottom: 1.5rem;
+    margin: 2rem auto;
   }
 }
 main .boxFormContainer .form-floating, main .boxFormContainer .radioContainer, main .boxFormContainer .form-select {
   margin-bottom: 2rem;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 @media screen and (min-width: 1280px) {
   main .boxFormContainer .form-floating, main .boxFormContainer .radioContainer, main .boxFormContainer .form-select {
-    width: 40%;
+    width: 95%;
     min-width: 40%;
     display: inline-block;
-    margin: 1rem;
+    margin: auto;
+    margin-bottom: 2rem;
   }
 }
-@media screen and (min-width: 1280px) {
-  main .boxFormContainer .form-select {
-    margin-left: 0;
-  }
+main .boxFormContainer .form-floating .form-control, main .boxFormContainer .radioContainer .form-control, main .boxFormContainer .form-select .form-control {
+  background-color: transparent;
+  border-style: none;
+  border-bottom-style: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+  outline: none;
 }
-@media screen and (min-width: 1280px) {
-  main .boxFormContainer .form-floating-4 .floatingSelect {
-    transform: scale(0.85) translateY(0.5rem) translateX(0.15rem);
-  }
+main .boxFormContainer .form-floating .form-control:focus, main .boxFormContainer .radioContainer .form-control:focus, main .boxFormContainer .form-select .form-control:focus {
+  box-shadow: none;
+}
+main .boxFormContainer .form-select {
+  padding: 0 1rem;
+  margin-bottom: 0;
+}
+main .boxFormContainer .form-select:focus {
+  box-shadow: none;
+  border-color: #ced4da;
 }
 main .boxFormContainer .radioContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 main .boxFormContainer .radioContainer div {
   margin-right: 1rem;
 }
 main .boxFormContainer .titleRadio {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 main .boxFormContainer .textArea-container {
   width: 100%;
@@ -1093,6 +1081,12 @@ main .boxFormContainer .textArea-container {
 main .boxFormContainer .textArea-container .textArea {
   resize: none;
   overflow-y: auto;
+  width: 90%;
+  margin: auto;
+}
+main .boxFormContainer .textArea-container .textArea:focus {
+  box-shadow: none;
+  border-color: #ced4da;
 }
 @media screen and (min-width: 1280px) {
   main .boxFormContainer .textArea-container .textArea {
@@ -1114,6 +1108,10 @@ main .boxFormContainer .submitBtn__btn {
 main .boxFormContainer .submitBtn__btn:hover {
   background-color: #ffc107;
   filter: brightness(70%);
+}
+main .boxFormContainer .submitBtn__btn:focus {
+  box-shadow: none;
+  border-color: #ced4da;
 }
 
 footer {
@@ -1206,4 +1204,9 @@ footer p {
 footer p::after {
   content: "  DeliveryPetFood.com";
   color: #aaa000;
+}
+
+.mostrar {
+  transform: translateX(0);
+  opacity: 1;
 }/*# sourceMappingURL=estilos_nuevos.css.map */

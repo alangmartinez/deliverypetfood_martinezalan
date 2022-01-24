@@ -164,14 +164,6 @@ body{
 .oculto{
     visibility: hidden;
 }
-.mostrar{
-    transform: translateX(0);
-    opacity: 1;
-}
-.mostrarLogin{
-    transform: translateX(0%) !important;
-    opacity: 1 !important;
-}
 
 // MAIN
 main{
@@ -195,7 +187,7 @@ main{
             transform: translateX(150%);
             opacity: 0;
             transition: all 1000ms;
-
+            
             &__login{
                 &__title{
                     color: $white;
@@ -238,12 +230,12 @@ main{
             gap: 1rem;
             padding: 1rem;
             padding-bottom: 0;
-
+            
             .saleCarousel{
                 grid-row: 1 / 3;
                 padding: 0;
                 height: 100%;
-
+                
             }
             .dog-box{
                 grid-column: 2 / 3;
@@ -278,7 +270,7 @@ main{
         @include flex();
         max-width: unset;
         margin-top: 4rem;
-    
+        
         @media screen and (min-width: $tablet) {
             width: 100%;
             margin: 0;
@@ -302,7 +294,7 @@ main{
             justify-content: space-between;
             position: relative;
             
-    
+            
             &__text{
                 border: none;
                 outline: none;
@@ -319,8 +311,8 @@ main{
                     padding-left: 1.5rem;
                 }
             }
-    
-    
+            
+            
             &__icon{
                 float: right;
                 @include flex();
@@ -349,20 +341,20 @@ main{
         padding-bottom: 0;
         height: 65vh;
         min-width: 365px;
-    
+        
         .carousel-indicators{
             margin-bottom: .5rem;
             padding: 0;
             align-items: flex-end
         }
-    
+        
         .carousel-inner{
             @include bordes-sombras();
             height: 100%;
-    
+            
             .carousel-item{
                 height: 100%;
-    
+                
                 img{
                     height: 100%;
                 }
@@ -451,7 +443,7 @@ main{
                 height: 100%;
                 justify-content: space-evenly;
             }
-    
+            
             h3{
                 font-size: 2rem;
                 color: #111;
@@ -464,15 +456,15 @@ main{
                     text-transform: uppercase;
                     color: #ffc107;
                 }
-            @media screen and (min-width: $desktop){
-                margin-top: 1rem;
-                font-size: 2.5rem;
-            }
+                @media screen and (min-width: $desktop){
+                    margin-top: 1rem;
+                    font-size: 2.5rem;
+                }
             }
             ul{
                 width: 100%;
                 padding-left: 1.5rem;
-    
+                
                 .listItem{
                     font-family: 'Inter', sans-serif;
                     text-align: start;
@@ -509,7 +501,7 @@ main{
                 &:hover{
                     box-shadow: $shadow-2;
                 }
-    
+                
                 a{
                     color: $black;
                     &:hover{
@@ -530,10 +522,10 @@ main{
         z-index: 300;
         
         @media screen and (min-width: $desktop) {
-                left: 25px;
-                bottom: 25px;
-                width: 60px;
-                height: 60px;
+            left: 25px;
+            bottom: 25px;
+            width: 60px;
+            height: 60px;
         }
     }
     
@@ -551,17 +543,17 @@ main{
             gap: 1.5rem;
             padding: 1.5rem;
         }
-    
+        
         &__perrosViejos, &__perrosAdultos, &__perrosCachorros, &__perrosEspeciales{
             width: 100%;
             height: 230px;
             position: relative;
             @media screen and (min-width: $tablet) {
-                    grid-column: 1 / 2;
-                    grid-row: 1 / 2;
-                    width: 100%;
-                    height: 100%;
-                    padding: 0;
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                width: 100%;
+                height: 100%;
+                padding: 0;
             }
             img{
                 width: 100%;
@@ -639,10 +631,10 @@ main{
                 grid-row: 2 / 3;
             }
         }
-    
+        
         &__gatosViejos, &__gatosAdultos, &__gatitos, &__gatosEspeciales{
             @extend .dogContainer__perrosViejos;
-
+            
             img{
                 width: 100%;
                 height: 100%;
@@ -667,7 +659,7 @@ main{
                 left: 50%;
                 transform: translate(-50%, -50%);
                 text-align: center;
-    
+                
                 @media screen and (min-width: 1280px) {
                     font-size: 3rem;
                 }
@@ -677,73 +669,71 @@ main{
     
     // MARKET.HTML
     
-        .saleBox{
+    .saleBox{
+        width: 100%;
+        height: 20vh;
+        @include sombras();
+        
+        @media screen and (min-width: $desktop) {
+            height: 45vh;
+        }
+        a{
+            display: block;
             width: 100%;
-            height: 20vh;
-            @include sombras();
-    
-            @media screen and (min-width: $desktop) {
-                height: 45vh;
-            }
-            a{
-                display: block;
-                width: 100%;
-                height: 100%;
-    
-                .sales{
+            height: 100%;
+            
+            .sales{
                 @include sombras();
                 width: 100%;
                 height: 100%;
-                }
             }
         }
-        .perros, .gatos{
+    }
+    .perros, .gatos{
+        width: 100%;
+        margin-bottom: 2rem;
+        padding-top: .1rem;
+        
+        //Sub Title
+        .subtitle{
+            color: $white;
+            margin-top: 1.5rem;
+            padding-left: .8rem;
+            font-size: 2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, .776);
+            
+            @media screen and (min-width: $desktop) {
+                padding-left: 2.4rem;
+                font-size: 2.5rem;
+            }
+        }
+        
+        span{
+            height: 0;
+            border-bottom: 2px solid $white;
+            display: block;
+            margin: 0 .8rem;
+            margin-bottom: 1.5rem;
+            
+            @media screen and (min-width: $desktop) {
+                margin: 0 2.4rem 2.4rem 2.4rem;
+            }
+        }
+        
+        .cardContainer{
             width: 100%;
-            margin-bottom: 2rem;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: .8rem;
+            padding: .8rem;
+            padding-top: 0;
             
-            //Sub Title
-            .subtitle{
-                color: $white;
-                margin-top: 1.5rem;
-                padding-left: .8rem;
-                font-size: 2rem;
-                text-shadow: 1px 1px 3px rgba(0, 0, 0, .776);
-    
-                @media screen and (min-width: $desktop) {
-                    padding-left: 2.4rem;
-                    font-size: 2.5rem;
-                }
+            @media screen and (min-width: $desktop) {
+                display: flex;
+                height: 420px;
             }
-    
-            span{
-                height: 0;
-                border-bottom: 2px solid $white;
-                display: block;
-                margin: 0 .8rem;
-                margin-bottom: 1.5rem;
-    
-                @media screen and (min-width: $desktop) {
-                    margin: 0 2.4rem 2.4rem 2.4rem;
-                }
-            }
-            
-            .cardContainer{
-                width: 100%;
-                height: auto;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(2, 1fr);
-                gap: .8rem;
-                padding: .8rem;
-                padding-top: 0;
-    
-                @media screen and (min-width: $desktop) {
-                    grid-template-rows: 1fr;
-                    grid-template-columns: repeat(4, 1fr);
-                    padding: 2.4rem;
-                    padding-top: 0;
-                }
-    
                 .card{
                     width: 100%;
                     max-width: 250px;
@@ -751,30 +741,31 @@ main{
                     @include bordes-sombras();
                     background-color: transparent;
                     border: none;
+                    user-select: none;
                     transition: all 450ms ease;
-    
+                    margin: auto;
+                    
                     &:hover{
                         box-shadow: $shadow-2;
                     }
-    
+                    
                     @media screen and (min-width: $desktop) {
                         width: 250px;
                         height: 410px;
                         max-height: 410px;
                         justify-self: center;
                     }
-    
+                    
                     img{
                         width: 100%;
-                        height: 55%;
+                        height: 70%;
                         background-color: $bg-color-box;
                         padding-top: .8rem;
                         object-fit: fill;
                     }
                     .card-body{
-                        height: 45%;
                         padding: .5rem;
-                        padding-bottom: .8rem;
+                        padding-bottom: 1rem;
                         font-family: $inter;
                         color: $black;
                         background-color: $bg-color-box;
@@ -783,51 +774,36 @@ main{
                         @include flex();
                         flex-direction: column;
                         justify-content: space-between;
-    
+                        
                         &__box-title{
                             @include flex();
                             margin-bottom: .3rem;
-                            height: 40%;
-    
+                            
                             .card-title{
                                 text-align: center;
                                 font-size: 1rem;
                             }
                         }
-    
+                        
                         .card-text{
-                            height: 25%;
                             text-align: center;
                             margin-bottom: .4rem;
                         }
-    
+                        
                         div{
                             @include flex();
                             width: 100%;
-                            height: 35%;
-    
-                            input{
-                                width: 40%;
+                            height: 50%;
+                            .btn{
+                                @include bordes();
+                                width: 100%;
                                 height: 100%;
-                                margin-right: .3rem;
-                                border-radius: 0;
-                                border-style: none;
-                                border: 1px solid rgba(0, 0, 0, .35);
-                                color: #777;
-                                text-align: center;
-                            }
-                            a{
-                                width: 60%;
-                                height: 100%;
-                                font-family: $inter;
-                                font-size: .72rem;
-                                border-style: none;
-                                border-radius: 0;
-                                padding: .25rem .9rem;
+                                font-family: "Inter", sans-serif;
+                                font-size: 12px;
                                 text-align: center;
                                 background-color: #ffc107;
-                                align-self: center;
-                            
+                                padding: 10px 20px;
+                                border-style: none;
                                 
                                 @media screen and (min-width: 1280px){
                                     font-size: .8rem;
@@ -835,15 +811,6 @@ main{
                                     justify-content: center;
                                     align-items: center;
                                     flex-wrap: nowrap;
-                                }
-                                
-                                .fa-cart-plus{
-                                    font-size: .8rem;
-                                    
-                                    @media screen and (min-width: 1280px) {
-                                        margin-right: .2rem;
-                                        font-size: 1.4rem;
-                                    }
                                 }
                                 
                                 &:hover{
@@ -855,22 +822,22 @@ main{
                 }
             }
         }
-
-    // ABOUTUS.HTML
-    
-    .about-us{
-        @include flex();
-        flex-direction: column;
-        gap: 1rem;
-        padding: .8rem;
-        @media screen and (min-width: $tablet) {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 1.5rem;
-            padding: 2rem;
-        }
-        &__box-container{
+        
+        // ABOUTUS.HTML
+        
+        .about-us{
+            @include flex();
+            flex-direction: column;
+            gap: 1rem;
+            padding: .8rem;
+            @media screen and (min-width: $tablet) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 1.5rem;
+                padding: 2rem;
+            }
+            &__box-container{
             width: 100%;
             @media screen and (min-width: $tablet) {
                 grid-column: 1 / 2;
@@ -901,7 +868,7 @@ main{
                         width: 170px;
                         height: 220px;
                     }
-        
+                    
                     img{
                         width: 100%;
                         height: 100%;
@@ -942,13 +909,15 @@ main{
         flex-direction: column;
         padding: 2rem;
         padding-bottom: 1rem;
-        width: 100vw;
+        width: 100%;
         height: 30%;
         @media screen and (min-width:1280px) {
-                flex-direction: row;
-                justify-content: center;
-                height: 20vh;
-                padding: 1rem;
+            flex-direction: row;
+            justify-content: center;
+            height: 20vh;
+            padding: .5rem;
+            padding-bottom: 0;
+            box-sizing: content-box;
         }
         h2{
             color: $white;
@@ -983,58 +952,81 @@ main{
     .boxFormContainer{
         padding: 1rem;
         background-color: $bg-color-box;
-        margin: 1rem;
+        margin: 2.5rem auto;
+        width: 80%;
         font-family: $inter;
         @include bordes-sombras();
+
         @media screen and (min-width: $desktop) {
             padding: 2rem;
             width: 60%;
             @include flex();
             justify-content: space-evenly;
             flex-wrap: wrap;
-            margin: 0 auto;
-            margin-bottom: 1.5rem;
+            margin: 2rem auto;
         }
         .form-floating{
             margin-bottom: 2rem;
+            width: 90%;
+            margin: auto;
+            margin-bottom: 2rem;
             @media screen and (min-width: $desktop) {
-                width: 40%;
+                width: 95%;
                 min-width: 40%;
                 display: inline-block;
-                margin: 1rem;
+                margin: auto;
+                margin-bottom: 2rem;
+            }
+            
+            .form-control{
+                background-color: transparent;
+                border-style: none;
+                border-bottom-style: none;
+                border-bottom: 1px solid #000;
+                border-radius: 0;
+                outline: none;
+
+                &:focus{
+                    box-shadow: none;
+                }
             }
         }
         .form-select{
             @extend .form-floating;
-            @media screen and (min-width: $desktop) {
-                margin-left: 0;
-            }
-        }
-        .form-floating-4{
+            padding: 0 1rem;
+            margin-bottom: 0;
 
-            .floatingSelect{
-                @media screen and (min-width: $desktop) {
-                    transform: scale(.85) translateY(.5rem) translateX(.15rem);
-                }
+            &:focus{
+                box-shadow: none;
+                border-color: #ced4da;
             }
         }
         .radioContainer{
             @extend .form-floating;
             @include flex();
+            flex-wrap: wrap;
             
             div{
                 margin-right: 1rem;
             }
         }
         .titleRadio{
-            margin-bottom: .5rem;
+            margin-bottom: 1rem;
+            width: 100%;
         }
         .textArea-container{
             width: 100%;
-    
+            
             .textArea{
                 resize: none;
                 overflow-y: auto;
+                width: 90%;
+                margin: auto;
+
+                &:focus{
+                    box-shadow: none;
+                    border-color: #ced4da;
+                }
                 @media screen and (min-width: $desktop) {
                     width: 100%;
                 }
@@ -1043,16 +1035,20 @@ main{
         .submitBtn{
             @include flex();
             margin-bottom: .8rem;
-        
+            
             &__btn{
                 background-color: $btn-color;
                 outline: none;
                 border: none;
                 padding: .5rem 2rem;
-        
+                
                 &:hover{
                     background-color: $btn-color;
                     filter: brightness(70%);
+                }
+                &:focus{
+                    box-shadow: none;
+                    border-color: #ced4da;
                 }
             }
         }
@@ -1064,24 +1060,24 @@ footer{
     background-color: rgba(10, 10, 10, .885);
     @include sombras();
     height: 30%;
-
+    
     @media screen and (min-width: 1280px) {
         height: 40%;
     }
-
+    
     .footerContainer{
         padding: 1rem;
         display: flex;
         flex-direction: column;
         font-family: 'Inter', sans-serif;
-
+        
         @media screen and (min-width: 1280px) {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 1fr;
             gap: 1rem;
         }
-    
+        
         .box{
             padding: .75rem 1.5rem;
             margin-bottom: 1rem;
@@ -1117,7 +1113,7 @@ footer{
             width: 50%;
             transform: translateX(50%);
             margin-bottom: 1rem;
-
+            
             @media screen and (min-width: 1280px) {
                 display: none;
             }
@@ -1143,7 +1139,7 @@ footer{
             color: $white;
         }
     }
-
+    
     p{
         color: rgba(255, 255, 255, .7);
         font-family: $inter;
@@ -1157,4 +1153,8 @@ footer{
             color: #aaa000;
         }
     }
+}
+.mostrar{
+    transform: translateX(0);
+    opacity: 1;
 }

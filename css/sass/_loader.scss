@@ -7,7 +7,7 @@
     background-color: $black;
     position: relative;
     z-index: 9999;
-    transition: all 1.5s;
+    transition: ease-in-out all 900ms;
     
     &__loader{
         width: 70px;
