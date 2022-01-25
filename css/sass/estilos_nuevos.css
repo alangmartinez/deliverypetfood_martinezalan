@@ -67,6 +67,8 @@ body {
   height: 55px;
   width: 100%;
   z-index: 1000;
+  transform: translate(0);
+  transition: ease-in-out all 400ms;
 }
 .header__nav {
   position: fixed;
@@ -967,7 +969,6 @@ main .title-help-container {
     height: 20vh;
     padding: 0.5rem;
     padding-bottom: 0;
-    box-sizing: content-box;
   }
 }
 main .title-help-container h2 {
@@ -1209,4 +1210,9 @@ footer p::after {
 .mostrar {
   transform: translateX(0);
   opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+  transform: translateY(-100%);
 }/*# sourceMappingURL=estilos_nuevos.css.map */

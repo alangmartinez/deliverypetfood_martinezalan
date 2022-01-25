@@ -1,3 +1,5 @@
+const navBar = document.querySelector(".header");
+console.log(navBar);
 // Loader spin
 
 onload = ()=>{
@@ -7,6 +9,12 @@ onload = ()=>{
     loader.style.position = "absolute";
     loader.style.zIndex = "-1";
 }
+
+if(window.innerWidth > 1280){ //Se ejecuta la funcion si el ancho de la ventana es mayor a 1280px;
+    window.onscroll = ()=> this.scrollY > 30 ? navBar.classList.add("hide") : navBar.classList.remove("hide"); // Si el scroll en Y es mayor a 30px se añade la clase .hide a navBar, si es menor se removerá;
+    // this. en este caso hace referencia al objeto window;
+}
+    
 
 // Evento para desplazar menu side al hacer "click" en btnMenu.
 
